@@ -1,0 +1,27 @@
+{
+    "name": "ssolweb/string-morpher",
+    "description": "A powerful string manipulation library",
+    "keywords": [
+        "string",
+        "manipulation",
+        "masking",
+        "morphing",
+        "changes",
+        "laravel"
+    ],
+    "type": "library",
+    "authors": [
+        {
+            "name": "Vinicius de Santana",
+            "email": "vinicius.vts@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "SSolWEB\\": "src"
+        }
+    },
+    "require": {
+        "php": ">=8.0"
+    }
+}
