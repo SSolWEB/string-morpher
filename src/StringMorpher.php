@@ -9,8 +9,10 @@ use SSolWEB\Instances\StringMorpherInstance;
  * @method static StringMorpherInstance onlyAlpha(string $input)
  * @method static StringMorpherInstance withoutSpaces(string $input)
  * @method static StringMorpherInstance capitalize(string $input)
- * @method static StringMorpherInstance maskCPF(string $input)
- * @method static StringMorpherInstance maskPhone(string $input)
+ * @method static StringMorpherInstance maskBrCep(string $input)
+ * @method static StringMorpherInstance maskBrCpf(string $input)
+ * @method static StringMorpherInstance maskBrCnpj(string $input)
+ * @method static StringMorpherInstance maskBrPhone(string $input)
  */
 class StringMorpher
 {
