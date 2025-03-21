@@ -5,6 +5,18 @@ namespace SSolWEB\Maskers;
 trait BrazilianMasker
 {
     /**
+     * Mask a CEP postal number.
+     * @return $this
+     */
+    public function maskBrCep()
+    {
+        $this->string = preg_replace('/^(\d{2})(\d{3})(\d)/', '\1.\2-\3', $this->string);
+
+
+        return $this;
+    }
+
+    /**
      * Mask a CPF number.
      * @return $this
      */
