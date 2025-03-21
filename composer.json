@@ -1,6 +1,7 @@
 {
     "name": "ssolweb/string-morpher",
     "description": "A powerful string manipulation library",
+    "license": "MIT",
     "keywords": [
         "string",
         "manipulation",
