@@ -25,10 +25,13 @@ jobs:
         bundle install
 
     - name: Build the site
-      run: bundle exec jekyll build --destination ./build
+      run: |
+        ls
+        cd docs
+        bundle exec jekyll build --destination ./build
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build
+        publish_dir: ./docs/build
