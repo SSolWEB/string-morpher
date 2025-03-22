@@ -26,7 +26,6 @@ jobs:
 
     - name: Build the site
       run: |
-        ls
         cd docs
         bundle exec jekyll build --destination ./build
 
