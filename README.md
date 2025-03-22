@@ -1,12 +1,21 @@
 # String Morpher, A powerful string manipulation library
 
-Manipulate string, apply masks and more!
+String Morpher A powerful and versatile string manipulation library designed for developers who need efficient and intuitive solutions for modifying and masking strings.
 
 ## Status
 
-![Packagist Version](https://img.shields.io/packagist/v/ssolweb/string-morpher)
-![Packagist License](https://img.shields.io/packagist/l/ssolwe/string-morpher)
+[![Packagist Version](https://img.shields.io/packagist/v/ssolweb/string-morpher)](https://packagist.org/packages/ssolweb/string-morpher)
+[![Packagist License](https://img.shields.io/packagist/l/ssolweb/string-morpher)](https://packagist.org/packages/ssolweb/string-morpher)
 
-## Docs
+## Official Documentation
 
-Comming soon
+To see how to install and use visit [documentation](https://ssolweb.github.io/string-morpher)
+
+## Contributing
+Please see the [contributing](CONTRIBUTING.md) entry for more details.
+
+## Credits
+[Vinicius de Santana](https://github.com/viniciusvts)
+
+## License
+The package is open source software licensed under the [MIT LICENSE](LICENSE.md).
