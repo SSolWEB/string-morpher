@@ -16,6 +16,18 @@ trait Manipulator
     }
 
     /**
+     * Morph from base64.
+     * @see base64_decode()
+     * @return $this
+     */
+    public function fromBase64()
+    {
+        $this->string = base64_decode($this->string);
+
+        return $this;
+    }
+
+    /**
      * Remove all characters except letters.
      * @return $this
      */

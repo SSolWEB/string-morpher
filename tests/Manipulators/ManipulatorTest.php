@@ -7,6 +7,32 @@ use SSolWEB\StringMorpher\StringMorpher as SM;
 
 class ManipulatorTest extends TestCase
 {
+    public function testCapitalize()
+    {
+        $this->assertEquals(
+            'The Quick Brown Fox Jumps Over The Lazy Dog',
+            SM::capitalize('the quick brown fox jumps over the lazy dog')
+        );
+        $this->assertEquals(
+            'The Quick Brown Fox Jumps Over The Lazy Dog',
+            SM::make('the quick brown fox jumps over the lazy dog')->capitalize()
+        );
+    }
+
+    public function testFromBase64()
+    {
+        $content = bin2hex(random_bytes(16));
+        $base64 = base64_encode($content);
+        $this->assertEquals(
+            base64_decode($base64),
+            SM::fromBase64($base64)
+        );
+        $this->assertEquals(
+            base64_decode($base64),
+            SM::make($base64)->fromBase64()
+        );
+    }
+
     public function testOnlyNumbers()
     {
         $this->assertEquals(
@@ -116,18 +142,6 @@ class ManipulatorTest extends TestCase
         $this->assertEquals(
             '1234567890',
             SM::make('123 456 789 0')->withoutSpaces()
-        );
-    }
-
-    public function testCapitalize()
-    {
-        $this->assertEquals(
-            'The Quick Brown Fox Jumps Over The Lazy Dog',
-            SM::capitalize('the quick brown fox jumps over the lazy dog')
-        );
-        $this->assertEquals(
-            'The Quick Brown Fox Jumps Over The Lazy Dog',
-            SM::make('the quick brown fox jumps over the lazy dog')->capitalize()
         );
     }
 }

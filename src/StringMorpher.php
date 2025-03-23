@@ -6,6 +6,7 @@ use SSolWEB\StringMorpher\Instances\StringMorpherInstance;
 
 /**
  * @method static StringMorpherInstance capitalize(string $input)
+ * @method static StringMorpherInstance fromBase64(string $input)
  * @method static StringMorpherInstance onlyAlpha(string $input)
  * @method static StringMorpherInstance onlyNumbers(string $input)
  * @method static StringMorpherInstance sub(string $input, int $offset, int $length = null)
