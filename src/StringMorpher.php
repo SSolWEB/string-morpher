@@ -34,7 +34,7 @@ class StringMorpher
     /**
      * {@inheritDoc}
      * @param string $method The method to be called.
-     * @param array  $args   The arguments to be passed to the method.
+     * @param array $args The arguments to be passed to the method.
      * @return StringMorpherInstance
      */
     public static function __callStatic(string $method, array $args)
