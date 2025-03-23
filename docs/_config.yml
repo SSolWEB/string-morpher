@@ -2,11 +2,20 @@ title: String Morpher
 theme: just-the-docs
 url: "https://ssolweb.github.io"
 baseurl: "/string-morpher" # the subpath of your site, e.g. /blog
+repository: ssolweb/string-morpher/
 email: vinicius.vts@gmail.com
 description: A powerful string manipulation library for PHP.
+permalink: pretty
 # color_scheme: dark
 # logo: /assets/logo.jpg
 favicon_ico: /assets/favicon.ico
 #footer
 gh_edit_link: true
 gh_edit_link_text: "Edit this page on GitHub."
+
+defaults:
+  - scope:
+      path:
+      type: "pages"
+    values:
+      layout: "default"

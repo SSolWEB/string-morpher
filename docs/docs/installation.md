@@ -1,6 +1,5 @@
 ---
 title: "Instalation"
-layout: default
 nav_order: 2
 ---
 
@@ -29,22 +28,22 @@ This will download the library and automatically update your project's composer.
 ```php
 require 'vendor/autoload.php';
 
-use Ssolweb\StringMorpher;
+use SSolWEB\StringMorpher\StringMorpher as SM;
 
-$morpher = StringMorpher::onlyAlpha($string);
+$morpher = SM::onlyAlpha($string);
 // Start morphing your strings here!
 ```
 
 The String Morpher library is designed with a focus on simplicity and efficiency, allowing developers to chain multiple methods in a seamless and readable manner. This makes it easy to perform complex string manipulations in a single flow.
 
 ```php
-$captalizedAlpha = StringMorpher::onlyAlpha($string)
+$captalizedAlpha = SM::onlyAlpha($string)
     ->captalize();
 
-$brCpfMask = StringMorpher::onlyNumbers($string)
+$brCpfMask = SM::onlyNumbers($string)
     ->maskBrCpf();
 
-$camelCase = StringMorpher::captalize($string)
+$camelCase = SM::captalize($string)
     ->withoutSpaces();
 ```
 Chainable Methods: The methods in String Morpher are designed to return the instance of the class itself, enabling developers to apply multiple transformations step by step.
@@ -53,4 +52,4 @@ Clean and Readable Code: By chaining methods, you can avoid writing verbose and 
 
 Enjoy 😊
 
-Check [methods](./methods-docs/)
+Check [methods](/string-morpher/docs/methods/)
