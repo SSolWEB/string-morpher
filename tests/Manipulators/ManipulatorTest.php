@@ -41,6 +41,59 @@ class ManipulatorTest extends TestCase
         );
     }
 
+    public function testSub()
+    {
+        $this->assertEquals(
+            'f6g7h8i9j0',
+            SM::sub('a1b2c3d4e5f6g7h8i9j0kl)m%n$o#p;qrstuvwxyz', 10, 10)
+        );
+        $this->assertEquals(
+            'F6G7H8I9J0',
+            SM::make('A1B2C3D4E5F6G7H8I9J0KL)M%N$O#P;QRSTUVWXYZ')
+                ->sub(10, 10)
+        );
+        // negative offset
+        $this->assertEquals(
+            'ef',
+            SM::sub("abcdef", -2)
+        );
+        $this->assertEquals(
+            'EF',
+            SM::make('ABCDEF')
+                ->sub(-2)
+        );
+        // negative length
+        $this->assertEquals(
+            'cde',
+            SM::sub("abcdef", 2, -1)
+        );
+        $this->assertEquals(
+            'CDE',
+            SM::make('ABCDEF')
+                ->sub(2, -1)
+        );
+        // negative offset and length
+        $this->assertEquals(
+            'cde',
+            SM::sub("abcdef", -4, -1)
+        );
+        $this->assertEquals(
+            'CDE',
+            SM::make('ABCDEF')
+                ->sub(-4, -1)
+        );
+        // empty returns
+        $this->assertEquals(
+            '',
+            SM::sub("abcdef", 4, -4)
+        );
+        $this->assertEquals(
+            '',
+            SM::make('ABCDEF')
+                ->sub(4, -4)
+        );
+    }
+
     public function testWithoutSpaces()
     {
         $this->assertEquals(

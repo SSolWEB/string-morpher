@@ -38,6 +38,20 @@ trait Manipulator
     }
 
     /**
+     * Slice the string.
+     * @see substr()
+     * @param integer $offset The start position.
+     * @param integer|null $length The length of the slice.
+     * @return $this
+     */
+    public function sub(int $offset, int $length = null)
+    {
+        $this->string = substr($this->string, $offset, $length);
+
+        return $this;
+    }
+
+    /**
      * Remove all spaces.
      * @return $this
      */
