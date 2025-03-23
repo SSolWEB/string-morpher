@@ -17,12 +17,25 @@
             "email": "vinicius.vts@gmail.com"
         }
     ],
+    "homepage": "https://ssolweb.github.io/string-morpher/",
+    "support": {
+        "issues": "https://github.com/SSolWEB/string-morpher/issues",
+        "source": "https://github.com/SSolWEB/string-morpher/"
+    },
     "autoload": {
         "psr-4": {
-            "SSolWEB\\": "src"
+            "SSolWEB\\StringMorpher\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SSolWEB\\StringMorpher\\Tests\\": "tests/"
         }
     },
     "require": {
         "php": ">=8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.5"
     }
 }

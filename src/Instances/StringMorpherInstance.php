@@ -1,13 +1,14 @@
 <?php
 
-namespace SSolWEB\Instances;
+namespace SSolWEB\StringMorpher\Instances;
 
+use JsonSerializable;
 use Stringable;
 
-class StringMorpherInstance implements Stringable
+class StringMorpherInstance implements Stringable, JsonSerializable
 {
-    use \SSolWEB\Maskers\BrazilianMasker;
-    use \SSolWEB\Manipulators\Manipulator;
+    use \SSolWEB\StringMorpher\Maskers\BrazilianMasker;
+    use \SSolWEB\StringMorpher\Manipulators\Manipulator;
 
     private string|null $string;
 
@@ -22,6 +23,11 @@ class StringMorpherInstance implements Stringable
     }
 
     public function getString(): string
+    {
+        return $this->string;
+    }
+
+    public function jsonSerialize(): mixed
     {
         return $this->string;
     }

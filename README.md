@@ -14,6 +14,13 @@ To see how to install and use visit [documentation](https://ssolweb.github.io/st
 ## Contributing
 Please see the [contributing](CONTRIBUTING.md) entry for more details.
 
+### Install, develop, test...
+
+```bash
+composer install
+vendor/bin/phpunit
+```
+
 ## Credits
 [Vinicius de Santana](https://github.com/viniciusvts)
 

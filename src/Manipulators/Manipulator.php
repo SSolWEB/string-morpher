@@ -1,6 +1,6 @@
 <?php
 
-namespace SSolWEB\Manipulators;
+namespace SSolWEB\StringMorpher\Manipulators;
 
 trait Manipulator
 {
