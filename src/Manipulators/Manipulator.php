@@ -52,6 +52,18 @@ trait Manipulator
     }
 
     /**
+     * Morph to base64.
+     * @see base64_encode()
+     * @return $this
+     */
+    public function toBase64()
+    {
+        $this->string = base64_encode($this->string);
+
+        return $this;
+    }
+
+    /**
      * Remove all spaces.
      * @return $this
      */

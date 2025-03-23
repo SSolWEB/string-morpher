@@ -94,6 +94,19 @@ class ManipulatorTest extends TestCase
         );
     }
 
+    public function testToBase64()
+    {
+        $content = bin2hex(random_bytes(16));
+        $this->assertEquals(
+            base64_encode($content),
+            SM::toBase64($content)
+        );
+        $this->assertEquals(
+            base64_encode($content),
+            SM::make($content)->toBase64()
+        );
+    }
+
     public function testWithoutSpaces()
     {
         $this->assertEquals(
