@@ -1,6 +1,6 @@
 <?php
 
-namespace SSolWEB\Maskers;
+namespace SSolWEB\StringMorpher\Maskers;
 
 trait BrazilianMasker
 {

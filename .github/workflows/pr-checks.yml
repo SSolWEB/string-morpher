@@ -1,0 +1,51 @@
+name: Pull Request Validation
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  add-reviewer:
+    name: Add Reviewer
+    runs-on: ubuntu-latest
+    steps:
+    - name: Add Reviewers
+      uses: madrapps/add-reviewers@v1
+      with:
+        token: ${{ secrets.PAT_GH_PAGE }}
+        reviewers: viniciusvts
+        re-request-when-approved: true
+        re-request-when-changes-requested: true
+
+  run-tests:
+    name: Run PHPUnit Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      - name: Install Composer dependencies
+        run: composer install --no-progress --prefer-dist
+
+      - name: Run PHPUnit
+        run: vendor/bin/phpunit
+
+  report-status:
+    name: Report Test Status
+    needs: run-tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post Test Result
+        if: ${{ success() }}
+        run: |
+          echo "All tests passed!" > result.txt
+      - name: Notify on Failure
+        if: ${{ failure() }}
+        run: |
+          echo "Tests failed, please fix them!" > result.txt

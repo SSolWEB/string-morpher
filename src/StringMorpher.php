@@ -1,8 +1,8 @@
 <?php
 
-namespace SSolWEB;
+namespace SSolWEB\StringMorpher;
 
-use SSolWEB\Instances\StringMorpherInstance;
+use SSolWEB\StringMorpher\Instances\StringMorpherInstance;
 
 /**
  * @method static StringMorpherInstance onlyNumbers(string $input)
@@ -16,6 +16,17 @@ use SSolWEB\Instances\StringMorpherInstance;
  */
 class StringMorpher
 {
+    private function __construct()
+    {}
+
+    /**
+     * Creates an instance without morphing the input.
+     */
+    public static function make(string $input): StringMorpherInstance
+    {
+        return new StringMorpherInstance($input);
+    }
+
     public static function __callStatic($method, $args)
     {
         $instance = new StringMorpherInstance($args[0] ?? null);
