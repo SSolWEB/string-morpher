@@ -19,7 +19,7 @@ jobs:
         re-request-when-changes-requested: true
 
   run-tests:
-    name: Run PHPUnit Tests
+    name: Run Tests and Linter
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -35,6 +35,9 @@ jobs:
 
       - name: Run PHPUnit
         run: vendor/bin/phpunit
+
+      - name: Run PHP_CodeSniffer
+        run: vendor/bin/phpcs
 
   report-status:
     name: Report Test Status
