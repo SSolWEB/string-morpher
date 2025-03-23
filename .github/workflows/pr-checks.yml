@@ -15,7 +15,7 @@ jobs:
       with:
         token: ${{ secrets.PAT_GH_PAGE }}
         reviewers: viniciusvts
-        re-request-when-approved: false
+        re-request-when-approved: true
         re-request-when-changes-requested: true
 
   run-tests:
