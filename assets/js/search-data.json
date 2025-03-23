@@ -1,142 +1,184 @@
 {"0": {
+    "doc": 404,
+    "title": "404",
+    "content": "Page not found :( . The requested page could not be found. ",
+    "url": "/string-morpher/404#404",
+    
+    "relUrl": "/404#404"
+  },"1": {
+    "doc": 404,
+    "title": 404,
+    "content": " ",
+    "url": "/string-morpher/404",
+    
+    "relUrl": "/404"
+  },"2": {
+    "doc": "A lot of manipulators",
+    "title": "String useful manipulation",
+    "content": ". | capitalize | onlyNumbers | onlyAlpha | withoutSpaces | . ",
+    "url": "/string-morpher/docs/methods/a-lot-of-manipulators/#string-useful-manipulation",
+    
+    "relUrl": "/docs/methods/a-lot-of-manipulators/#string-useful-manipulation"
+  },"3": {
+    "doc": "A lot of manipulators",
+    "title": "capitalize",
+    "content": "Capitalize each word . $string = SM::capitalize($string); $string = SM::withoutSpaces($string) -&gt;capitalize(); . ",
+    "url": "/string-morpher/docs/methods/a-lot-of-manipulators/#capitalize",
+    
+    "relUrl": "/docs/methods/a-lot-of-manipulators/#capitalize"
+  },"4": {
+    "doc": "A lot of manipulators",
+    "title": "onlyNumbers",
+    "content": "Only keep numbers . $string = SM::onlyNumbers($string); $string = SM::withoutSpaces($string) -&gt;onlyNumbers(); . ",
+    "url": "/string-morpher/docs/methods/a-lot-of-manipulators/#onlynumbers",
+    
+    "relUrl": "/docs/methods/a-lot-of-manipulators/#onlynumbers"
+  },"5": {
+    "doc": "A lot of manipulators",
+    "title": "onlyAlpha",
+    "content": "Only keep letters . $string = SM::onlyAlpha($string); $string = SM::withoutSpaces($string) -&gt;onlyAlpha(); . ",
+    "url": "/string-morpher/docs/methods/a-lot-of-manipulators/#onlyalpha",
+    
+    "relUrl": "/docs/methods/a-lot-of-manipulators/#onlyalpha"
+  },"6": {
+    "doc": "A lot of manipulators",
+    "title": "withoutSpaces",
+    "content": "Remove all spaces . $string = SM::withoutSpaces($string); $string = SM::capitalize($string) -&gt;withoutSpaces(); . ",
+    "url": "/string-morpher/docs/methods/a-lot-of-manipulators/#withoutspaces",
+    
+    "relUrl": "/docs/methods/a-lot-of-manipulators/#withoutspaces"
+  },"7": {
+    "doc": "A lot of manipulators",
+    "title": "A lot of manipulators",
+    "content": " ",
+    "url": "/string-morpher/docs/methods/a-lot-of-manipulators/",
+    
+    "relUrl": "/docs/methods/a-lot-of-manipulators/"
+  },"8": {
+    "doc": "Brazilian Maskers",
+    "title": "Brazilian Masks",
+    "content": ". | maskBrCep | maskBrCpf | maskBrCnpj | maskBrPhone | . ",
+    "url": "/string-morpher/docs/methods/brazilian-maskers/#brazilian-masks",
+    
+    "relUrl": "/docs/methods/brazilian-maskers/#brazilian-masks"
+  },"9": {
+    "doc": "Brazilian Maskers",
+    "title": "maskBrCep",
+    "content": "Apply the Brazilian CEP mask . $string = SM::maskBrCep($string); $string = SM::withoutSpaces($string) -&gt;maskBrCep(); . ",
+    "url": "/string-morpher/docs/methods/brazilian-maskers/#maskbrcep",
+    
+    "relUrl": "/docs/methods/brazilian-maskers/#maskbrcep"
+  },"10": {
+    "doc": "Brazilian Maskers",
+    "title": "maskBrCpf",
+    "content": "Apply the Brazilian CEP mask . $string = SM::maskBrCpf($string); $string = SM::withoutSpaces($string) -&gt;maskBrCpf(); . ",
+    "url": "/string-morpher/docs/methods/brazilian-maskers/#maskbrcpf",
+    
+    "relUrl": "/docs/methods/brazilian-maskers/#maskbrcpf"
+  },"11": {
+    "doc": "Brazilian Maskers",
+    "title": "maskBrCnpj",
+    "content": "Apply the Brazilian CNPJ mask . $string = SM::maskBrCnpj($string); $string = SM::withoutSpaces($string) -&gt;maskBrCnpj(); . ",
+    "url": "/string-morpher/docs/methods/brazilian-maskers/#maskbrcnpj",
+    
+    "relUrl": "/docs/methods/brazilian-maskers/#maskbrcnpj"
+  },"12": {
+    "doc": "Brazilian Maskers",
+    "title": "maskBrPhone",
+    "content": "Apply the Brazilian Phone mask . $string = SM::maskBrPhone($string); $string = SM::withoutSpaces($string) -&gt;maskBrPhone(); . ",
+    "url": "/string-morpher/docs/methods/brazilian-maskers/#maskbrphone",
+    
+    "relUrl": "/docs/methods/brazilian-maskers/#maskbrphone"
+  },"13": {
+    "doc": "Brazilian Maskers",
+    "title": "Brazilian Maskers",
+    "content": " ",
+    "url": "/string-morpher/docs/methods/brazilian-maskers/",
+    
+    "relUrl": "/docs/methods/brazilian-maskers/"
+  },"14": {
     "doc": "Contributing",
     "title": "Contributing",
     "content": "Contributions are always welcome, but to keep things organized, keep in mind the following rules. ",
-    "url": "/string-morpher/contributing.html",
+    "url": "/string-morpher/docs/contributing/",
     
-    "relUrl": "/contributing.html"
-  },"1": {
+    "relUrl": "/docs/contributing/"
+  },"15": {
     "doc": "Contributing",
     "title": "Bug Reports",
     "content": "When reporting a bug in the package, make sure you follow the rules: . | You have read the Installation and General Configuration sections of the documentation; | The issue you’re facing is not documented; | A GitHub issue with the problem you’re having doesn’t already exist (in an open or closed state); | . Failure to do so, will result in a closed ticket. ",
-    "url": "/string-morpher/contributing.html#bug-reports",
+    "url": "/string-morpher/docs/contributing/#bug-reports",
     
-    "relUrl": "/contributing.html#bug-reports"
-  },"2": {
+    "relUrl": "/docs/contributing/#bug-reports"
+  },"16": {
     "doc": "Contributing",
     "title": "Pull Requests",
     "content": "Fixing a bug, correcting a typo or adding a new feature? . Just remember that all pull requests should be done against the main branch. ",
-    "url": "/string-morpher/contributing.html#pull-requests",
+    "url": "/string-morpher/docs/contributing/#pull-requests",
     
-    "relUrl": "/contributing.html#pull-requests"
-  },"3": {
+    "relUrl": "/docs/contributing/#pull-requests"
+  },"17": {
     "doc": "Contributing",
     "title": "Repository",
     "content": "Visit the repository in github . ",
-    "url": "/string-morpher/contributing.html#repository",
+    "url": "/string-morpher/docs/contributing/#repository",
     
-    "relUrl": "/contributing.html#repository"
-  },"4": {
+    "relUrl": "/docs/contributing/#repository"
+  },"18": {
+    "doc": "Methods",
+    "title": "Methods",
+    "content": "Documentation of methods . The String Morpher library is designed with a focus on simplicity and efficiency, allowing developers to chain multiple methods in a seamless and readable manner. This makes it easy to perform complex string manipulations in a single flow. Dont Forget to import the magic! . use SSolWEB\\StringMorpher\\StringMorpher as SM; . ",
+    "url": "/string-morpher/docs/methods/",
+    
+    "relUrl": "/docs/methods/"
+  },"19": {
     "doc": "Introdução",
     "title": "String Morpher",
     "content": "A powerful string manipulation library . String Morpher A powerful and versatile string manipulation library designed for developers who need efficient and intuitive solutions for modifying and masking strings. With String Morpher, you can unlock a host of advanced methods to transform your strings effortlessly. Its chaining capabilities allow you to perform complex operations in a clean, readable manner, enhancing your development experience. Whether you’re formatting user input, crafting dynamic content, or safeguarding sensitive data, String Morpher is your go-to tool for all string-related tasks. Start by reading the instalation tutorial, then check the Documentation for more information. ",
     "url": "/string-morpher/#string-morpher",
     
     "relUrl": "/#string-morpher"
-  },"5": {
+  },"20": {
     "doc": "Introdução",
     "title": "Introdução",
     "content": " ",
     "url": "/string-morpher/",
     
     "relUrl": "/"
-  },"6": {
+  },"21": {
     "doc": "Instalation",
     "title": "Instalation",
     "content": "How to instalation . ",
-    "url": "/string-morpher/installation.html",
+    "url": "/string-morpher/docs/installation/",
     
-    "relUrl": "/installation.html"
-  },"7": {
+    "relUrl": "/docs/installation/"
+  },"22": {
     "doc": "Instalation",
     "title": "Check Composer",
     "content": "To install the String Morpher package via Composer, follow these steps: . | Ensure you have Composer installed. If you don’t already have it, download and install Composer from getcomposer.org. | In your terminal, navigate to your project directory. | Run the following command to add the String Morpher package to your project: . | . composer require ssolweb/string-morpher . This will download the library and automatically update your project’s composer.json file with the package details. ",
-    "url": "/string-morpher/installation.html#check-composer",
+    "url": "/string-morpher/docs/installation/#check-composer",
     
-    "relUrl": "/installation.html#check-composer"
-  },"8": {
+    "relUrl": "/docs/installation/#check-composer"
+  },"23": {
     "doc": "Instalation",
     "title": "Use",
-    "content": ". | After installation, you can include the package in your code and start using its powerful string manipulation features: | . require 'vendor/autoload.php'; use Ssolweb\\StringMorpher; $morpher = StringMorpher::onlyAlpha($string); // Start morphing your strings here! . The String Morpher library is designed with a focus on simplicity and efficiency, allowing developers to chain multiple methods in a seamless and readable manner. This makes it easy to perform complex string manipulations in a single flow. $captalizedAlpha = StringMorpher::onlyAlpha($string) -&gt;captalize(); $brCpfMask = StringMorpher::onlyNumbers($string) -&gt;maskBrCpf(); $camelCase = StringMorpher::captalize($string) -&gt;withoutSpaces(); . Chainable Methods: The methods in String Morpher are designed to return the instance of the class itself, enabling developers to apply multiple transformations step by step. Clean and Readable Code: By chaining methods, you can avoid writing verbose and repetitive code. Each transformation is applied in sequence, improving both clarity and maintainability. Enjoy 😊 . Check methods . ",
-    "url": "/string-morpher/installation.html#use",
+    "content": ". | After installation, you can include the package in your code and start using its powerful string manipulation features: | . require 'vendor/autoload.php'; use SSolWEB\\StringMorpher\\StringMorpher as SM; $morpher = SM::onlyAlpha($string); // Start morphing your strings here! . The String Morpher library is designed with a focus on simplicity and efficiency, allowing developers to chain multiple methods in a seamless and readable manner. This makes it easy to perform complex string manipulations in a single flow. $captalizedAlpha = SM::onlyAlpha($string) -&gt;captalize(); $brCpfMask = SM::onlyNumbers($string) -&gt;maskBrCpf(); $camelCase = SM::captalize($string) -&gt;withoutSpaces(); . Chainable Methods: The methods in String Morpher are designed to return the instance of the class itself, enabling developers to apply multiple transformations step by step. Clean and Readable Code: By chaining methods, you can avoid writing verbose and repetitive code. Each transformation is applied in sequence, improving both clarity and maintainability. Enjoy 😊 . Check methods . ",
+    "url": "/string-morpher/docs/installation/#use",
     
-    "relUrl": "/installation.html#use"
-  },"9": {
+    "relUrl": "/docs/installation/#use"
+  },"24": {
     "doc": "License",
     "title": "The MIT License (MIT)",
     "content": "Copyright (C) 2015-2023 Antério Vieira, Quetzy Garcia, Raphael França. Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: . The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. ",
-    "url": "/string-morpher/license.html#the-mit-license-mit",
+    "url": "/string-morpher/docs/license/#the-mit-license-mit",
     
-    "relUrl": "/license.html#the-mit-license-mit"
-  },"10": {
+    "relUrl": "/docs/license/#the-mit-license-mit"
+  },"25": {
     "doc": "License",
     "title": "License",
     "content": " ",
-    "url": "/string-morpher/license.html",
+    "url": "/string-morpher/docs/license/",
     
-    "relUrl": "/license.html"
-  },"11": {
-    "doc": "Methods",
-    "title": "Methods",
-    "content": "Documentation of methods . The String Morpher library is designed with a focus on simplicity and efficiency, allowing developers to chain multiple methods in a seamless and readable manner. This makes it easy to perform complex string manipulations in a single flow. ",
-    "url": "/string-morpher/methods-docs.html",
-    
-    "relUrl": "/methods-docs.html"
-  },"12": {
-    "doc": "Methods",
-    "title": "onlyNumbers",
-    "content": "Only keep numbers . $string = StringMorpher::onlyNumbers($string); $string = StringMorpher::withoutSpaces($string) -&gt;onlyNumbers(); . ",
-    "url": "/string-morpher/methods-docs.html#onlynumbers",
-    
-    "relUrl": "/methods-docs.html#onlynumbers"
-  },"13": {
-    "doc": "Methods",
-    "title": "onlyAlpha",
-    "content": "Only keep letters . $string = StringMorpher::onlyAlpha($string); $string = StringMorpher::withoutSpaces($string) -&gt;onlyAlpha(); . ",
-    "url": "/string-morpher/methods-docs.html#onlyalpha",
-    
-    "relUrl": "/methods-docs.html#onlyalpha"
-  },"14": {
-    "doc": "Methods",
-    "title": "withoutSpaces",
-    "content": "Remove all spaces . $string = StringMorpher::withoutSpaces($string); $string = StringMorpher::capitalize($string) -&gt;withoutSpaces(); . ",
-    "url": "/string-morpher/methods-docs.html#withoutspaces",
-    
-    "relUrl": "/methods-docs.html#withoutspaces"
-  },"15": {
-    "doc": "Methods",
-    "title": "capitalize",
-    "content": "Capitalize each word . $string = StringMorpher::capitalize($string); $string = StringMorpher::withoutSpaces($string) -&gt;capitalize(); . ",
-    "url": "/string-morpher/methods-docs.html#capitalize",
-    
-    "relUrl": "/methods-docs.html#capitalize"
-  },"16": {
-    "doc": "Methods",
-    "title": "maskBrCep",
-    "content": "Apply the Brazilian CEP mask . $string = StringMorpher::maskBrCep($string); $string = StringMorpher::withoutSpaces($string) -&gt;maskBrCep(); . ",
-    "url": "/string-morpher/methods-docs.html#maskbrcep",
-    
-    "relUrl": "/methods-docs.html#maskbrcep"
-  },"17": {
-    "doc": "Methods",
-    "title": "maskBrCpf",
-    "content": "Apply the Brazilian CEP mask . $string = StringMorpher::maskBrCpf($string); $string = StringMorpher::withoutSpaces($string) -&gt;maskBrCpf(); . ",
-    "url": "/string-morpher/methods-docs.html#maskbrcpf",
-    
-    "relUrl": "/methods-docs.html#maskbrcpf"
-  },"18": {
-    "doc": "Methods",
-    "title": "maskBrCnpj",
-    "content": "Apply the Brazilian CNPJ mask . $string = StringMorpher::maskBrCnpj($string); $string = StringMorpher::withoutSpaces($string) -&gt;maskBrCnpj(); . ",
-    "url": "/string-morpher/methods-docs.html#maskbrcnpj",
-    
-    "relUrl": "/methods-docs.html#maskbrcnpj"
-  },"19": {
-    "doc": "Methods",
-    "title": "maskBrPhone",
-    "content": "Apply the Brazilian Phone mask . $string = StringMorpher::maskBrPhone($string); $string = StringMorpher::withoutSpaces($string) -&gt;maskBrPhone(); . ",
-    "url": "/string-morpher/methods-docs.html#maskbrphone",
-    
-    "relUrl": "/methods-docs.html#maskbrphone"
+    "relUrl": "/docs/license/"
   }
 }
