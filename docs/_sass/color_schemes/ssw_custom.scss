@@ -1,0 +1,49 @@
+@import "./color_schemes/light";
+// ssw colors:
+$cor1: #00645F;
+$cor2: #AC9969;
+$corTexto1: #002927;
+$corTexto2: #272216;
+$corBase1: #EBFFFE;
+$corBase2: #F1EDE5;
+// customizing light color scheme
+body, .main-header{
+    color: $corTexto1 !important;
+    background-color: $corBase2 !important;
+}
+.search-input {
+    background-color: #ffffffcc !important;
+}
+.search-results {
+    background-color: $corBase2 !important;
+}
+.side-bar {
+    background-color: $cor1 !important;
+}
+.site-title {
+    color: white !important;
+}
+a, a:not([class]) {
+    color: $corTexto2 !important;
+    text-decoration: none;
+    &:hover {
+        color: $corTexto1 !important;
+    }
+}
+nav a {
+    color: $corBase2 !important;
+    &.active {
+        color: $cor1 !important;
+    }
+}
+.nav-list .nav-list-item .nav-list-link:hover, .nav-list .nav-list-item .nav-list-link.active {
+    // background-color: $cor2 !important;
+    background-image: linear-gradient(-90deg, $cor1 0%, #{$cor1}cc 80%, #{$cor1}00 100%);
+}
+.site-footer {
+    color: $corTexto1 !important;
+    & a, & a:not([class])  {
+        color: $corTexto2 !important;
+        text-decoration: none;
+    }
+}

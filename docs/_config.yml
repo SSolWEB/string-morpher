@@ -13,6 +13,8 @@ favicon_ico: /assets/favicon.ico
 gh_edit_link: true
 gh_edit_link_text: "Edit this page on GitHub."
 
+color_scheme: ssw_custom.scss
+
 defaults:
   - scope:
       path:
