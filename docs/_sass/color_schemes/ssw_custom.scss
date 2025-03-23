@@ -40,6 +40,12 @@ nav a {
     // background-color: $cor2 !important;
     background-image: linear-gradient(-90deg, $cor1 0%, #{$cor1}cc 80%, #{$cor1}00 100%);
 }
+.nav-list .nav-list-item .nav-list-expander {
+    color: $corBase2 !important;
+}
+.icon {
+    color: $corBase2 !important;
+}
 .site-footer {
     color: $corTexto1 !important;
     & a, & a:not([class])  {
