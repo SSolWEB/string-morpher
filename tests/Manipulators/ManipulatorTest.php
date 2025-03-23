@@ -33,6 +33,19 @@ class ManipulatorTest extends TestCase
         );
     }
 
+    public function testToLower()
+    {
+        $content = bin2hex(random_bytes(16)) . 'ABCDEF';
+        $this->assertEquals(
+            mb_strtolower($content, 'UTF-8'),
+            SM::toLower($content)
+        );
+        $this->assertEquals(
+            mb_strtolower($content, 'UTF-8'),
+            SM::make($content)->toLower()
+        );
+    }
+
     public function testOnlyNumbers()
     {
         $this->assertEquals(

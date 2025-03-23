@@ -82,6 +82,18 @@ $string = SM::make($string)
 echo $string; // SGVsbG8gd29ybGQ=
 ```
 
+## toLower
+Morph to lower case.
+
+```php
+$string = 'HeLlO wOrLd';
+$string = SM::toLower($string);
+// or
+$string = SM::make($string)
+    ->toLower();
+echo $string; // hello world
+```
+
 ## withoutSpaces
 Remove all spaces
 

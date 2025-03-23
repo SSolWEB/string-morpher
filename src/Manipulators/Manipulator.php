@@ -76,6 +76,18 @@ trait Manipulator
     }
 
     /**
+     * Morph to lower case.
+     * @see mb_strtolower()
+     * @return $this
+     */
+    public function toLower()
+    {
+        $this->string = mb_strtolower($this->string, 'UTF-8');
+
+        return $this;
+    }
+
+    /**
      * Remove all spaces.
      * @return $this
      */

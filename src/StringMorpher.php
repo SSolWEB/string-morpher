@@ -11,6 +11,7 @@ use SSolWEB\StringMorpher\Instances\StringMorpherInstance;
  * @method static StringMorpherInstance onlyNumbers(string $input)
  * @method static StringMorpherInstance sub(string $input, int $offset, int $length = null)
  * @method static StringMorpherInstance toBase64(string $input)
+ * @method static StringMorpherInstance toLower(string $input)
  * @method static StringMorpherInstance withoutSpaces(string $input)
  * @method static StringMorpherInstance maskBrCep(string $input)
  * @method static StringMorpherInstance maskBrCpf(string $input)
