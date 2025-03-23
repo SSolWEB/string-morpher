@@ -88,6 +88,18 @@ trait Manipulator
     }
 
     /**
+     * Morph to upper case.
+     * @see mb_strtoupper()
+     * @return $this
+     */
+    public function toUpper()
+    {
+        $this->string = mb_strtoupper($this->string, 'UTF-8');
+
+        return $this;
+    }
+
+    /**
      * Remove all spaces.
      * @return $this
      */

@@ -46,6 +46,28 @@ class ManipulatorTest extends TestCase
         );
     }
 
+    public function testToUpper()
+    {
+        $content = bin2hex(random_bytes(16)) . 'abcdef';
+        $this->assertEquals(
+            mb_strtoupper($content, 'UTF-8'),
+            SM::toUpper($content)
+        );
+        $this->assertEquals(
+            mb_strtoupper($content, 'UTF-8'),
+            SM::make($content)->toUpper()
+        );
+        $content = bin2hex(random_bytes(16)) . 'abcdef';
+        $this->assertEquals(
+            'HELLO WORLD',
+            SM::toUpper('HeLlO wOrLd')
+        );
+        $this->assertEquals(
+            'HELLO WORLD',
+            SM::make('HeLlO wOrLd')->toUpper()
+        );
+    }
+
     public function testOnlyNumbers()
     {
         $this->assertEquals(

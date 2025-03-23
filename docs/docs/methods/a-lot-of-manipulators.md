@@ -94,6 +94,18 @@ $string = SM::make($string)
 echo $string; // hello world
 ```
 
+## toUpper
+Morph to upper case.
+
+```php
+$string = 'HeLlO wOrLd';
+$string = SM::toUpper($string);
+// or
+$string = SM::make($string)
+    ->toUpper();
+echo $string; // HELLO WORLD
+```
+
 ## withoutSpaces
 Remove all spaces
 
