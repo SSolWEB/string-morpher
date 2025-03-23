@@ -10,10 +10,13 @@ jobs:
     name: Add Reviewer
     runs-on: ubuntu-latest
     steps:
-      - name: Add Reviewer
-        uses: peter-evans/add-reviewer@v2
-        with:
-          reviewers: viniciusvts
+    - name: Add Reviewers
+      uses: madrapps/add-reviewers@v1
+      with:
+        token: ${{ secrets.PAT_GH_PAGE }}
+        reviewers: viniciusvts
+        re-request-when-approved: false
+        re-request-when-changes-requested: true
 
   run-tests:
     name: Run PHPUnit Tests
@@ -25,7 +28,7 @@ jobs:
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.1'
+          php-version: '8.2'
 
       - name: Install Composer dependencies
         run: composer install --no-progress --prefer-dist
