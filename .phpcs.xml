@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<ruleset name="StringMorpher Coding Standards">
+    <description>Custom coding standards for the StringMorpher project.</description>
+    <file>src</file>
+    <file>tests</file>
+    <arg name="colors"/>
+    <rule ref="PSR12"/>
+    <!-- Rules in alphabetical order-->
+    <rule ref="Generic.Files.LineEndings">
+        <properties>
+            <property name="eolChar" value="\r\n"/>
+        </properties>
+    </rule>
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="120"/>
+            <property name="absoluteLineLimit" value="120"/>
+        </properties>
+        <type>error</type>
+    </rule>
+    <rule ref="Generic.Formatting.DisallowMultipleStatements"/>
+    <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
+    <rule ref="Squiz.Commenting.FunctionComment">
+        <property name="skipIfInheritdoc" value="true"/>
+        <properties>
+            <property name="specialMethods" type="array">
+                <element value="__callStatic"/>
+                <element value="__construct"/>
+                <element value="__destruct"/>
+                <element value="__toString"/>
+                <element value="jsonSerialize"/>
+            </property>
+        </properties>
+        <exclude-pattern>tests</exclude-pattern>
+    </rule>
+    <rule ref="Squiz.Functions.MultiLineFunctionDeclaration"/>
+    <rule ref="Squiz.WhiteSpace.FunctionSpacing">
+        <properties>
+            <property name="spacingBeforeFirst" value="0"/>
+            <property name="spacingAfterLast" value="0"/>
+            <property name="spacing" value="1"/>
+        </properties>
+    </rule>
+</ruleset>

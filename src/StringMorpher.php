@@ -16,18 +16,28 @@ use SSolWEB\StringMorpher\Instances\StringMorpherInstance;
  */
 class StringMorpher
 {
+    /** {@inheritDoc} */
     private function __construct()
-    {}
+    {
+    }
 
     /**
      * Creates an instance without morphing the input.
+     * @param string $input The string to be morphed.
+     * @return StringMorpherInstance
      */
-    public static function make(string $input): StringMorpherInstance
+    public static function make(string $input)
     {
         return new StringMorpherInstance($input);
     }
 
-    public static function __callStatic($method, $args)
+    /**
+     * {@inheritDoc}
+     * @param string $method The method to be called.
+     * @param array  $args   The arguments to be passed to the method.
+     * @return StringMorpherInstance
+     */
+    public static function __callStatic(string $method, array $args)
     {
         $instance = new StringMorpherInstance($args[0] ?? null);
 
