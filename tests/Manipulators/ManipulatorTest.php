@@ -31,6 +31,15 @@ class ManipulatorTest extends TestCase
             base64_decode($base64),
             SM::make($base64)->fromBase64()
         );
+        // hard coded test
+        $this->assertEquals(
+            'Hello world',
+            SM::fromBase64('SGVsbG8gd29ybGQ=')
+        );
+        $this->assertEquals(
+            'Hello world',
+            SM::make('SGVsbG8gd29ybGQ=')->fromBase64()
+        );
     }
 
     public function testToLower()
@@ -43,6 +52,15 @@ class ManipulatorTest extends TestCase
         $this->assertEquals(
             mb_strtolower($content, 'UTF-8'),
             SM::make($content)->toLower()
+        );
+        // hard coded test
+        $this->assertEquals(
+            'hello world',
+            SM::toLower('HeLlO wOrLd')
+        );
+        $this->assertEquals(
+            'hello world',
+            SM::make('HeLlO wOrLd')->toLower()
         );
     }
 
@@ -57,7 +75,7 @@ class ManipulatorTest extends TestCase
             mb_strtoupper($content, 'UTF-8'),
             SM::make($content)->toUpper()
         );
-        $content = bin2hex(random_bytes(16)) . 'abcdef';
+        // hard coded test
         $this->assertEquals(
             'HELLO WORLD',
             SM::toUpper('HeLlO wOrLd')
@@ -153,6 +171,15 @@ class ManipulatorTest extends TestCase
             SM::make('ABCDEF')
                 ->sub(4, -4)
         );
+        // hard coded test
+        $this->assertEquals(
+            'lo wo',
+            SM::sub('Hello world', 3, 5)
+        );
+        $this->assertEquals(
+            'lo wo',
+            SM::make('Hello world', 3, 5)->sub(3, 5)
+        );
     }
 
     public function testToBase64()
@@ -165,6 +192,15 @@ class ManipulatorTest extends TestCase
         $this->assertEquals(
             base64_encode($content),
             SM::make($content)->toBase64()
+        );
+        // hard coded test
+        $this->assertEquals(
+            'SGVsbG8gd29ybGQ=',
+            SM::toBase64('Hello world')
+        );
+        $this->assertEquals(
+            'SGVsbG8gd29ybGQ=',
+            SM::make('Hello world')->toBase64()
         );
     }
 
