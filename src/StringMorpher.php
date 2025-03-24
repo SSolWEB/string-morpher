@@ -47,8 +47,7 @@ class StringMorpher
     public static function __callStatic(string $method, array $args)
     {
         $string = array_shift($args);
-        $instance = new StringMorpherInstance($string);
 
-        return $instance->$method(...$args);
+        return static::make($string)->$method(...$args);
     }
 }

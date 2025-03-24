@@ -3,264 +3,186 @@
 namespace SSolWEB\StringMorpher\Tests\Manipulators;
 
 use PHPUnit\Framework\TestCase;
+use SSolWEB\StringMorpher\Instances\StringMorpherInstance;
 use SSolWEB\StringMorpher\StringMorpher as SM;
 
 class ManipulatorTest extends TestCase
 {
     public function testCapitalize()
     {
-        $this->assertEquals(
-            'The Quick Brown Fox Jumps Over The Lazy Dog',
-            SM::capitalize('the quick brown fox jumps over the lazy dog')
-        );
-        $this->assertEquals(
-            'The Quick Brown Fox Jumps Over The Lazy Dog',
-            SM::make('the quick brown fox jumps over the lazy dog')->capitalize()
-        );
+        $tests = [
+            'The Quick Brown Fox Jumps Over The Lazy Dog' => ['the quick brown fox jumps over the lazy dog'],
+            'Hello World' => ['hello world'],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::capitalize(...$params);
+            $this->assertEquals($expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
     }
 
     public function testFromBase64()
     {
-        $content = bin2hex(random_bytes(16));
-        $base64 = base64_encode($content);
-        $this->assertEquals(
-            base64_decode($base64),
-            SM::fromBase64($base64)
-        );
-        $this->assertEquals(
-            base64_decode($base64),
-            SM::make($base64)->fromBase64()
-        );
-        // hard coded test
-        $this->assertEquals(
-            'Hello world',
-            SM::fromBase64('SGVsbG8gd29ybGQ=')
-        );
-        $this->assertEquals(
-            'Hello world',
-            SM::make('SGVsbG8gd29ybGQ=')->fromBase64()
-        );
+        $randomStrings = [bin2hex(random_bytes(16)), bin2hex(random_bytes(16))];
+        $tests = [
+            bin2hex($randomStrings[0]) => [base64_encode(bin2hex($randomStrings[0]))],
+            bin2hex($randomStrings[1]) => [base64_encode(bin2hex($randomStrings[1]))],
+            'Hello world' => ['SGVsbG8gd29ybGQ='],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::fromBase64(...$params);
+            $this->assertEquals($expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
     }
 
     public function testToLower()
     {
-        $content = bin2hex(random_bytes(16)) . 'ABCDEF';
-        $this->assertEquals(
-            mb_strtolower($content, 'UTF-8'),
-            SM::toLower($content)
-        );
-        $this->assertEquals(
-            mb_strtolower($content, 'UTF-8'),
-            SM::make($content)->toLower()
-        );
-        // hard coded test
-        $this->assertEquals(
-            'hello world',
-            SM::toLower('HeLlO wOrLd')
-        );
-        $this->assertEquals(
-            'hello world',
-            SM::make('HeLlO wOrLd')->toLower()
-        );
+        $randomStrings = [bin2hex(random_bytes(16)) . 'ABCD', bin2hex(random_bytes(16)) . 'ABCD'];
+        $tests = [
+            mb_strtolower(bin2hex($randomStrings[0]), 'UTF-8') => [bin2hex($randomStrings[0])],
+            mb_strtolower(bin2hex($randomStrings[1]), 'UTF-8') => [bin2hex($randomStrings[1])],
+            'the quick brown fox jumps over the lazy dog' => ['THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG'],
+            'hello world' => ['HeLlO wOrLd'],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::toLower(...$params);
+            $this->assertEquals($expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
     }
 
     public function testToUpper()
     {
-        $content = bin2hex(random_bytes(16)) . 'abcdef';
-        $this->assertEquals(
-            mb_strtoupper($content, 'UTF-8'),
-            SM::toUpper($content)
-        );
-        $this->assertEquals(
-            mb_strtoupper($content, 'UTF-8'),
-            SM::make($content)->toUpper()
-        );
-        // hard coded test
-        $this->assertEquals(
-            'HELLO WORLD',
-            SM::toUpper('HeLlO wOrLd')
-        );
-        $this->assertEquals(
-            'HELLO WORLD',
-            SM::make('HeLlO wOrLd')->toUpper()
-        );
+        $randomStrings = [bin2hex(random_bytes(16)) . 'abcdef', bin2hex(random_bytes(16)) . 'abcdef'];
+        $tests = [
+            mb_strtolower(bin2hex($randomStrings[0]), 'UTF-8') => [bin2hex($randomStrings[0])],
+            mb_strtolower(bin2hex($randomStrings[1]), 'UTF-8') => [bin2hex($randomStrings[1])],
+            'THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG' => ['the quick brown fox jumps over the lazy dog'],
+            'HELLO WORLD' => ['HeLlO wOrLd'],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::toUpper(...$params);
+            $this->assertEquals($expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
     }
 
     public function testOnlyNumbers()
     {
-        $this->assertEquals(
-            '1234567890',
-            SM::onlyNumbers('1a2b3c4!5#6$7^8&9*0')
-        );
-        $this->assertEquals(
-            '1234567890',
-            SM::make('1a2b3c4!5#6$7^8&9*0')->onlyNumbers()
-        );
+        $tests = [
+            '1234567890' => ['1a2b3c4!5#6$7^8&9*0'],
+            '0987654321' => ['the0 quick 9rown f8x 76mp5 ov4r th3 laz2 dog1'],
+            '42' => ['The answer is 42'],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::onlyNumbers(...$params);
+            $this->assertEquals((string) $expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
     }
 
     public function testOnlyAlpha()
     {
-        // test lower case
-        $this->assertEquals(
-            'abcdefghijklmnopqrstuvwxyz',
-            SM::onlyAlpha('a1b2c3d4e5f6g7h8i9j0kl)m%n$o#p;qrstuvwxyz')
-        );
-        $this->assertEquals(
-            'abcdefghijklmnopqrstuvwxyz',
-            SM::make('a1b2c3d4e5f6g7h8i9j0kl)m%n$o#p;qrstuvwxyz')->onlyAlpha()
-        );
-        // test upper case
-        $this->assertEquals(
-            'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-            SM::onlyAlpha('A1B2C3D4E5F6G7H8I9J0KL)M%N$O#P;QRSTUVWXYZ')
-        );
-        $this->assertEquals(
-            'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-            SM::make('A1B2C3D4E5F6G7H8I9J0KL)M%N$O#P;QRSTUVWXYZ')->onlyAlpha()
-        );
+        $tests = [
+            'abcdefghijklmnopqrstuvwxyz' => ['a1b2c3d4e5f6g7h8i9j0kl)m%n$o#p;qrstuvwxyz'],
+            'ABCDEFGHIJKLMNOPQRSTUVWXYZ' => ['A1B2C3D4E5F6G7H8I9J0KL)M%N$O#P;QRSTUVWXYZ'],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::onlyAlpha(...$params);
+            $this->assertEquals((string) $expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
     }
 
     public function testReplace()
     {
         // case sensitive
-        $this->assertEquals(
-            'The quick brown dog jumps',
-            SM::replace('The quick brown fox jumps', 'fox', 'dog')
-        );
-        $this->assertEquals(
-            'The quick brown dog jumps over the lazy dog',
-            SM::make('The quick brown fox jumps over the lazy fox')
-                ->replace('fox', 'dog')
-        );
-        $this->assertEquals(
-            'The quick brown fox jumps over the lazy fox',
-            SM::replace('The quick brown fox jumps over the lazy fox', 'Fox', 'dog')
-        );
+        $tests = [
+            'The quick brown dog jumps' => ['The quick brown fox jumps', 'fox', 'dog'],
+            'The quick brown dog jumps over the lazy dog' =>
+                ['The quick brown fox jumps over the lazy fox', 'fox', 'dog'],
+            'The quick brown fox jumps over the lazy fox' =>
+                ['The quick brown fox jumps over the lazy fox', 'Fox', 'dog'],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::replace(...$params);
+            $this->assertEquals((string) $expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
         // case insensitive
-        $this->assertEquals(
-            'The quick brown dog jumps',
-            SM::replace('The quick brown fox jumps', 'fOx', 'dog', false)
-        );
-        $this->assertEquals(
-            'The quick brown dog jumps over the lazy dog',
-            SM::make('The quick brown foX jumps over the lazy fOx')
-                ->replace('Fox', 'dog', false)
-        );
+        $tests = [
+            'The quick brown dog jumps' => ['The quick brown fox jumps', 'fOx', 'dog', false],
+            'The quick brown dog jumps over the lazy dog' =>
+                ['The quick brown fox jumps over the lazy fOx', 'Fox', 'dog', false],
+            'The quick brown dog jumps over the lazy dog' =>
+                ['The quick brown fox jumps over the lazy fox', 'fOx', 'dog', false],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::replace(...$params);
+            $this->assertEquals((string) $expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
     }
 
     public function testSub()
     {
-        $this->assertEquals(
-            'f6g7h8i9j0',
-            SM::sub('a1b2c3d4e5f6g7h8i9j0kl)m%n$o#p;qrstuvwxyz', 10, 10)
-        );
-        $this->assertEquals(
-            'F6G7H8I9J0',
-            SM::make('A1B2C3D4E5F6G7H8I9J0KL)M%N$O#P;QRSTUVWXYZ')
-                ->sub(10, 10)
-        );
-        // negative offset
-        $this->assertEquals(
-            'ef',
-            SM::sub("abcdef", -2)
-        );
-        $this->assertEquals(
-            'EF',
-            SM::make('ABCDEF')
-                ->sub(-2)
-        );
-        // negative length
-        $this->assertEquals(
-            'cde',
-            SM::sub("abcdef", 2, -1)
-        );
-        $this->assertEquals(
-            'CDE',
-            SM::make('ABCDEF')
-                ->sub(2, -1)
-        );
-        // negative offset and length
-        $this->assertEquals(
-            'cde',
-            SM::sub("abcdef", -4, -1)
-        );
-        $this->assertEquals(
-            'CDE',
-            SM::make('ABCDEF')
-                ->sub(-4, -1)
-        );
-        // empty returns
-        $this->assertEquals(
-            '',
-            SM::sub("abcdef", 4, -4)
-        );
-        $this->assertEquals(
-            '',
-            SM::make('ABCDEF')
-                ->sub(4, -4)
-        );
-        // hard coded test
-        $this->assertEquals(
-            'lo wo',
-            SM::sub('Hello world', 3, 5)
-        );
-        $this->assertEquals(
-            'lo wo',
-            SM::make('Hello world', 3, 5)->sub(3, 5)
-        );
+        $tests = [
+            'f6g7h8i9j0' => ['a1b2c3d4e5f6g7h8i9j0kl)m%n$o#p;qrstuvwxyz', 10, 10],
+            'ef' => ['abcdef', -2],
+            'cde' => ['abcdef', 2, -1],
+            'cde' => ['abcdef', -4, -1],
+            '' => ['abcdef', 4, -4],
+            'lo wo' => ['Hello world', 3, 5],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::sub(...$params);
+            $this->assertEquals((string) $expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
     }
 
     public function testToBase64()
     {
-        $content = bin2hex(random_bytes(16));
-        $this->assertEquals(
-            base64_encode($content),
-            SM::toBase64($content)
-        );
-        $this->assertEquals(
-            base64_encode($content),
-            SM::make($content)->toBase64()
-        );
-        // hard coded test
-        $this->assertEquals(
-            'SGVsbG8gd29ybGQ=',
-            SM::toBase64('Hello world')
-        );
-        $this->assertEquals(
-            'SGVsbG8gd29ybGQ=',
-            SM::make('Hello world')->toBase64()
-        );
+        $randomStrings = [bin2hex(random_bytes(16)) . 'abcdef', bin2hex(random_bytes(16)) . 'abcdef'];
+        $tests = [
+            base64_encode($randomStrings[0]) => [$randomStrings[0]],
+            base64_encode($randomStrings[1]) => [$randomStrings[1]],
+            'SGVsbG8gd29ybGQ=' => ['Hello world'],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::toBase64(...$params);
+            $this->assertEquals($expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
     }
 
     public function testTrim()
     {
-        $this->assertEquals(
-            'Hello world',
-            SM::trim(' Hello world ')
-        );
-        $this->assertEquals(
-            'Hello world',
-            SM::make(' Hello world ')->trim()
-        );
-        $this->assertEquals(
-            'Hello world',
-            SM::trim(' Hello world ', ' ')
-        );
-        $this->assertEquals(
-            'Hello world',
-            SM::make(' Hello world ')->trim(' ')
-        );
+        $tests = [
+            'Hello world' => [' Hello world '],
+            'Hello world' => [' Hello world ', ' '],
+            'Hello world' => [' Hello world ', ' \n\r\t\v\0'],
+            'Hello world' => [' Hello world ', ' \n\r\t\v\0'],
+            ' Hello world ' => [' Hello world ', '\n\r\t\v\0'],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::trim(...$params);
+            $this->assertEquals($expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
     }
 
     public function testWithoutSpaces()
     {
-        $this->assertEquals(
-            'Thequickbrownfoxjumpsoverthelazydog',
-            SM::withoutSpaces('The quick brown fox jumps over the lazy dog')
-        );
-        $this->assertEquals(
-            '1234567890',
-            SM::make('123 456 789 0')->withoutSpaces()
-        );
+        $tests = [
+            'Thequickbrownfoxjumpsoverthelazydog' => ['The quick brown fox jumps over the lazy dog'],
+            'ab1234567890' => ['ab 123 456 789 0'],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::withoutSpaces(...$params);
+            $this->assertEquals($expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
     }
 }

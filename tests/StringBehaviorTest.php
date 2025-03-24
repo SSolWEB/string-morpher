@@ -3,6 +3,7 @@
 namespace SSolWEB\StringMorpher\Tests\Maskers;
 
 use PHPUnit\Framework\TestCase;
+use SSolWEB\StringMorpher\Instances\StringMorpherInstance;
 use SSolWEB\StringMorpher\StringMorpher as SM;
 
 /**
@@ -10,6 +11,14 @@ use SSolWEB\StringMorpher\StringMorpher as SM;
  */
 class StringBehaviorTest extends TestCase
 {
+    public function testMakeMethod()
+    {
+        $content = "Hello, World!";
+        $instance = SM::make($content);
+        $this->assertEquals($content, $instance);
+        $this->assertInstanceOf(StringMorpherInstance::class, $instance);
+    }
+
     public function testToStringMethod()
     {
         $content = "Hello, World!";

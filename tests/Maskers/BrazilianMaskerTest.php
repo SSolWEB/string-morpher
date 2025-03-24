@@ -3,70 +3,60 @@
 namespace SSolWEB\StringMorpher\Tests\Maskers;
 
 use PHPUnit\Framework\TestCase;
+use SSolWEB\StringMorpher\Instances\StringMorpherInstance;
 use SSolWEB\StringMorpher\StringMorpher as SM;
 
 class BrazilianMaskerTest extends TestCase
 {
     public function testMaskBrCep()
     {
-        $this->assertEquals(
-            '12.345-67',
-            SM::maskBrCep('1234567')
-        );
-        $this->assertEquals(
-            '12.345-67',
-            SM::onlyNumbers('1a2b3c4b5d6e7f')
-                ->maskBrCep()
-        );
+        $tests = [
+            '12.345-670' => ['12345670'],
+            '98.765-432' => ['98765432'],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::maskBrCep(...$params);
+            $this->assertEquals($expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
     }
 
     public function testMaskBrCpf()
     {
-        $this->assertEquals(
-            '123.456.789-01',
-            SM::maskBrCpf('12345678901')
-        );
-        $this->assertEquals(
-            '123.456.789-01',
-            SM::onlyNumbers('-.*&1a2b3c4d5e6f7g8h9i0j1k')
-                ->maskBrCpf()
-        );
+        $tests = [
+            '123.456.789-01' => ['12345678901'],
+            '111.222.333-44' => ['11122233344'],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::maskBrCpf(...$params);
+            $this->assertEquals($expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
     }
 
     public function testMaskBrCnpj()
     {
-        $this->assertEquals(
-            '12.345.678/9012-34',
-            SM::maskBrCnpj('12345678901234')
-        );
-        $this->assertEquals(
-            '12.345.678/9012-34',
-            SM::onlyNumbers('-.*&1a2b3c4b5d6e7f8g9h0i1j2k3l4')
-                ->maskBrCnpj()
-        );
+        $tests = [
+            '12.345.678/9012-34' => ['12345678901234'],
+            '11.222.333/4444-55' => ['11222333444455'],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::maskBrCnpj(...$params);
+            $this->assertEquals($expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
     }
 
     public function testMaskBrPhone()
     {
-        // Test for 8-digit number
-        $this->assertEquals(
-            '(11) 1234-5678',
-            SM::maskBrPhone('1112345678')
-        );
-        $this->assertEquals(
-            '(11) 1234-5678',
-            SM::onlyNumbers('-.*&111a2b3c4b5d6e7f8g')
-                ->maskBrPhone()
-        );
-        // Test for 9-digit number
-        $this->assertEquals(
-            '(11) 98765-4321',
-            SM::maskBrPhone('11987654321')
-        );
-        $this->assertEquals(
-            '(11) 98765-4321',
-            SM::onlyNumbers('-.*&11a9b8c7d6e5f4g3h2i1j')
-                ->maskBrPhone()
-        );
+        $tests = [
+            '(11) 1234-5678' => ['1112345678'],
+            '(11) 98765-4321' => ['11987654321'],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::maskBrPhone(...$params);
+            $this->assertEquals($expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
     }
 }
