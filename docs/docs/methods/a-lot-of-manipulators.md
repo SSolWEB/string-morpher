@@ -70,6 +70,27 @@ $string = SM::make($string)
 echo $string; // lo wo
 ```
 
+## replace
+Replace all occurrences of a string.
+
+```php
+$string = 'The quick brown fox jumps';
+$string = SM::sub($string, 'fox', 'dog');
+// or
+$string = SM::make($string)
+    ->sub('fox', 'dog');
+echo $string; // The quick brown dog jumps
+
+// case insensitive:
+$string = 'The quick brown Fox jumps';
+$string = SM::sub($string, 'fox', 'Dog');
+// or
+$string = SM::make($string)
+    ->sub('fox', 'Dog');
+echo $string; // The quick brown Dog jumps
+```
+
+
 ## toBase64
 Encode to base64
 

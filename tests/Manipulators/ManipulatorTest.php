@@ -182,6 +182,34 @@ class ManipulatorTest extends TestCase
         );
     }
 
+    public function testReplace()
+    {
+        // case sensitive
+        $this->assertEquals(
+            'The quick brown dog jumps',
+            SM::replace('The quick brown fox jumps', 'fox', 'dog')
+        );
+        $this->assertEquals(
+            'The quick brown dog jumps over the lazy dog',
+            SM::make('The quick brown fox jumps over the lazy fox')
+                ->replace('fox', 'dog')
+        );
+        $this->assertEquals(
+            'The quick brown fox jumps over the lazy fox',
+            SM::replace('The quick brown fox jumps over the lazy fox', 'Fox', 'dog')
+        );
+        // case insensitive
+        $this->assertEquals(
+            'The quick brown dog jumps',
+            SM::replace('The quick brown fox jumps', 'fOx', 'dog', false)
+        );
+        $this->assertEquals(
+            'The quick brown dog jumps over the lazy dog',
+            SM::make('The quick brown foX jumps over the lazy fOx')
+                ->replace('Fox', 'dog', false)
+        );
+    }
+
     public function testToBase64()
     {
         $content = bin2hex(random_bytes(16));

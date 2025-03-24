@@ -50,6 +50,24 @@ trait Manipulator
     }
 
     /**
+     * Replace all occurrences of a string.
+     * @see str_replace()
+     * @see str_ireplace()
+     * @param array|string $needle The search string.
+     * @param array|string $replace The replacement string.
+     * @param boolean $caseSensitive If the search is case-sensitive.
+     * @return $this
+     */
+    public function replace(array|string $needle, array|string $replace, bool $caseSensitive = true)
+    {
+        $this->string = $caseSensitive
+            ? str_replace($needle, $replace, $this->string)
+            : str_ireplace($needle, $replace, $this->string);
+
+        return $this;
+    }
+
+    /**
      * Slice the string.
      * @see substr()
      * @param integer $offset The start position.
