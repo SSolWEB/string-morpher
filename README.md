@@ -9,13 +9,13 @@ String Morpher A powerful and versatile string manipulation library designed for
 
 ## Official Documentation
 
-To see how to install and use visit [documentation](https://ssolweb.github.io/string-morpher)
+To see how to install and use visit: [documentation](https://ssolweb.github.io/string-morpher)
 
 ## Contributing
-Please see the [contributing](CONTRIBUTING.md) entry for more details.
+Please see the [contributing](https://ssolweb.github.io/string-morpher/docs/contributing/) entry for more details.
 
 ## Credits
 [Vinicius de Santana](https://github.com/viniciusvts)
 
 ## License
-The package is open source software licensed under the [MIT LICENSE](LICENSE.md).
+The package is open source software licensed under the [MIT LICENSE](https://ssolweb.github.io/string-morpher/docs/license/).

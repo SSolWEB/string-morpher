@@ -83,10 +83,10 @@ echo $string; // The quick brown dog jumps
 
 // case insensitive:
 $string = 'The quick brown Fox jumps';
-$string = SM::sub($string, 'fox', 'Dog');
+$string = SM::sub($string, 'fox', 'Dog', false);
 // or
 $string = SM::make($string)
-    ->sub('fox', 'Dog');
+    ->sub('fox', 'Dog', false);
 echo $string; // The quick brown Dog jumps
 ```
 
