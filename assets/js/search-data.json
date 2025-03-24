@@ -57,7 +57,7 @@
   },"8": {
     "doc": "A lot of manipulators",
     "title": "replace",
-    "content": "Replace all occurrences of a string. $string = 'The quick brown fox jumps'; $string = SM::sub($string, 'fox', 'dog'); // or $string = SM::make($string) -&gt;sub('fox', 'dog'); echo $string; // The quick brown dog jumps // case insensitive: $string = 'The quick brown Fox jumps'; $string = SM::sub($string, 'fox', 'Dog'); // or $string = SM::make($string) -&gt;sub('fox', 'Dog'); echo $string; // The quick brown Dog jumps . ",
+    "content": "Replace all occurrences of a string. $string = 'The quick brown fox jumps'; $string = SM::sub($string, 'fox', 'dog'); // or $string = SM::make($string) -&gt;sub('fox', 'dog'); echo $string; // The quick brown dog jumps // case insensitive: $string = 'The quick brown Fox jumps'; $string = SM::sub($string, 'fox', 'Dog', false); // or $string = SM::make($string) -&gt;sub('fox', 'Dog', false); echo $string; // The quick brown Dog jumps . ",
     "url": "/string-morpher/docs/methods/a-lot-of-manipulators/#replace",
     
     "relUrl": "/docs/methods/a-lot-of-manipulators/#replace"
@@ -176,7 +176,7 @@
   },"25": {
     "doc": "Methods",
     "title": "Methods",
-    "content": "Documentation of methods . The String Morpher library is designed with a focus on simplicity and efficiency, allowing developers to chain multiple methods in a seamless and readable manner. This makes it easy to perform complex string manipulations in a single flow. Dont Forget to import the magic! . use SSolWEB\\StringMorpher\\StringMorpher as SM; . ",
+    "content": "Documentation of methods . The String Morpher library is designed with a focus on simplicity and efficiency, allowing developers to chain multiple methods in a seamless and readable manner. This makes it easy to perform complex string manipulations in a single flow. use SSolWEB\\StringMorpher\\StringMorpher as SM; // Dont Forget to import the magic! $pascalCase = SM::capitalize('the quick brown fox jumps over the lazy dog') -&gt;withoutSpaces(); echo $pascalCase; // TheQuickBrownFoxJumpsOverTheLazyDog $slug = SM::toLower(' The quick brown Fox jumps over the lazy Dog ') -&gt;trim() -&gt;replace(' ', '-'); echo $slug; // the-quick-brown-fox-jumps-over-the-lazy-dog . ",
     "url": "/string-morpher/docs/methods/",
     
     "relUrl": "/docs/methods/"

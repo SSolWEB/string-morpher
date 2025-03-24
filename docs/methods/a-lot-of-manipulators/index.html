@@ -37,10 +37,10 @@
 
 <span class="c1">// case insensitive:</span>
 <span class="nv">$string</span> <span class="o">=</span> <span class="s1">'The quick brown Fox jumps'</span><span class="p">;</span>
-<span class="nv">$string</span> <span class="o">=</span> <span class="no">SM</span><span class="o">::</span><span class="nf">sub</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span> <span class="s1">'fox'</span><span class="p">,</span> <span class="s1">'Dog'</span><span class="p">);</span>
+<span class="nv">$string</span> <span class="o">=</span> <span class="no">SM</span><span class="o">::</span><span class="nf">sub</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span> <span class="s1">'fox'</span><span class="p">,</span> <span class="s1">'Dog'</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
 <span class="c1">// or</span>
 <span class="nv">$string</span> <span class="o">=</span> <span class="no">SM</span><span class="o">::</span><span class="nf">make</span><span class="p">(</span><span class="nv">$string</span><span class="p">)</span>
-    <span class="o">-&gt;</span><span class="nf">sub</span><span class="p">(</span><span class="s1">'fox'</span><span class="p">,</span> <span class="s1">'Dog'</span><span class="p">);</span>
+    <span class="o">-&gt;</span><span class="nf">sub</span><span class="p">(</span><span class="s1">'fox'</span><span class="p">,</span> <span class="s1">'Dog'</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
 <span class="k">echo</span> <span class="nv">$string</span><span class="p">;</span> <span class="c1">// The quick brown Dog jumps</span>
 </code></pre></div></div> <h2 id="tobase64"> <a href="#tobase64" class="anchor-heading" aria-labelledby="tobase64"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> toBase64 </h2> <p>Encode to base64</p> <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$string</span> <span class="o">=</span> <span class="s1">'Hello world'</span><span class="p">;</span>
 <span class="nv">$string</span> <span class="o">=</span> <span class="no">SM</span><span class="o">::</span><span class="nf">toBase64</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span>
