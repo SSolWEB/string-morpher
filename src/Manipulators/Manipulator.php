@@ -125,7 +125,39 @@ trait Manipulator
      */
     public function trim(string $characters = " \n\r\t\v\0")
     {
-        $this->string = trim($this->string, $characters);
+        $this->string = $characters == null ?
+            trim($this->string) :
+            trim($this->string, $characters);
+
+        return $this;
+    }
+
+    /**
+     * Remove all spaces from the left.
+     * @see ltrim()
+     * @param string $characters The characters to be removed.
+     * @return $this
+     */
+    public function ltrim(string $characters = " \n\r\t\v\0")
+    {
+        $this->string = $characters == null ?
+            ltrim($this->string) :
+            ltrim($this->string, $characters);
+
+        return $this;
+    }
+
+    /**
+     * Remove all spaces from the right.
+     * @see rtrim()
+     * @param string $characters The characters to be removed.
+     * @return $this
+     */
+    public function rtrim(string $characters = " \n\r\t\v\0")
+    {
+        $this->string = $characters == null ?
+            rtrim($this->string) :
+            rtrim($this->string, $characters);
 
         return $this;
     }

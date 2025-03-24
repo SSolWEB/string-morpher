@@ -144,6 +144,40 @@ $string = SM::make($string)
     ->trim(" \n\r\t\v\0");
 ```
 
+## ltrim
+Remove all spaces from the start and end.
+
+```php
+$string = ' Hello world ';
+$string = SM::ltrim($string);
+// or
+$string = SM::make($string)
+    ->ltrim();
+echo $string; // Hello world 
+
+// you can set what caracters you can ltrim
+$string = SM::ltrim($string, " \n\r\t\v\0");
+$string = SM::make($string)
+    ->ltrim(" \n\r\t\v\0");
+```
+
+## rtrim
+Remove all spaces from the start and end.
+
+```php
+$string = ' Hello world ';
+$string = SM::rtrim($string);
+// or
+$string = SM::make($string)
+    ->rtrim();
+echo $string; //  Hello world
+
+// you can set what caracters you can rtrim
+$string = SM::rtrim($string, " \n\r\t\v\0");
+$string = SM::make($string)
+    ->rtrim(" \n\r\t\v\0");
+```
+
 ## withoutSpaces
 Remove all spaces
 

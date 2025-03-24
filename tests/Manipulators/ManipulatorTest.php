@@ -173,6 +173,38 @@ class ManipulatorTest extends TestCase
         }
     }
 
+    public function testLtrim()
+    {
+        $tests = [
+            'Hello world ' => [' Hello world '],
+            'Hello world ' => [' Hello world ', ' '],
+            'Hello world ' => [' Hello world ', ' \n\r\t\v\0'],
+            'Hello world ' => [' Hello world ', ' \n\r\t\v\0'],
+            ' Hello world ' => [' Hello world ', '\n\r\t\v\0'],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::ltrim(...$params);
+            $this->assertEquals($expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
+    }
+
+    public function testRtrim()
+    {
+        $tests = [
+            ' Hello world' => [' Hello world '],
+            ' Hello world' => [' Hello world ', ' '],
+            ' Hello world' => [' Hello world ', ' \n\r\t\v\0'],
+            ' Hello world' => [' Hello world ', ' \n\r\t\v\0'],
+            ' Hello world ' => [' Hello world ', '\n\r\t\v\0'],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::rtrim(...$params);
+            $this->assertEquals($expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
+    }
+
     public function testWithoutSpaces()
     {
         $tests = [
