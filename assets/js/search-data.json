@@ -162,7 +162,7 @@
   },"23": {
     "doc": "Contributing",
     "title": "Pull Requests",
-    "content": "Fixing a bug, correcting a typo or adding a new feature? . Just remember that all pull requests should be done against the main branch. ",
+    "content": "Fixing a bug, correcting a typo or adding a new feature? . Just remember that all pull requests should be done against the main branch. Install, develop, test, contribute… . composer install # do some magic vendor/bin/phpcs vendor/bin/phpunit # commit # make a pull request . ",
     "url": "/string-morpher/docs/contributing/#pull-requests",
     
     "relUrl": "/docs/contributing/#pull-requests"
