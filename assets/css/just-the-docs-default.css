@@ -265,7 +265,7 @@
 
 body, .main-header { color: #002927 !important; background-color: #F1EDE5 !important; }
 
-.search-input { background-color: #ffffffcc !important; }
+.search-input { background-color: #ffffff99 !important; }
 
 .search-results { background-color: #F1EDE5 !important; }
 
@@ -282,6 +282,12 @@ nav a { color: #F1EDE5 !important; }
 nav a.active { color: #00645F !important; }
 
 .nav-list .nav-list-item .nav-list-link:hover, .nav-list .nav-list-item .nav-list-link.active { background-image: linear-gradient(-90deg, #00645F 0%, #00645Fcc 80%, #00645F0 100%); }
+
+.nav-list .nav-list-item .nav-list-expander { color: #F1EDE5 !important; }
+
+.icon { color: #F1EDE5 !important; }
+
+.main-content .anchor-heading svg { color: #00645F !important; }
 
 .site-footer { color: #002927 !important; }
 
