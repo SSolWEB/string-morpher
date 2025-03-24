@@ -14,17 +14,6 @@ To see how to install and use visit [documentation](https://ssolweb.github.io/st
 ## Contributing
 Please see the [contributing](CONTRIBUTING.md) entry for more details.
 
-### Install, develop, test, contribute...
-
-```bash
-composer install
-vendor/bin/phpcbf
-vendor/bin/phpcs
-vendor/bin/phpunit
-# commit
-# make a pull request
-```
-
 ## Credits
 [Vinicius de Santana](https://github.com/viniciusvts)
 
