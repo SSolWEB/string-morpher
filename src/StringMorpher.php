@@ -5,10 +5,17 @@ namespace SSolWEB\StringMorpher;
 use SSolWEB\StringMorpher\Instances\StringMorpherInstance;
 
 /**
- * @method static StringMorpherInstance onlyNumbers(string $input)
- * @method static StringMorpherInstance onlyAlpha(string $input)
- * @method static StringMorpherInstance withoutSpaces(string $input)
  * @method static StringMorpherInstance capitalize(string $input)
+ * @method static StringMorpherInstance fromBase64(string $input)
+ * @method static StringMorpherInstance onlyAlpha(string $input)
+ * @method static StringMorpherInstance onlyNumbers(string $input)
+ * @method static StringMorpherInstance replace(array|string $needle, array|string $replace, bool $caseSensitive = true)
+ * @method static StringMorpherInstance sub(string $input, int $offset, int $length = null)
+ * @method static StringMorpherInstance toBase64(string $input)
+ * @method static StringMorpherInstance toLower(string $input)
+ * @method static StringMorpherInstance toUpper(string $input)
+ * @method static StringMorpherInstance trim(string $input, string $characters = " \n\r\t\v\0")
+ * @method static StringMorpherInstance withoutSpaces(string $input)
  * @method static StringMorpherInstance maskBrCep(string $input)
  * @method static StringMorpherInstance maskBrCpf(string $input)
  * @method static StringMorpherInstance maskBrCnpj(string $input)
@@ -39,8 +46,9 @@ class StringMorpher
      */
     public static function __callStatic(string $method, array $args)
     {
-        $instance = new StringMorpherInstance($args[0] ?? null);
+        $string = array_shift($args);
+        $instance = new StringMorpherInstance($string);
 
-        return $instance->$method();
+        return $instance->$method(...$args);
     }
 }
