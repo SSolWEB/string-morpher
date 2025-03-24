@@ -45,3 +45,15 @@ $string = SM::maskBrPhone($string);
 $string = SM::withoutSpaces($string)
     ->maskBrPhone();
 ```
+
+## maskBrReal
+Apply the Brazilian Phone mask
+
+```php
+$string = '1234864.20'; // or float or int
+$string = SM::maskBrReal($string);
+// or
+$string = SM::withoutSpaces($string)
+    ->maskBrReal();
+echo $string // R$ 1.234.864,20
+```

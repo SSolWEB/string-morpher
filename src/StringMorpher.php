@@ -20,6 +20,7 @@ use SSolWEB\StringMorpher\Instances\StringMorpherInstance;
  * @method static StringMorpherInstance maskBrCpf(string $input)
  * @method static StringMorpherInstance maskBrCnpj(string $input)
  * @method static StringMorpherInstance maskBrPhone(string $input)
+ * @method static StringMorpherInstance maskBrReal(string $input)
  */
 class StringMorpher
 {
