@@ -68,6 +68,22 @@ class ManipulatorTest extends TestCase
         }
     }
 
+    public function testToUpperFirst()
+    {
+        $tests = [
+            'The quick brown fox jumps over the lazy dog' => ['the quick brown fox jumps over the lazy dog'],
+            'Hello world' => ['hello world'],
+            'First' => ['first'],
+            'HeLlO wOrLd' => ['HeLlO wOrLd'],
+            '1hello world' => ['1hello world'],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::toUpperFirst(...$params);
+            $this->assertEquals($expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
+    }
+
     public function testOnlyNumbers()
     {
         $tests = [

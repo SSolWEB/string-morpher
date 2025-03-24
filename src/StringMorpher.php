@@ -14,6 +14,7 @@ use SSolWEB\StringMorpher\Instances\StringMorpherInstance;
  * @method static StringMorpherInstance toBase64(string $input)
  * @method static StringMorpherInstance toLower(string $input)
  * @method static StringMorpherInstance toUpper(string $input)
+ * @method static StringMorpherInstance toUpperFirst(string $input)
  * @method static StringMorpherInstance trim(string $input, string $characters = " \n\r\t\v\0")
  * @method static StringMorpherInstance ltrim(string $input, string $characters = " \n\r\t\v\0")
  * @method static StringMorpherInstance rtrim(string $input, string $characters = " \n\r\t\v\0")

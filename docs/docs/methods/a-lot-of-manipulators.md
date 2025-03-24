@@ -127,6 +127,18 @@ $string = SM::make($string)
 echo $string; // HELLO WORLD
 ```
 
+## toUpperFirst
+Morph to upper case the first letter of string.
+
+```php
+$string = 'hello world';
+$string = SM::toUpperFirst($string);
+// or
+$string = SM::make($string)
+    ->toUpperFirst();
+echo $string; // Hello world
+```
+
 ## trim
 Remove all spaces from the start and end.
 

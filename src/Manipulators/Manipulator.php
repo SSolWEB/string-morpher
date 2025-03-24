@@ -118,6 +118,18 @@ trait Manipulator
     }
 
     /**
+     * Morph the first caracter to upper case.
+     * @see ucfirst()
+     * @return $this
+     */
+    public function toUpperFirst()
+    {
+        $this->string = ucfirst($this->string);
+
+        return $this;
+    }
+
+    /**
      * Remove all spaces from the start and end.
      * @see trim()
      * @param string $characters The characters to be removed.
