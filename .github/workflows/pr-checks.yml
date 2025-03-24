@@ -19,7 +19,7 @@ jobs:
         re-request-when-changes-requested: true
 
   run-tests:
-    name: Run Tests and Linter
+    name: Run PHPUnit
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -36,19 +36,20 @@ jobs:
       - name: Run PHPUnit
         run: vendor/bin/phpunit
 
-      - name: Run PHP_CodeSniffer
-        run: vendor/bin/phpcs
-
-  report-status:
-    name: Report Test Status
-    needs: run-tests
+  run-linter:
+    name: Run PHP_CodeSniffer
     runs-on: ubuntu-latest
     steps:
-      - name: Post Test Result
-        if: ${{ success() }}
-        run: |
-          echo "All tests passed!" > result.txt
-      - name: Notify on Failure
-        if: ${{ failure() }}
-        run: |
-          echo "Tests failed, please fix them!" > result.txt
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      - name: Install Composer dependencies
+        run: composer install --no-progress --prefer-dist
+
+      - name: Run PHP_CodeSniffer
+        run: vendor/bin/phpcs
