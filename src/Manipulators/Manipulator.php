@@ -118,6 +118,19 @@ trait Manipulator
     }
 
     /**
+     * Remove all spaces from the start and end.
+     * @see trim()
+     * @param string $characters The characters to be removed.
+     * @return $this
+     */
+    public function trim(string $characters = " \n\r\t\v\0")
+    {
+        $this->string = trim($this->string, $characters);
+
+        return $this;
+    }
+
+    /**
      * Remove all spaces.
      * @return $this
      */

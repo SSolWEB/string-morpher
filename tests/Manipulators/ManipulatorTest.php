@@ -232,6 +232,26 @@ class ManipulatorTest extends TestCase
         );
     }
 
+    public function testTrim()
+    {
+        $this->assertEquals(
+            'Hello world',
+            SM::trim(' Hello world ')
+        );
+        $this->assertEquals(
+            'Hello world',
+            SM::make(' Hello world ')->trim()
+        );
+        $this->assertEquals(
+            'Hello world',
+            SM::trim(' Hello world ', ' ')
+        );
+        $this->assertEquals(
+            'Hello world',
+            SM::make(' Hello world ')->trim(' ')
+        );
+    }
+
     public function testWithoutSpaces()
     {
         $this->assertEquals(

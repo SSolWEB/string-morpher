@@ -127,6 +127,23 @@ $string = SM::make($string)
 echo $string; // HELLO WORLD
 ```
 
+## trim
+Remove all spaces from the start and end.
+
+```php
+$string = ' Hello world ';
+$string = SM::trim($string);
+// or
+$string = SM::make($string)
+    ->trim();
+echo $string; // Hello world
+
+// you can set what caracters you can trim
+$string = SM::trim($string, " \n\r\t\v\0");
+$string = SM::make($string)
+    ->trim(" \n\r\t\v\0");
+```
+
 ## withoutSpaces
 Remove all spaces
 
