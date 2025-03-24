@@ -12,7 +12,7 @@ body, .main-header{
     background-color: $corBase2 !important;
 }
 .search-input {
-    background-color: #ffffffcc !important;
+    background-color: #ffffff99 !important;
 }
 .search-results {
     background-color: $corBase2 !important;
@@ -45,6 +45,9 @@ nav a {
 }
 .icon {
     color: $corBase2 !important;
+}
+.main-content .anchor-heading svg {
+    color: $cor1 !important;
 }
 .site-footer {
     color: $corTexto1 !important;
