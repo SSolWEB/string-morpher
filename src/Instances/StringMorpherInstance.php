@@ -10,13 +10,13 @@ class StringMorpherInstance implements Stringable, JsonSerializable
     use \SSolWEB\StringMorpher\Maskers\BrazilianMasker;
     use \SSolWEB\StringMorpher\Manipulators\Manipulator;
 
-    private string|null $string;
+    private string $string;
 
     /**
      * Creates a new instance of StringMorpherInstance.
-     * @param string|null $string The string to be morphed.
+     * @param string $string The string to be morphed.
      */
-    public function __construct(string|null $string)
+    public function __construct(string $string)
     {
         $this->string = $string;
     }
@@ -24,7 +24,7 @@ class StringMorpherInstance implements Stringable, JsonSerializable
     /** {@inheritDoc} */
     public function __toString(): string
     {
-        return $this->string ?? '';
+        return $this->string;
     }
 
     /**
