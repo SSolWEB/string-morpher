@@ -36,6 +36,39 @@ class ManipulatorTest extends TestCase
         }
     }
 
+    public function testLimit()
+    {
+        $tests = [
+            'The quick brown fox jumps over' => ['The quick brown fox jumps over the lazy dog', 30],
+            'The quick brown fox jumps over the lazy dog' => ['The quick brown fox jumps over the lazy dog', 100],
+            'The quick brown fox jumps[...]' => ['The quick brown fox jumps over the lazy dog', 30, '[...]'],
+            'abcdefghij' => ['abcdefghijklmnopqrstuvwxyz', 10],
+            'ABCDEFGHIJ...' => ['ABCDEFGHIJKLMNOPQRSTUVWXYZ', 13, '...'],
+            '.....' => ['abcdefghijklmnopqrstuvwxyz', 3, '.....'],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::limit(...$params);
+            $this->assertEquals($expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
+    }
+
+    public function testNormalize()
+    {
+        $tests = [
+            '0123456789ABCDEFGHIJKLMNOPQ' => ["†¤¶§!\"#$%&'()*+,-./0123456789:;=>?@ABCDEFGHIJKLMNOPQ"],
+            'RSTUVWXYZabcdefghijklmnopqrstuvwxyz' => ['RSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~'],
+            'CueaaaaceeeiiiooouuyPaiounN' => ['ÇüéâäàåçêëèïîìæÆôöòûùÿ¢£¥PƒáíóúñÑ¿¬½¼¡«»¦ßµ±°•·²€„…†'],
+            'SsYAAAAAAEEEEIIIIOOOOOUUUU' => ['‡ˆ‰Š‹Œ‘’“”–—˜™š›œŸ¨©®¯³´¸¹¾ÀÁÂÃÄÅÈÉÊËÌÍÎÏÐÒÓÔÕÖ×ØÙÚÛÜ'],
+            'Yaoouy ' => ['ÝÞãðõ÷øüýþ" '],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::normalize(...$params);
+            $this->assertEquals($expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
+    }
+
     public function testToLower()
     {
         $randomStrings = [bin2hex(random_bytes(16)) . 'ABCD', bin2hex(random_bytes(16)) . 'ABCD'];
@@ -68,6 +101,22 @@ class ManipulatorTest extends TestCase
         }
     }
 
+    public function testToUpperFirst()
+    {
+        $tests = [
+            'The quick brown fox jumps over the lazy dog' => ['the quick brown fox jumps over the lazy dog'],
+            'Hello world' => ['hello world'],
+            'First' => ['first'],
+            'HeLlO wOrLd' => ['HeLlO wOrLd'],
+            '1hello world' => ['1hello world'],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::toUpperFirst(...$params);
+            $this->assertEquals($expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
+    }
+
     public function testOnlyNumbers()
     {
         $tests = [
@@ -90,7 +139,7 @@ class ManipulatorTest extends TestCase
         ];
         foreach ($tests as $expected => $params) {
             $actual = SM::onlyAlpha(...$params);
-            $this->assertEquals((string) $expected, $actual);
+            $this->assertEquals($expected, $actual);
             $this->assertInstanceOf(StringMorpherInstance::class, $actual);
         }
     }
@@ -107,7 +156,7 @@ class ManipulatorTest extends TestCase
         ];
         foreach ($tests as $expected => $params) {
             $actual = SM::replace(...$params);
-            $this->assertEquals((string) $expected, $actual);
+            $this->assertEquals($expected, $actual);
             $this->assertInstanceOf(StringMorpherInstance::class, $actual);
         }
         // case insensitive
@@ -120,7 +169,42 @@ class ManipulatorTest extends TestCase
         ];
         foreach ($tests as $expected => $params) {
             $actual = SM::replace(...$params);
-            $this->assertEquals((string) $expected, $actual);
+            $this->assertEquals($expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
+    }
+
+    public function testReplaceRegex()
+    {
+        $tests = [
+            'The quick brown fox jumps' => ['The quick    brown fox jumps', '/\s+/', ' '],
+            'The quick brown dog jumps over the lazy dog' =>
+                ['The quick brown fox jumps over the lazy fox', '/fox/', 'dog'],
+            'April 1,2003' =>
+                ['April 15, 2003', '/(\w+) (\d+), (\d+)/i', '$1 1,$3'],
+            '2025, March 24' =>
+                ['March 24, 2025', '/(\w+) (\d+), (\d+)/i', '$3, $1 $2'],
+            '0he 0uick 0rown 0og 0umps' => ['The Quick Brown Dog Jumps', '/[A-Z]/', '0'],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::replaceRegex(...$params);
+            $this->assertEquals($expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
+    }
+
+    public function testReverse()
+    {
+        $tests = [
+            'The quick brown fox jumps' => ['spmuj xof nworb kciuq ehT'],
+            'The qu1ck br0wn fox jumps ov3r the l4zy dog' =>
+                ['god yz4l eht r3vo spmuj xof nw0rb kc1uq ehT'],
+            'zyxwvutsrqponmlkjihgfedcba' => ['abcdefghijklmnopqrstuvwxyz'],
+            'abcde' => ['edcba'],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::reverse(...$params);
+            $this->assertEquals($expected, $actual);
             $this->assertInstanceOf(StringMorpherInstance::class, $actual);
         }
     }
@@ -137,7 +221,7 @@ class ManipulatorTest extends TestCase
         ];
         foreach ($tests as $expected => $params) {
             $actual = SM::sub(...$params);
-            $this->assertEquals((string) $expected, $actual);
+            $this->assertEquals($expected, $actual);
             $this->assertInstanceOf(StringMorpherInstance::class, $actual);
         }
     }
@@ -168,6 +252,38 @@ class ManipulatorTest extends TestCase
         ];
         foreach ($tests as $expected => $params) {
             $actual = SM::trim(...$params);
+            $this->assertEquals($expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
+    }
+
+    public function testLtrim()
+    {
+        $tests = [
+            'Hello world ' => [' Hello world '],
+            'Hello world ' => [' Hello world ', ' '],
+            'Hello world ' => [' Hello world ', ' \n\r\t\v\0'],
+            'Hello world ' => [' Hello world ', ' \n\r\t\v\0'],
+            ' Hello world ' => [' Hello world ', '\n\r\t\v\0'],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::ltrim(...$params);
+            $this->assertEquals($expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
+    }
+
+    public function testRtrim()
+    {
+        $tests = [
+            ' Hello world' => [' Hello world '],
+            ' Hello world' => [' Hello world ', ' '],
+            ' Hello world' => [' Hello world ', ' \n\r\t\v\0'],
+            ' Hello world' => [' Hello world ', ' \n\r\t\v\0'],
+            ' Hello world ' => [' Hello world ', '\n\r\t\v\0'],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::rtrim(...$params);
             $this->assertEquals($expected, $actual);
             $this->assertInstanceOf(StringMorpherInstance::class, $actual);
         }
