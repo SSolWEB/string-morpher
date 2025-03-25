@@ -68,6 +68,20 @@ trait Manipulator
     }
 
     /**
+     * Replace all occurrences of a regex.
+     * @see preg_replace()
+     * @param array|string $needleRegex The search string.
+     * @param array|string $replace The replacement string.
+     * @return $this
+     */
+    public function replaceRegex(array|string $needleRegex, array|string $replace)
+    {
+        $this->string = preg_replace($needleRegex, $replace, $this->string);
+
+        return $this;
+    }
+
+    /**
      * Slice the string.
      * @see substr()
      * @param integer $offset The start position.

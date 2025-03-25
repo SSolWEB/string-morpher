@@ -90,6 +90,17 @@ $string = SM::make($string)
 echo $string; // The quick brown Dog jumps
 ```
 
+## replaceRegex
+Replace all occurrences of a regex.
+
+```php
+$string = 'The  quick   brown    fox jumps';
+$string = SM::replaceRegex($string, '/\s+/', ' ');
+// or
+$string = SM::make($string)
+    ->replaceRegex('/\s+/', ' ');
+echo $string; // The quick brown fox jumps
+```
 
 ## toBase64
 Encode to base64
