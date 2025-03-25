@@ -5,12 +5,24 @@
 
 <span class="nv">$morpher</span> <span class="o">=</span> <span class="no">SM</span><span class="o">::</span><span class="nf">onlyAlpha</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span>
 <span class="c1">// Start morphing your strings here!</span>
-</code></pre></div></div> <p>The String Morpher library is designed with a focus on simplicity and efficiency, allowing developers to chain multiple methods in a seamless and readable manner. This makes it easy to perform complex string manipulations in a single flow.</p> <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$captalizedAlpha</span> <span class="o">=</span> <span class="no">SM</span><span class="o">::</span><span class="nf">onlyAlpha</span><span class="p">(</span><span class="nv">$string</span><span class="p">)</span>
+</code></pre></div></div> <p>The String Morpher library is designed with a focus on simplicity and efficiency, allowing developers to chain multiple methods in a seamless and readable manner. This makes it easy to perform complex string manipulations in a single flow.</p> <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// you can chain methods</span>
+<span class="nv">$string</span> <span class="o">=</span> <span class="no">SM</span><span class="o">::</span><span class="nf">make</span><span class="p">(</span><span class="nv">$string</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="nb">trim</span><span class="p">()</span>
+    <span class="o">-&gt;</span><span class="nf">replace</span><span class="p">(</span><span class="s1">'fox'</span><span class="p">,</span> <span class="s1">'dog'</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="nf">sub</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="nf">toLower</span><span class="p">();</span>
+
+<span class="nv">$captalizedAlpha</span> <span class="o">=</span> <span class="no">SM</span><span class="o">::</span><span class="nf">onlyAlpha</span><span class="p">(</span><span class="nv">$string</span><span class="p">)</span>
     <span class="o">-&gt;</span><span class="nf">captalize</span><span class="p">();</span>
 
 <span class="nv">$brCpfMask</span> <span class="o">=</span> <span class="no">SM</span><span class="o">::</span><span class="nf">onlyNumbers</span><span class="p">(</span><span class="nv">$string</span><span class="p">)</span>
     <span class="o">-&gt;</span><span class="nf">maskBrCpf</span><span class="p">();</span>
 
-<span class="nv">$camelCase</span> <span class="o">=</span> <span class="no">SM</span><span class="o">::</span><span class="nf">captalize</span><span class="p">(</span><span class="nv">$string</span><span class="p">)</span>
+<span class="nv">$pascalCase</span> <span class="o">=</span> <span class="no">SM</span><span class="o">::</span><span class="nf">captalize</span><span class="p">(</span><span class="nv">$string</span><span class="p">)</span>
     <span class="o">-&gt;</span><span class="nf">withoutSpaces</span><span class="p">();</span>
+
+<span class="c1">// and use like a string</span>
+<span class="k">echo</span> <span class="nv">$string</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$captalizedAlpha</span><span class="p">;</span>
+<span class="nv">$json</span> <span class="o">=</span> <span class="nb">json_encode</span><span class="p">([</span><span class="s1">'data'</span> <span class="o">=&gt;</span> <span class="nv">$pascalCase</span><span class="p">]);</span>
 </code></pre></div></div> <p>Chainable Methods: The methods in String Morpher are designed to return the instance of the class itself, enabling developers to apply multiple transformations step by step.</p> <p>Clean and Readable Code: By chaining methods, you can avoid writing verbose and repetitive code. Each transformation is applied in sequence, improving both clarity and maintainability.</p> <p>Enjoy 😊</p> <p>Check <a href="/string-morpher/docs/methods/">methods</a></p> </main> <hr> <footer> <div class="d-flex mt-2"> </div> </footer> </div> </div> <div class="search-overlay"></div> </div> </body> </html>
