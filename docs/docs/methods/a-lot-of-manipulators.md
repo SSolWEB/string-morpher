@@ -102,6 +102,18 @@ $string = SM::make($string)
 echo $string; // The quick brown fox jumps
 ```
 
+## reverse
+Reverse the string
+
+```php
+$string = 'spmuj xof nworb kciuq ehT';
+$string = SM::reverse($string);
+// or
+$string = SM::make($string)
+    ->reverse();
+echo $string; // The quick brown fox jumps
+```
+
 ## toBase64
 Encode to base64
 

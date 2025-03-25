@@ -160,6 +160,22 @@ class ManipulatorTest extends TestCase
         }
     }
 
+    public function testReverse()
+    {
+        $tests = [
+            'The quick brown fox jumps' => ['spmuj xof nworb kciuq ehT'],
+            'The qu1ck br0wn fox jumps ov3r the l4zy dog' =>
+                ['god yz4l eht r3vo spmuj xof nw0rb kc1uq ehT'],
+            'zyxwvutsrqponmlkjihgfedcba' => ['abcdefghijklmnopqrstuvwxyz'],
+            'abcde' => ['edcba'],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::reverse(...$params);
+            $this->assertEquals((string) $expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
+    }
+
     public function testSub()
     {
         $tests = [

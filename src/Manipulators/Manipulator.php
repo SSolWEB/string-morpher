@@ -82,6 +82,18 @@ trait Manipulator
     }
 
     /**
+     * Reverse the string.
+     * @see strrev()
+     * @return $this
+     */
+    public function reverse()
+    {
+        $this->string = strrev($this->string);
+
+        return $this;
+    }
+
+    /**
      * Slice the string.
      * @see substr()
      * @param integer $offset The start position.
