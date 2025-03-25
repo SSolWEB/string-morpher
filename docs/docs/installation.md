@@ -37,14 +37,26 @@ $morpher = SM::onlyAlpha($string);
 The String Morpher library is designed with a focus on simplicity and efficiency, allowing developers to chain multiple methods in a seamless and readable manner. This makes it easy to perform complex string manipulations in a single flow.
 
 ```php
+// you can chain methods
+$string = SM::make($string)
+    ->trim()
+    ->replace('fox', 'dog')
+    ->sub(5, 20)
+    ->toLower();
+
 $captalizedAlpha = SM::onlyAlpha($string)
     ->captalize();
 
 $brCpfMask = SM::onlyNumbers($string)
     ->maskBrCpf();
 
-$camelCase = SM::captalize($string)
+$pascalCase = SM::captalize($string)
     ->withoutSpaces();
+
+// and use like a string
+echo $string;
+echo $captalizedAlpha;
+$json = json_encode(['data' => $pascalCase]);
 ```
 Chainable Methods: The methods in String Morpher are designed to return the instance of the class itself, enabling developers to apply multiple transformations step by step.
 
