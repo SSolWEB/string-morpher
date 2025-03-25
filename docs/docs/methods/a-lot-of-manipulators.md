@@ -58,6 +58,20 @@ $string = SM::make($string)
 echo $string; // The quick brown fox jumps[...]
 ```
 
+## normalize
+Remove all accents and special characters.
+
+Only alphanumeric and spaces are preserved
+
+```php
+$string = 'âäàåçêëèïîìÆôöòûùÿ';
+$string = SM::normalize($string);
+// or
+$string = SM::make($string)
+    ->normalize();
+echo $string; // aaaaceeeiiiooouuy
+```
+
 ## onlyAlpha
 Only keep letters
 

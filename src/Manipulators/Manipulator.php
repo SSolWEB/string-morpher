@@ -50,6 +50,35 @@ trait Manipulator
     }
 
     /**
+     * Remove all accents and special characters.
+     * Only alphanumeric and spaces are preserved
+     * @return $this
+     */
+    public function normalize()
+    {
+        $transliteration = [
+            'á' => 'a', 'à' => 'a', 'â' => 'a', 'ã' => 'a', 'ä' => 'a', 'å' => 'a',
+            'ç' => 'c',
+            'é' => 'e', 'è' => 'e', 'ê' => 'e', 'ë' => 'e',
+            'í' => 'i', 'ì' => 'i', 'î' => 'i', 'ï' => 'i',
+            'ó' => 'o', 'ò' => 'o', 'ô' => 'o', 'õ' => 'o', 'ö' => 'o', 'ð' => 'o',
+            'ú' => 'u', 'ù' => 'u', 'û' => 'u', 'ü' => 'u',
+            'ñ' => 'n', 'š' => 's', 'ý' => 'y', 'ÿ' => 'y',
+            'Á' => 'A', 'À' => 'A', 'Â' => 'A', 'Ã' => 'A', 'Ä' => 'A', 'Å' => 'A',
+            'Ç' => 'C',
+            'É' => 'E', 'È' => 'E', 'Ê' => 'E', 'Ë' => 'E',
+            'Í' => 'I', 'Ì' => 'I', 'Î' => 'I', 'Ï' => 'I',
+            'Ó' => 'O', 'Ò' => 'O', 'Ô' => 'O', 'Õ' => 'O', 'Ö' => 'O',
+            'Ú' => 'U', 'Ù' => 'U', 'Û' => 'U', 'Ü' => 'U',
+            'Ñ' => 'N', 'Š' => 'S', 'Ý' => 'Y', 'Ÿ' => 'Y',
+        ];
+        $input = strtr($this->string, $transliteration);
+        $this->string = preg_replace('/[^a-zA-Z0-9\s]/', '', $input);
+
+        return $this;
+    }
+
+    /**
      * Remove all characters except letters.
      * @return $this
      */

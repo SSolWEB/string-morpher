@@ -53,6 +53,22 @@ class ManipulatorTest extends TestCase
         }
     }
 
+    public function testNormalize()
+    {
+        $tests = [
+            '0123456789ABCDEFGHIJKLMNOPQ' => ["†¤¶§!\"#$%&'()*+,-./0123456789:;=>?@ABCDEFGHIJKLMNOPQ"],
+            'RSTUVWXYZabcdefghijklmnopqrstuvwxyz' => ['RSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~'],
+            'CueaaaaceeeiiiooouuyPaiounN' => ['ÇüéâäàåçêëèïîìæÆôöòûùÿ¢£¥PƒáíóúñÑ¿¬½¼¡«»¦ßµ±°•·²€„…†'],
+            'SsYAAAAAAEEEEIIIIOOOOOUUUU' => ['‡ˆ‰Š‹Œ‘’“”–—˜™š›œŸ¨©®¯³´¸¹¾ÀÁÂÃÄÅÈÉÊËÌÍÎÏÐÒÓÔÕÖ×ØÙÚÛÜ'],
+            'Yaoouy ' => ['ÝÞãðõ÷øüýþ" '],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::normalize(...$params);
+            $this->assertEquals($expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
+    }
+
     public function testToLower()
     {
         $randomStrings = [bin2hex(random_bytes(16)) . 'ABCD', bin2hex(random_bytes(16)) . 'ABCD'];
