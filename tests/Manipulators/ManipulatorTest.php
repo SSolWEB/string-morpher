@@ -36,6 +36,23 @@ class ManipulatorTest extends TestCase
         }
     }
 
+    public function testLimit()
+    {
+        $tests = [
+            'The quick brown fox jumps over' => ['The quick brown fox jumps over the lazy dog', 30],
+            'The quick brown fox jumps over the lazy dog' => ['The quick brown fox jumps over the lazy dog', 100],
+            'The quick brown fox jumps[...]' => ['The quick brown fox jumps over the lazy dog', 30, '[...]'],
+            'abcdefghij' => ['abcdefghijklmnopqrstuvwxyz', 10],
+            'ABCDEFGHIJ...' => ['ABCDEFGHIJKLMNOPQRSTUVWXYZ', 13, '...'],
+            '.....' => ['abcdefghijklmnopqrstuvwxyz', 3, '.....'],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::limit(...$params);
+            $this->assertEquals($expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
+    }
+
     public function testToLower()
     {
         $randomStrings = [bin2hex(random_bytes(16)) . 'ABCD', bin2hex(random_bytes(16)) . 'ABCD'];

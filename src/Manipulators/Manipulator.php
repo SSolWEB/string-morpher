@@ -28,6 +28,28 @@ trait Manipulator
     }
 
     /**
+     * Limit the string length.
+     * If $end is setted, it will be added at the end.
+     * If $length is less than the length of $end, $end will be the new string.
+     * @param integer $length The maximum length.
+     * @param string|null $end The string to be added at the end.
+     * @return $this
+     */
+    public function limit(int $length, string|null $end = null)
+    {
+        if (strlen($this->string) <= $length) {
+            return $this;
+        }
+        $endLength = !is_null($end) ? strlen($end) : 0;
+        $finalLength = ($length - $endLength < 0) ? 0 : $length - $endLength;
+        $this->string = $endLength > 0 ?
+            substr($this->string, 0, $finalLength) . $end :
+            substr($this->string, 0, $finalLength);
+
+        return $this;
+    }
+
+    /**
      * Remove all characters except letters.
      * @return $this
      */

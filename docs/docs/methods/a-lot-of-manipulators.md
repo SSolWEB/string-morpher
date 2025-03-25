@@ -34,6 +34,30 @@ $string = SM::make($string)
 echo $string; // Hello world
 ```
 
+## limit
+Limit the string length.
+
+If $end is setted, it will be added at the end of string.
+
+If $length is less than the length of $end, $end will be the new string.
+
+```php
+$string = 'The quick brown fox jumps over the lazy dog';
+$string = SM::limit($string, 30);
+// or
+$string = SM::make($string)
+    ->limit(30);
+echo $string; // The quick brown fox jumps over
+
+//if you use $end
+$string = 'The quick brown fox jumps over the lazy dog';
+$string = SM::limit($string, 30, '[...]');
+// or
+$string = SM::make($string)
+    ->limit(30, '[...]');
+echo $string; // The quick brown fox jumps[...]
+```
+
 ## onlyAlpha
 Only keep letters
 
