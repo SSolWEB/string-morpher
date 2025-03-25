@@ -36,6 +36,9 @@ $pascalCase = SM::captalize($string)
 echo $string;
 echo $captalizedAlpha;
 $json = json_encode(['data' => $pascalCase]);
+
+// or return string primitive string value
+echo $string->getString();
 ```
 
 ## Contributing

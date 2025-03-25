@@ -57,6 +57,9 @@ $pascalCase = SM::captalize($string)
 echo $string;
 echo $captalizedAlpha;
 $json = json_encode(['data' => $pascalCase]);
+
+// or return string primitive string value
+echo $string->getString();
 ```
 Chainable Methods: The methods in String Morpher are designed to return the instance of the class itself, enabling developers to apply multiple transformations step by step.
 
