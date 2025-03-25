@@ -38,12 +38,12 @@ class StringMorpher
 
     /**
      * Creates an instance without morphing the input.
-     * @param string $input The string to be morphed.
+     * @param string|null $input The string to be morphed.
      * @return StringMorpherInstance
      */
-    public static function make(string $input)
+    public static function make(string|null $input)
     {
-        return new StringMorpherInstance($input);
+        return new StringMorpherInstance($input ?? '');
     }
 
     /**
