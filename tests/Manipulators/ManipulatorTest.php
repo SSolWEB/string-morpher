@@ -123,7 +123,7 @@ class ManipulatorTest extends TestCase
         ];
         foreach ($tests as $expected => $params) {
             $actual = SM::onlyAlpha(...$params);
-            $this->assertEquals((string) $expected, $actual);
+            $this->assertEquals($expected, $actual);
             $this->assertInstanceOf(StringMorpherInstance::class, $actual);
         }
     }
@@ -140,7 +140,7 @@ class ManipulatorTest extends TestCase
         ];
         foreach ($tests as $expected => $params) {
             $actual = SM::replace(...$params);
-            $this->assertEquals((string) $expected, $actual);
+            $this->assertEquals($expected, $actual);
             $this->assertInstanceOf(StringMorpherInstance::class, $actual);
         }
         // case insensitive
@@ -153,7 +153,7 @@ class ManipulatorTest extends TestCase
         ];
         foreach ($tests as $expected => $params) {
             $actual = SM::replace(...$params);
-            $this->assertEquals((string) $expected, $actual);
+            $this->assertEquals($expected, $actual);
             $this->assertInstanceOf(StringMorpherInstance::class, $actual);
         }
     }
@@ -172,7 +172,7 @@ class ManipulatorTest extends TestCase
         ];
         foreach ($tests as $expected => $params) {
             $actual = SM::replaceRegex(...$params);
-            $this->assertEquals((string) $expected, $actual);
+            $this->assertEquals($expected, $actual);
             $this->assertInstanceOf(StringMorpherInstance::class, $actual);
         }
     }
@@ -188,7 +188,7 @@ class ManipulatorTest extends TestCase
         ];
         foreach ($tests as $expected => $params) {
             $actual = SM::reverse(...$params);
-            $this->assertEquals((string) $expected, $actual);
+            $this->assertEquals($expected, $actual);
             $this->assertInstanceOf(StringMorpherInstance::class, $actual);
         }
     }
@@ -205,7 +205,7 @@ class ManipulatorTest extends TestCase
         ];
         foreach ($tests as $expected => $params) {
             $actual = SM::sub(...$params);
-            $this->assertEquals((string) $expected, $actual);
+            $this->assertEquals($expected, $actual);
             $this->assertInstanceOf(StringMorpherInstance::class, $actual);
         }
     }
