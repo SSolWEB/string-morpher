@@ -48,4 +48,24 @@ trait BrazilianMasker
 
         return $this;
     }
+
+    /**
+     * Mask to a real currency.
+     * @return $this
+     */
+    public function maskBrReal()
+    {
+        if (empty($this->string)) {
+            return $this;
+        }
+        $aux = $this->string;
+        if (strpos($aux, ',') !== false && strpos($aux, '.') === false) {
+            $aux = str_replace(',', '.', $aux);
+        }
+        $aux = floatval($aux);
+        $aux = number_format($aux, 2, ',', '.');
+        $this->string = 'R$ ' . $aux;
+
+        return $this;
+    }
 }

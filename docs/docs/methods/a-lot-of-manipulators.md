@@ -34,6 +34,44 @@ $string = SM::make($string)
 echo $string; // Hello world
 ```
 
+## limit
+Limit the string length.
+
+If $end is setted, it will be added at the end of string.
+
+If $length is less than the length of $end, $end will be the new string.
+
+```php
+$string = 'The quick brown fox jumps over the lazy dog';
+$string = SM::limit($string, 30);
+// or
+$string = SM::make($string)
+    ->limit(30);
+echo $string; // The quick brown fox jumps over
+
+//if you use $end
+$string = 'The quick brown fox jumps over the lazy dog';
+$string = SM::limit($string, 30, '[...]');
+// or
+$string = SM::make($string)
+    ->limit(30, '[...]');
+echo $string; // The quick brown fox jumps[...]
+```
+
+## normalize
+Remove all accents and special characters.
+
+Only alphanumeric and spaces are preserved
+
+```php
+$string = 'âäàåçêëèïîìÆôöòûùÿ';
+$string = SM::normalize($string);
+// or
+$string = SM::make($string)
+    ->normalize();
+echo $string; // aaaaceeeiiiooouuy
+```
+
 ## onlyAlpha
 Only keep letters
 
@@ -75,21 +113,44 @@ Replace all occurrences of a string.
 
 ```php
 $string = 'The quick brown fox jumps';
-$string = SM::sub($string, 'fox', 'dog');
+$string = SM::replace($string, 'fox', 'dog');
 // or
 $string = SM::make($string)
-    ->sub('fox', 'dog');
+    ->replace('fox', 'dog');
 echo $string; // The quick brown dog jumps
 
 // case insensitive:
 $string = 'The quick brown Fox jumps';
-$string = SM::sub($string, 'fox', 'Dog', false);
+$string = SM::replace($string, 'fox', 'Dog', false);
 // or
 $string = SM::make($string)
-    ->sub('fox', 'Dog', false);
+    ->replace('fox', 'Dog', false);
 echo $string; // The quick brown Dog jumps
 ```
 
+## replaceRegex
+Replace all occurrences of a regex.
+
+```php
+$string = 'The  quick   brown    fox jumps';
+$string = SM::replaceRegex($string, '/\s+/', ' ');
+// or
+$string = SM::make($string)
+    ->replaceRegex('/\s+/', ' ');
+echo $string; // The quick brown fox jumps
+```
+
+## reverse
+Reverse the string
+
+```php
+$string = 'spmuj xof nworb kciuq ehT';
+$string = SM::reverse($string);
+// or
+$string = SM::make($string)
+    ->reverse();
+echo $string; // The quick brown fox jumps
+```
 
 ## toBase64
 Encode to base64
@@ -127,6 +188,18 @@ $string = SM::make($string)
 echo $string; // HELLO WORLD
 ```
 
+## toUpperFirst
+Morph to upper case the first letter of string.
+
+```php
+$string = 'hello world';
+$string = SM::toUpperFirst($string);
+// or
+$string = SM::make($string)
+    ->toUpperFirst();
+echo $string; // Hello world
+```
+
 ## trim
 Remove all spaces from the start and end.
 
@@ -142,6 +215,40 @@ echo $string; // Hello world
 $string = SM::trim($string, " \n\r\t\v\0");
 $string = SM::make($string)
     ->trim(" \n\r\t\v\0");
+```
+
+## ltrim
+Remove all spaces from the start and end.
+
+```php
+$string = ' Hello world ';
+$string = SM::ltrim($string);
+// or
+$string = SM::make($string)
+    ->ltrim();
+echo $string; // Hello world 
+
+// you can set what caracters you can ltrim
+$string = SM::ltrim($string, " \n\r\t\v\0");
+$string = SM::make($string)
+    ->ltrim(" \n\r\t\v\0");
+```
+
+## rtrim
+Remove all spaces from the start and end.
+
+```php
+$string = ' Hello world ';
+$string = SM::rtrim($string);
+// or
+$string = SM::make($string)
+    ->rtrim();
+echo $string; //  Hello world
+
+// you can set what caracters you can rtrim
+$string = SM::rtrim($string, " \n\r\t\v\0");
+$string = SM::make($string)
+    ->rtrim(" \n\r\t\v\0");
 ```
 
 ## withoutSpaces
