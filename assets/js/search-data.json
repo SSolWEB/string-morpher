@@ -15,7 +15,7 @@
   },"2": {
     "doc": "A lot of manipulators",
     "title": "String useful manipulation",
-    "content": ". | capitalize | fromBase64 | limit | normalize | onlyAlpha | onlyNumbers | sub | replace | replaceRegex | reverse | toBase64 | toLower | toUpper | toUpperFirst | trim | ltrim | rtrim | withoutSpaces | . ",
+    "content": ". | capitalize | fromBase64 | limit | normalize | onlyAlpha | onlyNumbers | padL | padR | sub | replace | replaceRegex | reverse | toBase64 | toLower | toUpper | toUpperFirst | trim | ltrim | rtrim | withoutSpaces | . ",
     "url": "/string-morpher/docs/methods/a-lot-of-manipulators/#string-useful-manipulation",
     
     "relUrl": "/docs/methods/a-lot-of-manipulators/#string-useful-manipulation"
@@ -63,222 +63,236 @@
     "relUrl": "/docs/methods/a-lot-of-manipulators/#onlynumbers"
   },"9": {
     "doc": "A lot of manipulators",
+    "title": "padL",
+    "content": "Repeatedly add a character to the left of the string until the length is reached. If the string is equal to or greater than the length, nothing is changed. $string = 'abc123'; $string = SM::padL($string, 8, 'z'); // or $string = SM::make($string) -&gt;padL(8, 'z'); echo $string; // zzabc123 . ",
+    "url": "/string-morpher/docs/methods/a-lot-of-manipulators/#padl",
+    
+    "relUrl": "/docs/methods/a-lot-of-manipulators/#padl"
+  },"10": {
+    "doc": "A lot of manipulators",
+    "title": "padR",
+    "content": "Repeatedly add a character to the right of the string until the length is reached. If the string is equal to or greater than the length, nothing is changed. $string = 'abc123'; $string = SM::padR($string, 8, 'z'); // or $string = SM::make($string) -&gt;padR(8, 'z'); echo $string; // abc123zz . ",
+    "url": "/string-morpher/docs/methods/a-lot-of-manipulators/#padr",
+    
+    "relUrl": "/docs/methods/a-lot-of-manipulators/#padr"
+  },"11": {
+    "doc": "A lot of manipulators",
     "title": "sub",
     "content": "Performs substring . $string = 'Hello world'; $string = SM::sub($string, 3, 5); // or $string = SM::make($string) -&gt;sub(3, 5); echo $string; // lo wo . ",
     "url": "/string-morpher/docs/methods/a-lot-of-manipulators/#sub",
     
     "relUrl": "/docs/methods/a-lot-of-manipulators/#sub"
-  },"10": {
+  },"12": {
     "doc": "A lot of manipulators",
     "title": "replace",
     "content": "Replace all occurrences of a string. $string = 'The quick brown fox jumps'; $string = SM::replace($string, 'fox', 'dog'); // or $string = SM::make($string) -&gt;replace('fox', 'dog'); echo $string; // The quick brown dog jumps // case insensitive: $string = 'The quick brown Fox jumps'; $string = SM::replace($string, 'fox', 'Dog', false); // or $string = SM::make($string) -&gt;replace('fox', 'Dog', false); echo $string; // The quick brown Dog jumps . ",
     "url": "/string-morpher/docs/methods/a-lot-of-manipulators/#replace",
     
     "relUrl": "/docs/methods/a-lot-of-manipulators/#replace"
-  },"11": {
+  },"13": {
     "doc": "A lot of manipulators",
     "title": "replaceRegex",
     "content": "Replace all occurrences of a regex. $string = 'The quick brown fox jumps'; $string = SM::replaceRegex($string, '/\\s+/', ' '); // or $string = SM::make($string) -&gt;replaceRegex('/\\s+/', ' '); echo $string; // The quick brown fox jumps . ",
     "url": "/string-morpher/docs/methods/a-lot-of-manipulators/#replaceregex",
     
     "relUrl": "/docs/methods/a-lot-of-manipulators/#replaceregex"
-  },"12": {
+  },"14": {
     "doc": "A lot of manipulators",
     "title": "reverse",
     "content": "Reverse the string . $string = 'spmuj xof nworb kciuq ehT'; $string = SM::reverse($string); // or $string = SM::make($string) -&gt;reverse(); echo $string; // The quick brown fox jumps . ",
     "url": "/string-morpher/docs/methods/a-lot-of-manipulators/#reverse",
     
     "relUrl": "/docs/methods/a-lot-of-manipulators/#reverse"
-  },"13": {
+  },"15": {
     "doc": "A lot of manipulators",
     "title": "toBase64",
     "content": "Encode to base64 . $string = 'Hello world'; $string = SM::toBase64($string); // or $string = SM::make($string) -&gt;toBase64(); echo $string; // SGVsbG8gd29ybGQ= . ",
     "url": "/string-morpher/docs/methods/a-lot-of-manipulators/#tobase64",
     
     "relUrl": "/docs/methods/a-lot-of-manipulators/#tobase64"
-  },"14": {
+  },"16": {
     "doc": "A lot of manipulators",
     "title": "toLower",
     "content": "Morph to lower case. $string = 'HeLlO wOrLd'; $string = SM::toLower($string); // or $string = SM::make($string) -&gt;toLower(); echo $string; // hello world . ",
     "url": "/string-morpher/docs/methods/a-lot-of-manipulators/#tolower",
     
     "relUrl": "/docs/methods/a-lot-of-manipulators/#tolower"
-  },"15": {
+  },"17": {
     "doc": "A lot of manipulators",
     "title": "toUpper",
     "content": "Morph to upper case. $string = 'HeLlO wOrLd'; $string = SM::toUpper($string); // or $string = SM::make($string) -&gt;toUpper(); echo $string; // HELLO WORLD . ",
     "url": "/string-morpher/docs/methods/a-lot-of-manipulators/#toupper",
     
     "relUrl": "/docs/methods/a-lot-of-manipulators/#toupper"
-  },"16": {
+  },"18": {
     "doc": "A lot of manipulators",
     "title": "toUpperFirst",
     "content": "Morph to upper case the first letter of string. $string = 'hello world'; $string = SM::toUpperFirst($string); // or $string = SM::make($string) -&gt;toUpperFirst(); echo $string; // Hello world . ",
     "url": "/string-morpher/docs/methods/a-lot-of-manipulators/#toupperfirst",
     
     "relUrl": "/docs/methods/a-lot-of-manipulators/#toupperfirst"
-  },"17": {
+  },"19": {
     "doc": "A lot of manipulators",
     "title": "trim",
     "content": "Remove all spaces from the start and end. $string = ' Hello world '; $string = SM::trim($string); // or $string = SM::make($string) -&gt;trim(); echo $string; // Hello world // you can set what caracters you can trim $string = SM::trim($string, \" \\n\\r\\t\\v\\0\"); $string = SM::make($string) -&gt;trim(\" \\n\\r\\t\\v\\0\"); . ",
     "url": "/string-morpher/docs/methods/a-lot-of-manipulators/#trim",
     
     "relUrl": "/docs/methods/a-lot-of-manipulators/#trim"
-  },"18": {
+  },"20": {
     "doc": "A lot of manipulators",
     "title": "ltrim",
     "content": "Remove all spaces from the start and end. $string = ' Hello world '; $string = SM::ltrim($string); // or $string = SM::make($string) -&gt;ltrim(); echo $string; // Hello world // you can set what caracters you can ltrim $string = SM::ltrim($string, \" \\n\\r\\t\\v\\0\"); $string = SM::make($string) -&gt;ltrim(\" \\n\\r\\t\\v\\0\"); . ",
     "url": "/string-morpher/docs/methods/a-lot-of-manipulators/#ltrim",
     
     "relUrl": "/docs/methods/a-lot-of-manipulators/#ltrim"
-  },"19": {
+  },"21": {
     "doc": "A lot of manipulators",
     "title": "rtrim",
     "content": "Remove all spaces from the start and end. $string = ' Hello world '; $string = SM::rtrim($string); // or $string = SM::make($string) -&gt;rtrim(); echo $string; // Hello world // you can set what caracters you can rtrim $string = SM::rtrim($string, \" \\n\\r\\t\\v\\0\"); $string = SM::make($string) -&gt;rtrim(\" \\n\\r\\t\\v\\0\"); . ",
     "url": "/string-morpher/docs/methods/a-lot-of-manipulators/#rtrim",
     
     "relUrl": "/docs/methods/a-lot-of-manipulators/#rtrim"
-  },"20": {
+  },"22": {
     "doc": "A lot of manipulators",
     "title": "withoutSpaces",
     "content": "Remove all spaces . $string = 'Hello world'; $string = SM::withoutSpaces($string); // or $string = SM::make($string) -&gt;withoutSpaces(); echo $string; // Helloworld . ",
     "url": "/string-morpher/docs/methods/a-lot-of-manipulators/#withoutspaces",
     
     "relUrl": "/docs/methods/a-lot-of-manipulators/#withoutspaces"
-  },"21": {
+  },"23": {
     "doc": "A lot of manipulators",
     "title": "A lot of manipulators",
     "content": " ",
     "url": "/string-morpher/docs/methods/a-lot-of-manipulators/",
     
     "relUrl": "/docs/methods/a-lot-of-manipulators/"
-  },"22": {
+  },"24": {
     "doc": "Brazilian Maskers",
     "title": "Brazilian Masks",
     "content": ". | maskBrCep | maskBrCpf | maskBrCnpj | maskBrPhone | maskBrReal | . ",
     "url": "/string-morpher/docs/methods/brazilian-maskers/#brazilian-masks",
     
     "relUrl": "/docs/methods/brazilian-maskers/#brazilian-masks"
-  },"23": {
+  },"25": {
     "doc": "Brazilian Maskers",
     "title": "maskBrCep",
     "content": "Apply the Brazilian CEP mask . $string = '44555666'; $string = SM::maskBrCep($string); // or $string = SM::withoutSpaces($string) -&gt;maskBrCep(); echo $string // 44.555-666 . ",
     "url": "/string-morpher/docs/methods/brazilian-maskers/#maskbrcep",
     
     "relUrl": "/docs/methods/brazilian-maskers/#maskbrcep"
-  },"24": {
+  },"26": {
     "doc": "Brazilian Maskers",
     "title": "maskBrCpf",
     "content": "Apply the Brazilian CEP mask . $string = '11122233344'; $string = SM::maskBrCpf($string); // or $string = SM::withoutSpaces($string) -&gt;maskBrCpf(); echo $string // 111.222.333-44 . ",
     "url": "/string-morpher/docs/methods/brazilian-maskers/#maskbrcpf",
     
     "relUrl": "/docs/methods/brazilian-maskers/#maskbrcpf"
-  },"25": {
+  },"27": {
     "doc": "Brazilian Maskers",
     "title": "maskBrCnpj",
     "content": "Apply the Brazilian CNPJ mask . $string = '11222333444455'; $string = SM::maskBrCnpj($string); // or $string = SM::withoutSpaces($string) -&gt;maskBrCnpj(); echo $string // 11.222.333/4444-55 . ",
     "url": "/string-morpher/docs/methods/brazilian-maskers/#maskbrcnpj",
     
     "relUrl": "/docs/methods/brazilian-maskers/#maskbrcnpj"
-  },"26": {
+  },"28": {
     "doc": "Brazilian Maskers",
     "title": "maskBrPhone",
     "content": "Apply the Brazilian Phone mask . $string = '11988887777'; $string = SM::maskBrPhone($string); // or $string = SM::withoutSpaces($string) -&gt;maskBrPhone(); echo $string // (11) 98888-7777 . ",
     "url": "/string-morpher/docs/methods/brazilian-maskers/#maskbrphone",
     
     "relUrl": "/docs/methods/brazilian-maskers/#maskbrphone"
-  },"27": {
+  },"29": {
     "doc": "Brazilian Maskers",
     "title": "maskBrReal",
     "content": "Apply the Brazilian Phone mask . $string = '1234864.20'; // or float or int $string = SM::maskBrReal($string); // or $string = SM::withoutSpaces($string) -&gt;maskBrReal(); echo $string // R$ 1.234.864,20 . ",
     "url": "/string-morpher/docs/methods/brazilian-maskers/#maskbrreal",
     
     "relUrl": "/docs/methods/brazilian-maskers/#maskbrreal"
-  },"28": {
+  },"30": {
     "doc": "Brazilian Maskers",
     "title": "Brazilian Maskers",
     "content": " ",
     "url": "/string-morpher/docs/methods/brazilian-maskers/",
     
     "relUrl": "/docs/methods/brazilian-maskers/"
-  },"29": {
+  },"31": {
     "doc": "Contributing",
     "title": "Contributing",
     "content": "Contributions are always welcome, but to keep things organized, keep in mind the following rules. ",
     "url": "/string-morpher/docs/contributing/",
     
     "relUrl": "/docs/contributing/"
-  },"30": {
+  },"32": {
     "doc": "Contributing",
     "title": "Bug Reports",
     "content": "When reporting a bug in the package, make sure you follow the rules: . | You have read the Installation and General Configuration sections of the documentation; | The issue you’re facing is not documented; | A GitHub issue with the problem you’re having doesn’t already exist (in an open or closed state); | . Failure to do so, will result in a closed ticket. ",
     "url": "/string-morpher/docs/contributing/#bug-reports",
     
     "relUrl": "/docs/contributing/#bug-reports"
-  },"31": {
+  },"33": {
     "doc": "Contributing",
     "title": "Pull Requests",
     "content": "Fixing a bug, correcting a typo or adding a new feature? . Just remember that all pull requests should be done against the main branch. Install, develop, test, contribute… . composer install # do some magic vendor/bin/phpcs vendor/bin/phpunit # commit # make a pull request . ",
     "url": "/string-morpher/docs/contributing/#pull-requests",
     
     "relUrl": "/docs/contributing/#pull-requests"
-  },"32": {
+  },"34": {
     "doc": "Contributing",
     "title": "Repository",
     "content": "Visit the repository in github . ",
     "url": "/string-morpher/docs/contributing/#repository",
     
     "relUrl": "/docs/contributing/#repository"
-  },"33": {
+  },"35": {
     "doc": "Methods",
     "title": "Methods",
     "content": "Documentation of methods . The String Morpher library is designed with a focus on simplicity and efficiency, allowing developers to chain multiple methods in a seamless and readable manner. This makes it easy to perform complex string manipulations in a single flow. use SSolWEB\\StringMorpher\\StringMorpher as SM; // Dont Forget to import the magic! $pascalCase = SM::capitalize('the quick brown fox jumps over the lazy dog') -&gt;withoutSpaces(); echo $pascalCase; // TheQuickBrownFoxJumpsOverTheLazyDog $slug = SM::toLower(' The quick brown Fox jumps over the lazy Dog ') -&gt;trim() -&gt;replace(' ', '-'); echo $slug; // the-quick-brown-fox-jumps-over-the-lazy-dog . ",
     "url": "/string-morpher/docs/methods/",
     
     "relUrl": "/docs/methods/"
-  },"34": {
+  },"36": {
     "doc": "Introdução",
     "title": "String Morpher",
     "content": "A powerful string manipulation library . String Morpher A powerful and versatile string manipulation library designed for developers who need efficient and intuitive solutions for modifying and masking strings. With String Morpher, you can unlock a host of advanced methods to transform your strings effortlessly. Its chaining capabilities allow you to perform complex operations in a clean, readable manner, enhancing your development experience. Whether you’re formatting user input, crafting dynamic content, or safeguarding sensitive data, String Morpher is your go-to tool for all string-related tasks. Start by reading the instalation tutorial, then check the Documentation for more information. ",
     "url": "/string-morpher/#string-morpher",
     
     "relUrl": "/#string-morpher"
-  },"35": {
+  },"37": {
     "doc": "Introdução",
     "title": "Introdução",
     "content": " ",
     "url": "/string-morpher/",
     
     "relUrl": "/"
-  },"36": {
+  },"38": {
     "doc": "Instalation",
     "title": "Instalation",
     "content": "How to instalation . ",
     "url": "/string-morpher/docs/installation/",
     
     "relUrl": "/docs/installation/"
-  },"37": {
+  },"39": {
     "doc": "Instalation",
     "title": "Check Composer",
     "content": "To install the String Morpher package via Composer, follow these steps: . | Ensure you have Composer installed. If you don’t already have it, download and install Composer from getcomposer.org. | In your terminal, navigate to your project directory. | Run the following command to add the String Morpher package to your project: . | . composer require ssolweb/string-morpher . This will download the library and automatically update your project’s composer.json file with the package details. ",
     "url": "/string-morpher/docs/installation/#check-composer",
     
     "relUrl": "/docs/installation/#check-composer"
-  },"38": {
+  },"40": {
     "doc": "Instalation",
     "title": "Use",
     "content": ". | After installation, you can include the package in your code and start using its powerful string manipulation features: | . require 'vendor/autoload.php'; use SSolWEB\\StringMorpher\\StringMorpher as SM; $morpher = SM::onlyAlpha($string); // Start morphing your strings here! . The String Morpher library is designed with a focus on simplicity and efficiency, allowing developers to chain multiple methods in a seamless and readable manner. This makes it easy to perform complex string manipulations in a single flow. // you can chain methods $string = SM::make($string) -&gt;trim() -&gt;replace('fox', 'dog') -&gt;sub(5, 20) -&gt;toLower(); $captalizedAlpha = SM::onlyAlpha($string) -&gt;captalize(); $brCpfMask = SM::onlyNumbers($string) -&gt;maskBrCpf(); $pascalCase = SM::captalize($string) -&gt;withoutSpaces(); // and use like a string echo $string; echo $captalizedAlpha; $json = json_encode(['data' =&gt; $pascalCase]); // or return string primitive string value echo $string-&gt;getString(); . Chainable Methods: The methods in String Morpher are designed to return the instance of the class itself, enabling developers to apply multiple transformations step by step. Clean and Readable Code: By chaining methods, you can avoid writing verbose and repetitive code. Each transformation is applied in sequence, improving both clarity and maintainability. Enjoy 😊 . Check methods . ",
     "url": "/string-morpher/docs/installation/#use",
     
     "relUrl": "/docs/installation/#use"
-  },"39": {
+  },"41": {
     "doc": "License",
     "title": "The MIT License (MIT)",
     "content": "Copyright (C) 2015-2023 Antério Vieira, Quetzy Garcia, Raphael França. Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: . The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. ",
     "url": "/string-morpher/docs/license/#the-mit-license-mit",
     
     "relUrl": "/docs/license/#the-mit-license-mit"
-  },"40": {
+  },"42": {
     "doc": "License",
     "title": "License",
     "content": " ",
