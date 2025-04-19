@@ -101,6 +101,36 @@ trait Manipulator
     }
 
     /**
+     * Repeatedly add a character to the left of the string until the length is reached.
+     * If the string is equal to or greater than the length, nothing is changed.
+     * @see str_pad()
+     * @param integer $length The length of the string.
+     * @param string $padChar The character to be added.
+     * @return $this
+     */
+    public function padL(int $length, string $padChar = ' ')
+    {
+        $this->string = str_pad($this->string, $length, $padChar, STR_PAD_LEFT);
+
+        return $this;
+    }
+
+    /**
+     * Repeatedly add a character to the right of the string until the length is reached.
+     * If the string is equal to or greater than the length, nothing is changed.
+     * @see str_pad()
+     * @param integer $length The length of the string.
+     * @param string $padChar The character to be added.
+     * @return $this
+     */
+    public function padR(int $length, string $padChar = ' ')
+    {
+        $this->string = str_pad($this->string, $length, $padChar, STR_PAD_RIGHT);
+
+        return $this;
+    }
+
+    /**
      * Replace all occurrences of a string.
      * @see str_replace()
      * @see str_ireplace()

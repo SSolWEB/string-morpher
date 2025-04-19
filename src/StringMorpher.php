@@ -11,6 +11,8 @@ use SSolWEB\StringMorpher\Instances\StringMorpherInstance;
  * @method static StringMorpherInstance normalize(string $input)
  * @method static StringMorpherInstance onlyAlpha(string $input)
  * @method static StringMorpherInstance onlyNumbers(string $input)
+ * @method static StringMorpherInstance padL(string $input, int $length, string $padChar = ' ')
+ * @method static StringMorpherInstance padR(string $input, int $length, string $padChar = ' ')
  * @method static StringMorpherInstance replace(array|string $needle, array|string $replace, bool $caseSensitive = true)
  * @method static StringMorpherInstance replaceRegex(array|string $needleRegex, array|string $replace)
  * @method static StringMorpherInstance reverse(string $needle)
