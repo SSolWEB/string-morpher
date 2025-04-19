@@ -144,6 +144,56 @@ class ManipulatorTest extends TestCase
         }
     }
 
+    public function testPadLeft()
+    {
+        $tests = [
+            'The quick brown fox jumps' => ['The quick brown fox jumps', 11, '1'],
+            '11abc123' => ['abc123', 8, '1'],
+            '  hello-world' => ['hello-world', 13, ' '],
+            '  hello-world' => ['hello-world', 13],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::padL(...$params);
+            $this->assertEquals($expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
+        // testing numbers
+        $tests = [
+            '01122233344' => ['1122233344', 11, '0'],
+            '01122233344' => [1122233344, 11, '0'],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::padL(...$params);
+            $this->assertEquals((string) $expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
+    }
+
+    public function testPadRight()
+    {
+        $tests = [
+            'The quick brown fox jumps' => ['The quick brown fox jumps', 11, '1'],
+            'abc123aa' => ['abc123', 8, 'a'],
+            'hello-world  ' => ['hello-world', 13, ' '],
+            'hello-world  ' => ['hello-world', 13],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::padR(...$params);
+            $this->assertEquals($expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
+        // testing numbers
+        $tests = [
+            '11122233344' => ['111222333', 11, '4'],
+            '11122233344' => [111222333, 11, '4'],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::padR(...$params);
+            $this->assertEquals((string) $expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
+    }
+
     public function testReplace()
     {
         // case sensitive

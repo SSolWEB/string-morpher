@@ -96,6 +96,34 @@ $string = SM::make($string)
 echo $string; // 123
 ```
 
+## padL
+Repeatedly add a character to the left of the string until the length is reached.
+
+If the string is equal to or greater than the length, nothing is changed.
+
+```php
+$string = 'abc123';
+$string = SM::padL($string, 8, 'z');
+// or
+$string = SM::make($string)
+    ->padL(8, 'z');
+echo $string; // zzabc123
+```
+
+## padR
+Repeatedly add a character to the right of the string until the length is reached.
+
+If the string is equal to or greater than the length, nothing is changed.
+
+```php
+$string = 'abc123';
+$string = SM::padR($string, 8, 'z');
+// or
+$string = SM::make($string)
+    ->padR(8, 'z');
+echo $string; // abc123zz
+```
+
 ## sub
 Performs substring
 
