@@ -28,6 +28,8 @@ class StringBehaviorTest extends TestCase
             'normalize' => [null],
             'onlyAlpha' => [null],
             'onlyNumbers' => [null],
+            'padL' => [null, 5, '1'],
+            'padR' => [null, 5, '1'],
             'replace' => [null, 'needle', 'replace'],
             'replaceRegex' => [null, '/needle/', 'replace'],
             'reverse' => [null],
