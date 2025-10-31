@@ -21,6 +21,23 @@ class StringMorpherInstance implements Stringable, JsonSerializable
         $this->string = $string;
     }
 
+    /**
+     * {@inheritDoc}
+     * @param string $method The method to be called.
+     * @param array $args The arguments to be passed to the method.
+     * @return StringMorpherInstance
+     */
+    public function __call(string $method, array $args)
+    {
+        if (method_exists($this, $method)) {
+            array_unshift($args, $this->string);
+            $this->string = $this->$method(...$args);
+            return $this;
+        }
+
+        throw new \BadMethodCallException("Method {$method} does not exist");
+    }
+
     /** {@inheritDoc} */
     public function __toString(): string
     {
