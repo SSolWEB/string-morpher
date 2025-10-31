@@ -181,7 +181,7 @@ trait Manipulator
      * @param integer|null $length The length of the slice.
      * @return $this
      */
-    public function sub(int $offset, int $length = null)
+    public function sub(int $offset, int|null $length = null)
     {
         $this->string = substr($this->string, $offset, $length);
 
