@@ -35,6 +35,7 @@ use Stringable;
 class StringMorpherInstance implements Stringable, JsonSerializable
 {
     use \SSolWEB\StringMorpher\Maskers\BrazilianMasker;
+    use \SSolWEB\StringMorpher\Manipulators\Cases;
     use \SSolWEB\StringMorpher\Manipulators\Manipulator;
 
     private string $string;
