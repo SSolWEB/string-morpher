@@ -6,66 +6,60 @@ trait BrazilianMasker
 {
     /**
      * Mask a CEP postal number.
-     * @return $this
+     * @param string $string The string that will be changed.
+     * @return string
      */
-    public function maskBrCep()
+    protected function maskBrCep(string $string): string
     {
-        $this->string = preg_replace('/^(\d{2})(\d{3})(\d)/', '\1.\2-\3', $this->string);
-
-
-        return $this;
+        return preg_replace('/^(\d{2})(\d{3})(\d)/', '\1.\2-\3', $string);
     }
 
     /**
      * Mask a CPF number.
-     * @return $this
+     * @param string $string The string that will be changed.
+     * @return string
      */
-    public function maskBrCpf()
+    protected function maskBrCpf(string $string): string
     {
-        $this->string = preg_replace('/(\d{3})(\d{3})(\d{3})(\d{2})/', '$1.$2.$3-$4', $this->string);
-
-        return $this;
+        return preg_replace('/(\d{3})(\d{3})(\d{3})(\d{2})/', '$1.$2.$3-$4', $string);
     }
 
     /**
      * Mask a CNPJ number.
-     * @return $this
+     * @param string $string The string that will be changed.
+     * @return string
      */
-    public function maskBrCnpj()
+    protected function maskBrCnpj(string $string): string
     {
-        $this->string = preg_replace('/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/', '$1.$2.$3/$4-$5', $this->string);
-
-        return $this;
+        return preg_replace('/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/', '$1.$2.$3/$4-$5', $string);
     }
 
     /**
      * Mask a phone number.
-     * @return $this
+     * @param string $string The string that will be changed.
+     * @return string
      */
-    public function maskBrPhone()
+    protected function maskBrPhone(string $string): string
     {
-        $this->string = preg_replace('/(\d{2})(\d{4,5})(\d{4})/', '($1) $2-$3', $this->string);
-
-        return $this;
+        return preg_replace('/(\d{2})(\d{4,5})(\d{4})/', '($1) $2-$3', $string);
     }
 
     /**
      * Mask to a real currency.
-     * @return $this
+     * @param string $string The string that will be changed.
+     * @return string
      */
-    public function maskBrReal()
+    protected function maskBrReal(string $string): string
     {
-        if (empty($this->string)) {
-            return $this;
+        if (empty($string)) {
+            return $string;
         }
-        $aux = $this->string;
+        $aux = $string;
         if (strpos($aux, ',') !== false && strpos($aux, '.') === false) {
             $aux = str_replace(',', '.', $aux);
         }
         $aux = floatval($aux);
         $aux = number_format($aux, 2, ',', '.');
-        $this->string = 'R$ ' . $aux;
-
-        return $this;
+        return 'R$ ' . $aux;
     }
 }

@@ -5,6 +5,33 @@ namespace SSolWEB\StringMorpher\Instances;
 use JsonSerializable;
 use Stringable;
 
+/**
+ * @method StringMorpherInstance capitalize()
+ * @method StringMorpherInstance fromBase64()
+ * @method StringMorpherInstance limit(int $length, string|null $end = null)
+ * @method StringMorpherInstance normalize()
+ * @method StringMorpherInstance onlyAlpha()
+ * @method StringMorpherInstance onlyNumbers()
+ * @method StringMorpherInstance padL(int $length, string $padChar = ' ')
+ * @method StringMorpherInstance padR(int $length, string $padChar = ' ')
+ * @method StringMorpherInstance replace(array|string $needle, array|string $replace, bool $caseSensitive = true)
+ * @method StringMorpherInstance replaceRegex(array|string $needleRegex, array|string $replace)
+ * @method StringMorpherInstance reverse()
+ * @method StringMorpherInstance sub(int $offset, int|null $length = null)
+ * @method StringMorpherInstance toBase64()
+ * @method StringMorpherInstance toLower()
+ * @method StringMorpherInstance toUpper()
+ * @method StringMorpherInstance toUpperFirst()
+ * @method StringMorpherInstance trim(string $characters = " \n\r\t\v\0")
+ * @method StringMorpherInstance ltrim(string $characters = " \n\r\t\v\0")
+ * @method StringMorpherInstance rtrim(string $characters = " \n\r\t\v\0")
+ * @method StringMorpherInstance withoutSpaces()
+ * @method StringMorpherInstance maskBrCep()
+ * @method StringMorpherInstance maskBrCpf()
+ * @method StringMorpherInstance maskBrCnpj()
+ * @method StringMorpherInstance maskBrPhone()
+ * @method StringMorpherInstance maskBrReal()
+ */
 class StringMorpherInstance implements Stringable, JsonSerializable
 {
     use \SSolWEB\StringMorpher\Maskers\BrazilianMasker;
@@ -19,6 +46,23 @@ class StringMorpherInstance implements Stringable, JsonSerializable
     public function __construct(string $string)
     {
         $this->string = $string;
+    }
+
+    /**
+     * {@inheritDoc}
+     * @param string $method The method to be called.
+     * @param array $args The arguments to be passed to the method.
+     * @return StringMorpherInstance
+     */
+    public function __call(string $method, array $args)
+    {
+        if (method_exists($this, $method)) {
+            array_unshift($args, $this->string);
+            $this->string = $this->$method(...$args);
+            return $this;
+        }
+
+        throw new \BadMethodCallException("Method {$method} does not exist");
     }
 
     /** {@inheritDoc} */
