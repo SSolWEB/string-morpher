@@ -66,4 +66,50 @@ trait Cases
     {
         return strtoupper($this->toSnakeCase($string));
     }
+
+    /**
+     * Converte para Train-Case
+     * @example Train-Case-Example
+     * @param string $string The string that will be changed.
+     * @return string
+     */
+    protected function toTrainCase(string $string): string
+    {
+        $str = preg_replace('/[A-Z]/', '-$0', $string);
+        $str = strtolower($str);
+        $str = preg_replace('/[\s_]+/', '-', $str);
+        $str = preg_replace('/-{2,}/', '-', $str);
+        $str = trim($str, '-');
+        $str = ucwords($str, '-');
+        return $str;
+    }
+
+    /**
+     * Converte para dot.case
+     * @example dot.case.example
+     * @param string $string The string that will be changed.
+     * @return string
+     */
+    protected function toDotCase(string $string): string
+    {
+        $str = preg_replace('/[A-Z]/', '.$0', $string);
+        $str = strtolower($str);
+        $str = preg_replace('/[\s_\-]+/', '.', $str);
+        $str = preg_replace('/\.{2,}/', '.', $str);
+        return trim($str, '.');
+    }
+
+    /**
+     * Converte para flatcase
+     * @example flatcaseexample
+     * @param string $string The string that will be changed.
+     * @return string
+     */
+    protected function toFlatCase(string $string): string
+    {
+        $str = preg_replace('/[A-Z]/', '$0', $string);
+        $str = strtolower($str);
+        $str = preg_replace('/[\s_\-\.]+/', '', $str);
+        return $str;
+    }
 }
