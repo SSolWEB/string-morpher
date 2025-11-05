@@ -98,4 +98,58 @@ class CaseTest extends TestCase
             $this->assertInstanceOf(StringMorpherInstance::class, $actual);
         }
     }
+
+    public function testToTrainCase()
+    {
+        $tests = [
+            'Train-Case-Example' => ['Train case example'],
+            'Train-Case-Example' => ['trainCaseExample'],
+            'Train-Case-Example' => ['train_case_example'],
+            'Train-Case-Example' => ['Train_Case-Example'],
+            'Train-Case' => ['TrainCase'],
+            'T' => ['T'],
+            '' => [''],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::toTrainCase(...$params);
+            $this->assertEquals($expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
+    }
+
+    public function testToDotCase()
+    {
+        $tests = [
+            'dot.case.example' => ['Dot case example'],
+            'dot.case.example' => ['dotCaseExample'],
+            'dot.case.example' => ['dot_case_example'],
+            'dot.case.example' => ['Dot_Case-Example'],
+            'dot.case' => ['DotCase'],
+            'd' => ['D'],
+            '' => [''],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::toDotCase(...$params);
+            $this->assertEquals($expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
+    }
+
+    public function testToFlatCase()
+    {
+        $tests = [
+            'flatcaseexample' => ['Flat case example'],
+            'flatcaseexample' => ['flatCaseExample'],
+            'flatcaseexample' => ['flat_case_example'],
+            'flatcaseexample' => ['Flat_Case-Example'],
+            'flatcase' => ['FlatCase'],
+            'f' => ['F'],
+            '' => [''],
+        ];
+        foreach ($tests as $expected => $params) {
+            $actual = SM::toFlatCase(...$params);
+            $this->assertEquals($expected, $actual);
+            $this->assertInstanceOf(StringMorpherInstance::class, $actual);
+        }
+    }
 }
