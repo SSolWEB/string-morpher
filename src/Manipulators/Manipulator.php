@@ -175,7 +175,7 @@ trait Manipulator
      * @param integer|null $length The length of the slice.
      * @return string
      */
-    protected function sub(string $string, int $offset, int|nul $length = null): string
+    protected function sub(string $string, int $offset, int|null $length = null): string
     {
         return substr($string, $offset, $length);
     }

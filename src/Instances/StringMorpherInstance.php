@@ -26,6 +26,14 @@ use Stringable;
  * @method StringMorpherInstance ltrim(string $characters = " \n\r\t\v\0")
  * @method StringMorpherInstance rtrim(string $characters = " \n\r\t\v\0")
  * @method StringMorpherInstance withoutSpaces()
+ * @method StringMorpherInstance toCamelCase()
+ * @method StringMorpherInstance toPascalCase()
+ * @method StringMorpherInstance toSnakeCase()
+ * @method StringMorpherInstance toKebabCase()
+ * @method StringMorpherInstance toUpperSnakeCase()
+ * @method StringMorpherInstance toTrainCase()
+ * @method StringMorpherInstance toDotCase()
+ * @method StringMorpherInstance toFlatCase()
  * @method StringMorpherInstance maskBrCep()
  * @method StringMorpherInstance maskBrCpf()
  * @method StringMorpherInstance maskBrCnpj()
@@ -35,6 +43,7 @@ use Stringable;
 class StringMorpherInstance implements Stringable, JsonSerializable
 {
     use \SSolWEB\StringMorpher\Maskers\BrazilianMasker;
+    use \SSolWEB\StringMorpher\Manipulators\Cases;
     use \SSolWEB\StringMorpher\Manipulators\Manipulator;
 
     private string $string;
