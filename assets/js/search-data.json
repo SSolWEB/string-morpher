@@ -216,83 +216,146 @@
     
     "relUrl": "/docs/methods/brazilian-maskers/"
   },"31": {
+    "doc": "Case Manipulators",
+    "title": "Case Manipulators",
+    "content": ". | toCamelCase | toPascalCase | toSnakeCase | toKebabCase | toUpperSnakeCase | toTrainCase | toDotCase | toFlatCase | . ",
+    "url": "/string-morpher/docs/methods/case-manipulators/",
+    
+    "relUrl": "/docs/methods/case-manipulators/"
+  },"32": {
+    "doc": "Case Manipulators",
+    "title": "toCamelCase",
+    "content": "Converts a string to camelCase. $string = 'example string case'; $string = SM::toCamelCase($string); // or $string = SM::make($string) -&gt;toCamelCase(); echo $string; // exampleStringCase . ",
+    "url": "/string-morpher/docs/methods/case-manipulators/#tocamelcase",
+    
+    "relUrl": "/docs/methods/case-manipulators/#tocamelcase"
+  },"33": {
+    "doc": "Case Manipulators",
+    "title": "toPascalCase",
+    "content": "Converts a string to PascalCase. $string = 'example string case'; $string = SM::toPascalCase($string); // or $string = SM::make($string) -&gt;toPascalCase(); echo $string; // ExampleStringCase . ",
+    "url": "/string-morpher/docs/methods/case-manipulators/#topascalcase",
+    
+    "relUrl": "/docs/methods/case-manipulators/#topascalcase"
+  },"34": {
+    "doc": "Case Manipulators",
+    "title": "toSnakeCase",
+    "content": "Converts a string to snake_case. $string = 'example string case'; $string = SM::toSnakeCase($string); // or $string = SM::make($string) -&gt;toSnakeCase(); echo $string; // example_string_case . ",
+    "url": "/string-morpher/docs/methods/case-manipulators/#tosnakecase",
+    
+    "relUrl": "/docs/methods/case-manipulators/#tosnakecase"
+  },"35": {
+    "doc": "Case Manipulators",
+    "title": "toKebabCase",
+    "content": "Converts a string to kebab-case. $string = 'example string case'; $string = SM::toKebabCase($string); // or $string = SM::make($string) -&gt;toKebabCase(); echo $string; // example-string-case . ",
+    "url": "/string-morpher/docs/methods/case-manipulators/#tokebabcase",
+    
+    "relUrl": "/docs/methods/case-manipulators/#tokebabcase"
+  },"36": {
+    "doc": "Case Manipulators",
+    "title": "toUpperSnakeCase",
+    "content": "Converts a string to UPPER_SNAKE_CASE. $string = 'example string case'; $string = SM::toUpperSnakeCase($string); // or $string = SM::make($string) -&gt;toUpperSnakeCase(); echo $string; // EXAMPLE_STRING_CASE . ",
+    "url": "/string-morpher/docs/methods/case-manipulators/#touppersnakecase",
+    
+    "relUrl": "/docs/methods/case-manipulators/#touppersnakecase"
+  },"37": {
+    "doc": "Case Manipulators",
+    "title": "toTrainCase",
+    "content": "Converts a string to Train-Case. $string = 'example string case'; $string = SM::toTrainCase($string); // or $string = SM::make($string) -&gt;toTrainCase(); echo $string; // Example-String-Case . ",
+    "url": "/string-morpher/docs/methods/case-manipulators/#totraincase",
+    
+    "relUrl": "/docs/methods/case-manipulators/#totraincase"
+  },"38": {
+    "doc": "Case Manipulators",
+    "title": "toDotCase",
+    "content": "Converts a string to dot.case. $string = 'example string case'; $string = SM::toDotCase($string); // or $string = SM::make($string) -&gt;toDotCase(); echo $string; // example.string.case . ",
+    "url": "/string-morpher/docs/methods/case-manipulators/#todotcase",
+    
+    "relUrl": "/docs/methods/case-manipulators/#todotcase"
+  },"39": {
+    "doc": "Case Manipulators",
+    "title": "toFlatCase",
+    "content": "Converts a string to flatcase. $string = 'example string case'; $string = SM::toFlatCase($string); // or $string = SM::make($string) -&gt;toFlatCase(); echo $string; // examplestringcase . ",
+    "url": "/string-morpher/docs/methods/case-manipulators/#toflatcase",
+    
+    "relUrl": "/docs/methods/case-manipulators/#toflatcase"
+  },"40": {
     "doc": "Contributing",
     "title": "Contributing",
     "content": "Contributions are always welcome, but to keep things organized, keep in mind the following rules. ",
     "url": "/string-morpher/docs/contributing/",
     
     "relUrl": "/docs/contributing/"
-  },"32": {
+  },"41": {
     "doc": "Contributing",
     "title": "Bug Reports",
     "content": "When reporting a bug in the package, make sure you follow the rules: . | You have read the Installation and General Configuration sections of the documentation; | The issue you’re facing is not documented; | A GitHub issue with the problem you’re having doesn’t already exist (in an open or closed state); | . Failure to do so, will result in a closed ticket. ",
     "url": "/string-morpher/docs/contributing/#bug-reports",
     
     "relUrl": "/docs/contributing/#bug-reports"
-  },"33": {
+  },"42": {
     "doc": "Contributing",
     "title": "Pull Requests",
     "content": "Fixing a bug, correcting a typo or adding a new feature? . Just remember that all pull requests should be done against the main branch. Install, develop, test, contribute… . composer install # do some magic vendor/bin/phpcs vendor/bin/phpunit # commit # make a pull request . ",
     "url": "/string-morpher/docs/contributing/#pull-requests",
     
     "relUrl": "/docs/contributing/#pull-requests"
-  },"34": {
+  },"43": {
     "doc": "Contributing",
     "title": "Repository",
     "content": "Visit the repository in github . ",
     "url": "/string-morpher/docs/contributing/#repository",
     
     "relUrl": "/docs/contributing/#repository"
-  },"35": {
+  },"44": {
     "doc": "Methods",
     "title": "Methods",
     "content": "Documentation of methods . The String Morpher library is designed with a focus on simplicity and efficiency, allowing developers to chain multiple methods in a seamless and readable manner. This makes it easy to perform complex string manipulations in a single flow. use SSolWEB\\StringMorpher\\StringMorpher as SM; // Dont Forget to import the magic! $pascalCase = SM::capitalize('the quick brown fox jumps over the lazy dog') -&gt;withoutSpaces(); echo $pascalCase; // TheQuickBrownFoxJumpsOverTheLazyDog $slug = SM::toLower(' The quick brown Fox jumps over the lazy Dog ') -&gt;trim() -&gt;replace(' ', '-'); echo $slug; // the-quick-brown-fox-jumps-over-the-lazy-dog . ",
     "url": "/string-morpher/docs/methods/",
     
     "relUrl": "/docs/methods/"
-  },"36": {
+  },"45": {
     "doc": "Introdução",
     "title": "String Morpher",
     "content": "A powerful string manipulation library . String Morpher A powerful and versatile string manipulation library designed for developers who need efficient and intuitive solutions for modifying and masking strings. With String Morpher, you can unlock a host of advanced methods to transform your strings effortlessly. Its chaining capabilities allow you to perform complex operations in a clean, readable manner, enhancing your development experience. Whether you’re formatting user input, crafting dynamic content, or safeguarding sensitive data, String Morpher is your go-to tool for all string-related tasks. Start by reading the instalation tutorial, then check the Documentation for more information. ",
     "url": "/string-morpher/#string-morpher",
     
     "relUrl": "/#string-morpher"
-  },"37": {
+  },"46": {
     "doc": "Introdução",
     "title": "Introdução",
     "content": " ",
     "url": "/string-morpher/",
     
     "relUrl": "/"
-  },"38": {
+  },"47": {
     "doc": "Instalation",
     "title": "Instalation",
     "content": "How to instalation . ",
     "url": "/string-morpher/docs/installation/",
     
     "relUrl": "/docs/installation/"
-  },"39": {
+  },"48": {
     "doc": "Instalation",
     "title": "Check Composer",
     "content": "To install the String Morpher package via Composer, follow these steps: . | Ensure you have Composer installed. If you don’t already have it, download and install Composer from getcomposer.org. | In your terminal, navigate to your project directory. | Run the following command to add the String Morpher package to your project: . | . composer require ssolweb/string-morpher . This will download the library and automatically update your project’s composer.json file with the package details. ",
     "url": "/string-morpher/docs/installation/#check-composer",
     
     "relUrl": "/docs/installation/#check-composer"
-  },"40": {
+  },"49": {
     "doc": "Instalation",
     "title": "Use",
     "content": ". | After installation, you can include the package in your code and start using its powerful string manipulation features: | . require 'vendor/autoload.php'; use SSolWEB\\StringMorpher\\StringMorpher as SM; $morpher = SM::onlyAlpha($string); // Start morphing your strings here! . The String Morpher library is designed with a focus on simplicity and efficiency, allowing developers to chain multiple methods in a seamless and readable manner. This makes it easy to perform complex string manipulations in a single flow. // you can chain methods $string = SM::make($string) -&gt;trim() -&gt;replace('fox', 'dog') -&gt;sub(5, 20) -&gt;toLower(); $captalizedAlpha = SM::onlyAlpha($string) -&gt;captalize(); $brCpfMask = SM::onlyNumbers($string) -&gt;maskBrCpf(); $pascalCase = SM::captalize($string) -&gt;withoutSpaces(); // and use like a string echo $string; echo $captalizedAlpha; $json = json_encode(['data' =&gt; $pascalCase]); // or return string primitive string value echo $string-&gt;getString(); . Chainable Methods: The methods in String Morpher are designed to return the instance of the class itself, enabling developers to apply multiple transformations step by step. Clean and Readable Code: By chaining methods, you can avoid writing verbose and repetitive code. Each transformation is applied in sequence, improving both clarity and maintainability. Enjoy 😊 . Check methods . ",
     "url": "/string-morpher/docs/installation/#use",
     
     "relUrl": "/docs/installation/#use"
-  },"41": {
+  },"50": {
     "doc": "License",
     "title": "The MIT License (MIT)",
     "content": "Copyright (C) 2015-2023 Antério Vieira, Quetzy Garcia, Raphael França. Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: . The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. ",
     "url": "/string-morpher/docs/license/#the-mit-license-mit",
     
     "relUrl": "/docs/license/#the-mit-license-mit"
-  },"42": {
+  },"51": {
     "doc": "License",
     "title": "License",
     "content": " ",
