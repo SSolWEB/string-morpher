@@ -39,11 +39,11 @@ Este repositório contém documentação Jekyll em `/docs`.
 
 7. Rode o servidor Jekyll:
     ```bash
-    bundle exec jekyll serve
+    bundle exec jekyll serve --livereload --force_polling
     ```
     ou
     ```bash
-    jekyll serve
+    jekyll serve --livereload --force_polling
     ```
 
 8. Acesse no navegador:

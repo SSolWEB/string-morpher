@@ -309,7 +309,7 @@
   },"44": {
     "doc": "Methods",
     "title": "Methods",
-    "content": "Documentation of methods . The String Morpher library is designed with a focus on simplicity and efficiency, allowing developers to chain multiple methods in a seamless and readable manner. This makes it easy to perform complex string manipulations in a single flow. use SSolWEB\\StringMorpher\\StringMorpher as SM; // Dont Forget to import the magic! $pascalCase = SM::capitalize('the quick brown fox jumps over the lazy dog') -&gt;withoutSpaces(); echo $pascalCase; // TheQuickBrownFoxJumpsOverTheLazyDog $slug = SM::toLower(' The quick brown Fox jumps over the lazy Dog ') -&gt;trim() -&gt;replace(' ', '-'); echo $slug; // the-quick-brown-fox-jumps-over-the-lazy-dog . ",
+    "content": "Documentation of methods . The String Morpher library is designed with a focus on simplicity and efficiency, allowing developers to chain multiple methods in a seamless and readable manner. This makes it easy to perform complex string manipulations in a single flow. use SSolWEB\\StringMorpher\\StringMorpher as SM; // Dont Forget to import the magic! $formatedSentence = SM::make(\" hello, world! \") -&gt;replaceRegex('/\\s+/', ' ') -&gt;trim() -&gt;toUpperFirst(); echo $formatedSentence; // Hello, world! $username = SM::make('João da Silva Souza') -&gt;normalize() -&gt;onlyAlpha() -&gt;toLower() -&gt;limit(12); echo $username; // joaodasilvaso . ",
     "url": "/string-morpher/docs/methods/",
     
     "relUrl": "/docs/methods/"
