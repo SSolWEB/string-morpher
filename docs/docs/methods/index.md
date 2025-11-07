@@ -12,12 +12,16 @@ The String Morpher library is designed with a focus on simplicity and efficiency
 ```php
 use SSolWEB\StringMorpher\StringMorpher as SM; // Dont Forget to import the magic!
 
-$pascalCase = SM::capitalize('the quick brown fox jumps over the lazy dog')
-    ->withoutSpaces();
-echo $pascalCase; // TheQuickBrownFoxJumpsOverTheLazyDog
-
-$slug = SM::toLower(' The quick brown Fox jumps over the lazy Dog ')
+$formatedSentence = SM::make("   hello,   world!   ")
+    ->replaceRegex('/\s+/', ' ')
     ->trim()
-    ->replace(' ', '-');
-echo $slug; // the-quick-brown-fox-jumps-over-the-lazy-dog
+    ->toUpperFirst();
+echo $formatedSentence; // Hello, world!
+
+$username = SM::make('João da Silva Souza')
+    ->normalize()
+    ->onlyAlpha()
+    ->toLower()
+    ->limit(12);
+echo $username; // joaodasilvaso
 ```
