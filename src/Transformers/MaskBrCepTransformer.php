@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace SSolWEB\StringMorpher\Transformers;
 
 use SSolWEB\StringMorpher\Contracts\StringTransformerInterface;
-use SSolWEB\StringMorpher\Maskers\Brazilian\CepMasker;
 
 /**
  * Transformer for Brazilian CEP masking.
@@ -23,6 +22,10 @@ final class MaskBrCepTransformer implements StringTransformerInterface
      */
     public function transform(string $input, mixed ...$args): string
     {
-        return (new CepMasker())->mask($input);
+        $onlyNumbers = preg_replace('/[^0-9]/', '', $input);
+        if (strlen($onlyNumbers) !== 8) {
+            return $input;
+        }
+        return preg_replace('/^(\d{2})(\d{3})(\d{3})$/', '$1.$2-$3', $onlyNumbers);
     }
 }

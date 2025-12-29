@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace SSolWEB\StringMorpher\Transformers;
 
 use SSolWEB\StringMorpher\Contracts\StringTransformerInterface;
-use SSolWEB\StringMorpher\Maskers\Brazilian\PhoneMasker;
 
 /**
  * Transformer for Brazilian phone masking.
@@ -23,6 +22,11 @@ final class MaskBrPhoneTransformer implements StringTransformerInterface
      */
     public function transform(string $input, mixed ...$args): string
     {
-        return (new PhoneMasker())->mask($input);
+        $onlyNumbers = preg_replace('/[^0-9]/', '', $input);
+        $length = strlen($onlyNumbers);
+        if ($length < 10 || $length > 11) {
+            return $input;
+        }
+        return preg_replace('/^(\d{2})(\d{4,5})(\d{4})$/', '($1) $2-$3', $onlyNumbers);
     }
 }

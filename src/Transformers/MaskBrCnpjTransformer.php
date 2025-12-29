@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace SSolWEB\StringMorpher\Transformers;
 
 use SSolWEB\StringMorpher\Contracts\StringTransformerInterface;
-use SSolWEB\StringMorpher\Maskers\Brazilian\CnpjMasker;
 
 /**
  * Transformer for Brazilian CNPJ masking.
@@ -23,6 +22,10 @@ final class MaskBrCnpjTransformer implements StringTransformerInterface
      */
     public function transform(string $input, mixed ...$args): string
     {
-        return (new CnpjMasker())->mask($input);
+        $onlyNumbers = preg_replace('/[^0-9]/', '', $input);
+        if (strlen($onlyNumbers) !== 14) {
+            return $input;
+        }
+        return preg_replace('/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/', '$1.$2.$3/$4-$5', $onlyNumbers);
     }
 }

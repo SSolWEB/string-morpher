@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace SSolWEB\StringMorpher\Transformers;
 
 use SSolWEB\StringMorpher\Contracts\StringTransformerInterface;
-use SSolWEB\StringMorpher\Maskers\Brazilian\RealMasker;
 
 /**
  * Transformer for Brazilian Real currency masking.
@@ -23,6 +22,17 @@ final class MaskBrRealTransformer implements StringTransformerInterface
      */
     public function transform(string $input, mixed ...$args): string
     {
-        return (new RealMasker())->mask($input);
+        if (empty($input)) {
+            return $input;
+        }
+        $value = $input;
+        // Handle Brazilian decimal format (comma as decimal separator)
+        if (strpos($value, ',') !== false && strpos($value, '.') === false) {
+            $value = str_replace(',', '.', $value);
+        }
+        // Convert to float and format
+        $floatValue = floatval($value);
+        $formatted = number_format($floatValue, 2, ',', '.');
+        return 'R$ ' . $formatted;
     }
 }
