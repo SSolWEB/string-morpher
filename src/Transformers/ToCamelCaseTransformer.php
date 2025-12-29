@@ -7,21 +7,24 @@ namespace SSolWEB\StringMorpher\Transformers;
 use SSolWEB\StringMorpher\Contracts\StringTransformerInterface;
 
 /**
- * Transformer for encoding strings to Base64.
+ * Transformer for converting strings to camelCase.
  *
  * @package SSolWEB\StringMorpher\Transformers
  */
-final class Base64EncodeTransformer implements StringTransformerInterface
+final class ToCamelCaseTransformer implements StringTransformerInterface
 {
     /**
-     * Encode string to Base64.
+     * Convert string to camelCase.
      *
      * @param string $input The string to transform.
      * @param mixed ...$args Not used.
-     * @return string The Base64 encoded string.
+     * @return string The camelCase string.
      */
     public function transform(string $input, mixed ...$args): string
     {
-        return base64_encode($input);
+        $str = str_replace(['-', '_'], ' ', $input);
+        $str = ucwords($str);
+        $str = str_replace(' ', '', $str);
+        return lcfirst($str);
     }
 }

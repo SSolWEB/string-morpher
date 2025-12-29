@@ -8,46 +8,15 @@ use JsonSerializable;
 use Stringable;
 
 /**
- * @method StringMorpherInstance capitalize()
- * @method StringMorpherInstance fromBase64()
- * @method StringMorpherInstance limit(int $length, string|null $end = null)
- * @method StringMorpherInstance normalize()
- * @method StringMorpherInstance onlyAlpha()
- * @method StringMorpherInstance onlyNumbers()
- * @method StringMorpherInstance padL(int $length, string $padChar = ' ')
- * @method StringMorpherInstance padR(int $length, string $padChar = ' ')
- * @method StringMorpherInstance replace(array|string $needle, array|string $replace, bool $caseSensitive = true)
- * @method StringMorpherInstance replaceRegex(array|string $needleRegex, array|string $replace)
- * @method StringMorpherInstance reverse()
- * @method StringMorpherInstance sub(int $offset, int|null $length = null)
- * @method StringMorpherInstance toBase64()
- * @method StringMorpherInstance toLower()
- * @method StringMorpherInstance toUpper()
- * @method StringMorpherInstance toUpperFirst()
- * @method StringMorpherInstance trim(string $characters = " \n\r\t\v\0")
- * @method StringMorpherInstance ltrim(string $characters = " \n\r\t\v\0")
- * @method StringMorpherInstance rtrim(string $characters = " \n\r\t\v\0")
- * @method StringMorpherInstance withoutSpaces()
- * @method StringMorpherInstance toCamelCase()
- * @method StringMorpherInstance toPascalCase()
- * @method StringMorpherInstance toSnakeCase()
- * @method StringMorpherInstance toKebabCase()
- * @method StringMorpherInstance toUpperSnakeCase()
- * @method StringMorpherInstance toTrainCase()
- * @method StringMorpherInstance toDotCase()
- * @method StringMorpherInstance toFlatCase()
- * @method StringMorpherInstance maskBrCep()
- * @method StringMorpherInstance maskBrCpf()
- * @method StringMorpherInstance maskBrCnpj()
- * @method StringMorpherInstance maskBrPhone()
- * @method StringMorpherInstance maskBrReal()
+ * String Morpher Instance with dynamic transformer loading.
+ *
+ * This class dynamically loads transformers based on method names.
+ * For example, calling sub() will load SubTransformer, toLower() will load ToLowerTransformer.
+ *
+ * @package SSolWEB\StringMorpher\Instances
  */
 class StringMorpherInstance implements Stringable, JsonSerializable
 {
-    use \SSolWEB\StringMorpher\Maskers\BrazilianMasker;
-    use \SSolWEB\StringMorpher\Manipulators\Cases;
-    use \SSolWEB\StringMorpher\Manipulators\Manipulator;
-
     private string $string;
 
     /**
@@ -60,20 +29,49 @@ class StringMorpherInstance implements Stringable, JsonSerializable
     }
 
     /**
-     * {@inheritDoc}
-     * @param string $method The method to be called.
-     * @param array $args The arguments to be passed to the method.
+     * Dynamically loads and executes a transformer based on method name.
+     *
+     * @param string $method The method name to convert to transformer class.
+     * @param array $args The arguments to pass to the transformer.
      * @return StringMorpherInstance
      */
-    public function __call(string $method, array $args)
+    public function __call(string $method, array $args): StringMorpherInstance
     {
-        if (method_exists($this, $method)) {
-            array_unshift($args, $this->string);
-            $this->string = $this->$method(...$args);
+        // Convert method name to transformer class name
+        // Examples: sub -> SubTransformer, toLower -> ToLowerTransformer, maskBrCep -> MaskBrCepTransformer
+        $transformerName = $this->methodToTransformerName($method);
+
+        // Try to load transformer
+        $className = 'SSolWEB\\StringMorpher\\Transformers\\' . $transformerName;
+
+        if (class_exists($className)) {
+            $transformer = new $className();
+            $this->string = $transformer->transform($this->string, ...$args);
             return $this;
         }
 
-        throw new \BadMethodCallException("Method {$method} does not exist");
+        // If transformer doesn't exist, throw exception
+        throw new \BadMethodCallException(
+            "Method {$method} does not exist. Expected transformer class: {$className}"
+        );
+    }
+
+    /**
+     * Convert method name to transformer class name.
+     *
+     * @param string $method The method name.
+     * @return string The transformer class name (without 'Transformer' suffix).
+     */
+    private function methodToTransformerName(string $method): string
+    {
+        // Convert camelCase/PascalCase method to PascalCase class name
+        // Examples:
+        // - sub -> Sub
+        // - toLower -> ToLower
+        // - maskBrCep -> MaskBrCep
+        // - toCamelCase -> ToCamelCase
+
+        return ucfirst($method) . 'Transformer';
     }
 
     /** {@inheritDoc} */

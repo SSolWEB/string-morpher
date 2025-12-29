@@ -7,18 +7,18 @@ namespace SSolWEB\StringMorpher\Transformers;
 use SSolWEB\StringMorpher\Contracts\StringTransformerInterface;
 
 /**
- * Transformer for converting strings to kebab-case.
+ * Transformer for converting strings to Train-Case.
  *
  * @package SSolWEB\StringMorpher\Transformers
  */
-final class KebabCaseTransformer implements StringTransformerInterface
+final class ToTrainCaseTransformer implements StringTransformerInterface
 {
     /**
-     * Convert string to kebab-case.
+     * Convert string to Train-Case.
      *
      * @param string $input The string to transform.
      * @param mixed ...$args Not used.
-     * @return string The kebab-case string.
+     * @return string The Train-Case string.
      */
     public function transform(string $input, mixed ...$args): string
     {
@@ -26,6 +26,8 @@ final class KebabCaseTransformer implements StringTransformerInterface
         $str = strtolower($str);
         $str = preg_replace('/[\s_]+/', '-', $str);
         $str = preg_replace('/-{2,}/', '-', $str);
-        return trim($str, '-');
+        $str = trim($str, '-');
+        $str = ucwords($str, '-');
+        return $str;
     }
 }

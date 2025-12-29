@@ -7,25 +7,25 @@ namespace SSolWEB\StringMorpher\Transformers;
 use SSolWEB\StringMorpher\Contracts\StringTransformerInterface;
 
 /**
- * Transformer for converting strings to snake_case.
+ * Transformer for converting strings to kebab-case.
  *
  * @package SSolWEB\StringMorpher\Transformers
  */
-final class SnakeCaseTransformer implements StringTransformerInterface
+final class ToKebabCaseTransformer implements StringTransformerInterface
 {
     /**
-     * Convert string to snake_case.
+     * Convert string to kebab-case.
      *
      * @param string $input The string to transform.
      * @param mixed ...$args Not used.
-     * @return string The snake_case string.
+     * @return string The kebab-case string.
      */
     public function transform(string $input, mixed ...$args): string
     {
-        $str = preg_replace('/[A-Z]/', '_$0', $input);
+        $str = preg_replace('/[A-Z]/', '-$0', $input);
         $str = strtolower($str);
-        $str = preg_replace('/[\s\-]+/', '_', $str);
-        $str = preg_replace('/_{2,}/', '_', $str);
-        return trim($str, '_');
+        $str = preg_replace('/[\s_]+/', '-', $str);
+        $str = preg_replace('/-{2,}/', '-', $str);
+        return trim($str, '-');
     }
 }
