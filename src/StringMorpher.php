@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SSolWEB\StringMorpher;
 
 use SSolWEB\StringMorpher\Instances\StringMorpherInstance;
@@ -48,12 +50,12 @@ class StringMorpher
 
     /**
      * Creates an instance without morphing the input.
-     * @param string|null $input The string to be morphed.
+     * @param string|integer|float|null $input The string to be morphed.
      * @return StringMorpherInstance
      */
-    public static function make(string|null $input)
+    public static function make(string|int|float|null $input): StringMorpherInstance
     {
-        return new StringMorpherInstance($input ?? '');
+        return new StringMorpherInstance((string)($input ?? ''));
     }
 
     /**
@@ -62,7 +64,7 @@ class StringMorpher
      * @param array $args The arguments to be passed to the method.
      * @return StringMorpherInstance
      */
-    public static function __callStatic(string $method, array $args)
+    public static function __callStatic(string $method, array $args): StringMorpherInstance
     {
         $string = array_shift($args);
 

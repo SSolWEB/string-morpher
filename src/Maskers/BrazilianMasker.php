@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SSolWEB\StringMorpher\Maskers;
 
 trait BrazilianMasker
