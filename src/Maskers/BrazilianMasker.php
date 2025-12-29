@@ -4,6 +4,12 @@ declare(strict_types=1);
 
 namespace SSolWEB\StringMorpher\Maskers;
 
+use SSolWEB\StringMorpher\Maskers\Brazilian\CepMasker;
+use SSolWEB\StringMorpher\Maskers\Brazilian\CnpjMasker;
+use SSolWEB\StringMorpher\Maskers\Brazilian\CpfMasker;
+use SSolWEB\StringMorpher\Maskers\Brazilian\PhoneMasker;
+use SSolWEB\StringMorpher\Maskers\Brazilian\RealMasker;
+
 trait BrazilianMasker
 {
     /**
@@ -13,7 +19,7 @@ trait BrazilianMasker
      */
     protected function maskBrCep(string $string): string
     {
-        return preg_replace('/^(\d{2})(\d{3})(\d)/', '\1.\2-\3', $string);
+        return (new CepMasker())->mask($string);
     }
 
     /**
@@ -23,7 +29,7 @@ trait BrazilianMasker
      */
     protected function maskBrCpf(string $string): string
     {
-        return preg_replace('/(\d{3})(\d{3})(\d{3})(\d{2})/', '$1.$2.$3-$4', $string);
+        return (new CpfMasker())->mask($string);
     }
 
     /**
@@ -33,7 +39,7 @@ trait BrazilianMasker
      */
     protected function maskBrCnpj(string $string): string
     {
-        return preg_replace('/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/', '$1.$2.$3/$4-$5', $string);
+        return (new CnpjMasker())->mask($string);
     }
 
     /**
@@ -43,7 +49,7 @@ trait BrazilianMasker
      */
     protected function maskBrPhone(string $string): string
     {
-        return preg_replace('/(\d{2})(\d{4,5})(\d{4})/', '($1) $2-$3', $string);
+        return (new PhoneMasker())->mask($string);
     }
 
     /**
@@ -53,15 +59,6 @@ trait BrazilianMasker
      */
     protected function maskBrReal(string $string): string
     {
-        if (empty($string)) {
-            return $string;
-        }
-        $aux = $string;
-        if (strpos($aux, ',') !== false && strpos($aux, '.') === false) {
-            $aux = str_replace(',', '.', $aux);
-        }
-        $aux = floatval($aux);
-        $aux = number_format($aux, 2, ',', '.');
-        return 'R$ ' . $aux;
+        return (new RealMasker())->mask($string);
     }
 }
