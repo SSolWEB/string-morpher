@@ -6,6 +6,8 @@ namespace SSolWEB\StringMorpher\Manipulators;
 
 trait Cases
 {
+    use TransformerLoader;
+
     /**
      * Converte para camelCase.
      * @param string $string The string that will be changed.
@@ -13,10 +15,7 @@ trait Cases
      */
     protected function toCamelCase(string $string): string
     {
-        $str = str_replace(['-', '_'], ' ', $string);
-        $str = ucwords($str);
-        $str = str_replace(' ', '', $str);
-        return lcfirst($str);
+        return $this->applyTransformer('CamelCase', $string);
     }
 
     /**
@@ -26,9 +25,7 @@ trait Cases
      */
     protected function toPascalCase(string $string): string
     {
-        $str = str_replace(['-', '_'], ' ', $string);
-        $str = ucwords($str);
-        return str_replace(' ', '', $str);
+        return $this->applyTransformer('PascalCase', $string);
     }
 
     /**
@@ -38,11 +35,7 @@ trait Cases
      */
     protected function toSnakeCase(string $string): string
     {
-        $str = preg_replace('/[A-Z]/', '_$0', $string);
-        $str = strtolower($str);
-        $str = preg_replace('/[\s\-]+/', '_', $str);
-        $str = preg_replace('/_{2,}/', '_', $str);
-        return trim($str, '_');
+        return $this->applyTransformer('SnakeCase', $string);
     }
 
     /**
@@ -52,11 +45,7 @@ trait Cases
      */
     protected function toKebabCase(string $string): string
     {
-        $str = preg_replace('/[A-Z]/', '-$0', $string);
-        $str = strtolower($str);
-        $str = preg_replace('/[\s_]+/', '-', $str);
-        $str = preg_replace('/-{2,}/', '-', $str);
-        return trim($str, '-');
+        return $this->applyTransformer('KebabCase', $string);
     }
 
     /**

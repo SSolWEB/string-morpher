@@ -6,6 +6,8 @@ namespace SSolWEB\StringMorpher\Manipulators;
 
 trait Manipulator
 {
+    use TransformerLoader;
+
     /**
      * Capitalize the first letter of each word.
      * @param string $string The string that will be changed.
@@ -24,7 +26,7 @@ trait Manipulator
      */
     protected function fromBase64(string $string): string
     {
-        return base64_decode($string);
+        return $this->applyTransformer('Base64Decode', $string);
     }
 
     /**
@@ -56,24 +58,7 @@ trait Manipulator
      */
     protected function normalize(string $string): string
     {
-        $transliteration = [
-            'á' => 'a', 'à' => 'a', 'â' => 'a', 'ã' => 'a', 'ä' => 'a', 'å' => 'a',
-            'ç' => 'c',
-            'é' => 'e', 'è' => 'e', 'ê' => 'e', 'ë' => 'e',
-            'í' => 'i', 'ì' => 'i', 'î' => 'i', 'ï' => 'i',
-            'ó' => 'o', 'ò' => 'o', 'ô' => 'o', 'õ' => 'o', 'ö' => 'o', 'ð' => 'o',
-            'ú' => 'u', 'ù' => 'u', 'û' => 'u', 'ü' => 'u',
-            'ñ' => 'n', 'š' => 's', 'ý' => 'y', 'ÿ' => 'y',
-            'Á' => 'A', 'À' => 'A', 'Â' => 'A', 'Ã' => 'A', 'Ä' => 'A', 'Å' => 'A',
-            'Ç' => 'C',
-            'É' => 'E', 'È' => 'E', 'Ê' => 'E', 'Ë' => 'E',
-            'Í' => 'I', 'Ì' => 'I', 'Î' => 'I', 'Ï' => 'I',
-            'Ó' => 'O', 'Ò' => 'O', 'Ô' => 'O', 'Õ' => 'O', 'Ö' => 'O',
-            'Ú' => 'U', 'Ù' => 'U', 'Û' => 'U', 'Ü' => 'U',
-            'Ñ' => 'N', 'Š' => 'S', 'Ý' => 'Y', 'Ÿ' => 'Y',
-        ];
-        $input = strtr($string, $transliteration);
-        return preg_replace('/[^a-zA-Z0-9\s]/', '', $input);
+        return $this->applyTransformer('Normalize', $string);
     }
 
     /**
@@ -140,9 +125,7 @@ trait Manipulator
         array|string $replace,
         bool $caseSensitive = true
     ): string {
-        return $caseSensitive
-            ? str_replace($needle, $replace, $string)
-            : str_ireplace($needle, $replace, $string);
+        return $this->applyTransformer('Replace', $string, $needle, $replace, $caseSensitive);
     }
 
     /**
@@ -155,7 +138,7 @@ trait Manipulator
      */
     protected function replaceRegex(string $string, array|string $needleRegex, array|string $replace): string
     {
-        return preg_replace($needleRegex, $replace, $string);
+        return $this->applyTransformer('ReplaceRegex', $string, $needleRegex, $replace);
     }
 
     /**
@@ -166,7 +149,7 @@ trait Manipulator
      */
     protected function reverse(string $string): string
     {
-        return strrev($string);
+        return $this->applyTransformer('Reverse', $string);
     }
 
     /**
@@ -179,7 +162,7 @@ trait Manipulator
      */
     protected function sub(string $string, int $offset, int|null $length = null): string
     {
-        return substr($string, $offset, $length);
+        return $this->applyTransformer('Sub', $string, $offset, $length);
     }
 
     /**
@@ -190,7 +173,7 @@ trait Manipulator
      */
     protected function toBase64(string $string): string
     {
-        return base64_encode($string);
+        return $this->applyTransformer('Base64Encode', $string);
     }
 
     /**
@@ -201,7 +184,7 @@ trait Manipulator
      */
     protected function toLower(string $string): string
     {
-        return mb_strtolower($string, 'UTF-8');
+        return $this->applyTransformer('ToLower', $string);
     }
 
     /**
@@ -212,7 +195,7 @@ trait Manipulator
      */
     protected function toUpper(string $string): string
     {
-        return mb_strtoupper($string, 'UTF-8');
+        return $this->applyTransformer('ToUpper', $string);
     }
 
     /**
@@ -235,7 +218,7 @@ trait Manipulator
      */
     protected function trim(string $string, string $characters = " \n\r\t\v\0"): string
     {
-        return $characters == null ? trim($string) : trim($string, $characters);
+        return $this->applyTransformer('Trim', $string, $characters);
     }
 
     /**
