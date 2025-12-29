@@ -14,6 +14,40 @@ use Stringable;
  * For example, calling sub() will load SubTransformer, toLower() will load ToLowerTransformer.
  *
  * @package SSolWEB\StringMorpher\Instances
+ *
+ * @method StringMorpherInstance capitalize()
+ * @method StringMorpherInstance fromBase64()
+ * @method StringMorpherInstance limit(int $length, string|null $end = null)
+ * @method StringMorpherInstance normalize()
+ * @method StringMorpherInstance onlyAlpha()
+ * @method StringMorpherInstance onlyNumbers()
+ * @method StringMorpherInstance padL(int $length, string $padChar = ' ')
+ * @method StringMorpherInstance padR(int $length, string $padChar = ' ')
+ * @method StringMorpherInstance replace(array|string $needle, array|string $replace, bool $caseSensitive = true)
+ * @method StringMorpherInstance replaceRegex(array|string $needleRegex, array|string $replace)
+ * @method StringMorpherInstance reverse()
+ * @method StringMorpherInstance sub(int $offset, int|null $length = null)
+ * @method StringMorpherInstance toBase64()
+ * @method StringMorpherInstance toLower()
+ * @method StringMorpherInstance toUpper()
+ * @method StringMorpherInstance toUpperFirst()
+ * @method StringMorpherInstance trim(string $characters = " \n\r\t\v\0")
+ * @method StringMorpherInstance ltrim(string $characters = " \n\r\t\v\0")
+ * @method StringMorpherInstance rtrim(string $characters = " \n\r\t\v\0")
+ * @method StringMorpherInstance withoutSpaces()
+ * @method StringMorpherInstance toCamelCase()
+ * @method StringMorpherInstance toPascalCase()
+ * @method StringMorpherInstance toSnakeCase()
+ * @method StringMorpherInstance toKebabCase()
+ * @method StringMorpherInstance toUpperSnakeCase()
+ * @method StringMorpherInstance toTrainCase()
+ * @method StringMorpherInstance toDotCase()
+ * @method StringMorpherInstance toFlatCase()
+ * @method StringMorpherInstance maskBrCep()
+ * @method StringMorpherInstance maskBrCpf()
+ * @method StringMorpherInstance maskBrCnpj()
+ * @method StringMorpherInstance maskBrPhone()
+ * @method StringMorpherInstance maskBrReal()
  */
 class StringMorpherInstance implements Stringable, JsonSerializable
 {
