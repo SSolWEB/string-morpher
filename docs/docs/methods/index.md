@@ -1,11 +1,10 @@
 ---
 title: "Methods"
 nav_order: 3
+has_children: true
 ---
 
 # Methods
-
-Documentation of methods
 
 The String Morpher library is designed with a focus on simplicity and efficiency, allowing developers to chain multiple methods in a seamless and readable manner. This makes it easy to perform complex string manipulations in a single flow.
 
@@ -25,3 +24,5 @@ $username = SM::make('João da Silva Souza')
     ->limit(12);
 echo $username; // joaodasilvaso
 ```
+
+## Available Methods
