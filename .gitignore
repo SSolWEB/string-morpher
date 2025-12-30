@@ -1,3 +1,4 @@
 .phpunit.cache/
 .vscode/
 vendor/
+composer.lock
