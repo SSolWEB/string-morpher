@@ -1,7 +1,7 @@
 ---
 title: "toPascalCase"
 parent: Methods
-nav_order: 26
+nav_order:
 ---
 
 # toPascalCase

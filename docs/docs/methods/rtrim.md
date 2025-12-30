@@ -1,7 +1,7 @@
 ---
 title: "rtrim"
 parent: Methods
-nav_order: 18
+nav_order:
 ---
 
 # rtrim
@@ -18,8 +18,6 @@ $string = SM::make($string)
     ->rtrim();
 echo $string; //  Hello world
 ```
-
-## Examples
 
 ### Custom characters to trim
 

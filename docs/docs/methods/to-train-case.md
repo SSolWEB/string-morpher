@@ -1,7 +1,7 @@
 ---
 title: "toTrainCase"
 parent: Methods
-nav_order: 28
+nav_order:
 ---
 
 # toTrainCase

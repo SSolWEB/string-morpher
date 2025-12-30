@@ -1,7 +1,7 @@
 ---
 title: "toUpperSnakeCase"
 parent: Methods
-nav_order: 31
+nav_order:
 ---
 
 # toUpperSnakeCase

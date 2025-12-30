@@ -1,7 +1,7 @@
 ---
 title: "normalize"
 parent: Methods
-nav_order: 10
+nav_order:
 ---
 
 # normalize

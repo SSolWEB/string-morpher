@@ -1,7 +1,7 @@
 ---
 title: "sub"
 parent: Methods
-nav_order: 19
+nav_order:
 ---
 
 # sub

@@ -1,7 +1,7 @@
 ---
 title: "fromBase64"
 parent: Methods
-nav_order: 2
+nav_order:
 ---
 
 # fromBase64

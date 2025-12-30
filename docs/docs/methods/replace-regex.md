@@ -1,7 +1,7 @@
 ---
 title: "replaceRegex"
 parent: Methods
-nav_order: 16
+nav_order:
 ---
 
 # replaceRegex

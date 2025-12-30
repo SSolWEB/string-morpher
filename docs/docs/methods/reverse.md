@@ -1,7 +1,7 @@
 ---
 title: "reverse"
 parent: Methods
-nav_order: 17
+nav_order:
 ---
 
 # reverse

@@ -1,7 +1,7 @@
 ---
 title: "capitalize"
 parent: Methods
-nav_order: 1
+nav_order:
 ---
 
 # capitalize

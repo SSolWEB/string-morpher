@@ -1,7 +1,7 @@
 ---
 title: "replace"
 parent: Methods
-nav_order: 15
+nav_order:
 ---
 
 # replace
@@ -19,9 +19,7 @@ $string = SM::make($string)
 echo $string; // The quick brown dog jumps
 ```
 
-## Examples
-
-### Case-insensitive replacement
+### Case-insensitive replacement parameter
 
 ```php
 $string = 'The quick brown Fox jumps';

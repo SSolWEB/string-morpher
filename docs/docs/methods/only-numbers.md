@@ -1,7 +1,7 @@
 ---
 title: "onlyNumbers"
 parent: Methods
-nav_order: 12
+nav_order:
 ---
 
 # onlyNumbers

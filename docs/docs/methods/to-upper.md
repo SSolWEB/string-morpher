@@ -1,7 +1,7 @@
 ---
 title: "toUpper"
 parent: Methods
-nav_order: 29
+nav_order:
 ---
 
 # toUpper

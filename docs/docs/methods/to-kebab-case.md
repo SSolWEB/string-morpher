@@ -1,7 +1,7 @@
 ---
 title: "toKebabCase"
 parent: Methods
-nav_order: 24
+nav_order:
 ---
 
 # toKebabCase

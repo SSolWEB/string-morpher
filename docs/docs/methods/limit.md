@@ -1,7 +1,7 @@
 ---
 title: "limit"
 parent: Methods
-nav_order: 3
+nav_order:
 ---
 
 # limit
@@ -20,8 +20,6 @@ $string = SM::make($string)
     ->limit(30);
 echo $string; // The quick brown fox jumps over
 ```
-
-## Examples
 
 ### With custom ending
 

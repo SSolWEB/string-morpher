@@ -1,7 +1,7 @@
 ---
 title: "onlyAlpha"
 parent: Methods
-nav_order: 11
+nav_order:
 ---
 
 # onlyAlpha

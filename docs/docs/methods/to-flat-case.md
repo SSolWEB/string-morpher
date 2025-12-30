@@ -1,7 +1,7 @@
 ---
 title: "toFlatCase"
 parent: Methods
-nav_order: 23
+nav_order:
 ---
 
 # toFlatCase
