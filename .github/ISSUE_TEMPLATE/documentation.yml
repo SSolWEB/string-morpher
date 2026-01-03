@@ -1,0 +1,76 @@
+name: 📚 Documentation Issue
+description: Report documentation issues or suggest improvements
+title: "[Docs]: "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve our documentation! Please describe the issue or suggestion below.
+
+  - type: dropdown
+    id: doc-type
+    attributes:
+      label: Documentation Type
+      description: What type of documentation issue is this?
+      options:
+        - Missing documentation
+        - Incorrect/outdated documentation
+        - Typo or grammar issue
+        - Unclear explanation
+        - Missing example
+        - Broken link
+        - Suggestion for improvement
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: doc-location
+    attributes:
+      label: Documentation Location
+      description: Where is this documentation located?
+      placeholder: e.g., https://ssolweb.github.io/string-morpher/docs/methods/trim/ or README.md
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue-description
+    attributes:
+      label: Issue Description
+      description: Clearly describe the documentation issue or what needs improvement
+      placeholder: The documentation for the trim() method doesn't mention...
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggested-change
+    attributes:
+      label: Suggested Change or Addition
+      description: If applicable, suggest how the documentation should be corrected or improved
+      placeholder: |
+        I suggest adding:
+        ```php
+        // Example code
+        ```
+        Or changing the text to: "..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context or screenshots
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have checked the latest version of the documentation
+          required: true
+        - label: I have searched for similar documentation issues
+          required: true

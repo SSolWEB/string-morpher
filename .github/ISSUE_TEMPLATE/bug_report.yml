@@ -1,0 +1,89 @@
+name: 🐛 Bug Report
+description: Report a bug or unexpected behavior in String Morpher
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug! Please provide as much detail as possible to help us fix it quickly.
+
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is
+      placeholder: When I use SM::method()... I expect... but instead...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Provide a minimal code example to reproduce the issue
+      placeholder: |
+        ```php
+        use SSolWEB\StringMorpher\StringMorpher as SM;
+        
+        $result = SM::make('example')
+            ->method()
+            ->getString();
+        
+        echo $result; // Outputs: ...
+        ```
+      render: php
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: String Morpher Version
+      description: Which version of String Morpher are you using?
+      placeholder: e.g., 1.0.0 (check composer.json or packagist)
+    validations:
+      required: true
+
+  - type: input
+    id: php-version
+    attributes:
+      label: PHP Version
+      description: Which version of PHP are you running?
+      placeholder: e.g., 8.1, 8.2, 8.3
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment Details
+      description: Any relevant environment information (OS, framework, etc.)
+      placeholder: |
+        - OS: Ubuntu 22.04
+        - Framework: Laravel 10
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context, screenshots, or error messages
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Please confirm the following
+      options:
+        - label: I have read the [Installation](https://ssolweb.github.io/string-morpher/docs/installation/)
+          required: true
+        - label: I have read the [Methods](https://ssolweb.github.io/string-morpher/docs/methods/) documentation
+          required: true
+        - label: I have searched for similar issues (open and closed)
+          required: true
+        - label: This issue is not already documented
+          required: true

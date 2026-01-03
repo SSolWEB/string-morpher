@@ -1,0 +1,40 @@
+name: 🚀 Feature Request
+description: Suggest a new feature or enhancement for String Morpher
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to suggest a new feature! Please fill out the information below.
+
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: Feature Description
+      description: A clear and concise description of the feature you'd like to see
+      placeholder: I would like String Morpher to...
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use Case
+      description: Describe the problem this feature would solve or the use case it would address
+      placeholder: This would be useful when...
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Please confirm the following
+      options:
+        - label: I have read the [documentation](https://ssolweb.github.io/string-morpher)
+          required: true
+        - label: I have read the existing [Methods](https://ssolweb.github.io/string-morpher/docs/methods/) documentation
+          required: true
+        - label: I have searched for similar feature requests
+          required: true
