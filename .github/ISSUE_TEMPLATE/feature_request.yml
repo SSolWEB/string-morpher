@@ -26,50 +26,6 @@ body:
     validations:
       required: true
 
-  - type: textarea
-    id: proposed-solution
-    attributes:
-      label: Proposed Solution
-      description: How do you envision this feature working?
-      placeholder: |
-        Example usage:
-        ```php
-        $result = SM::make('example')->newMethod();
-        ```
-    validations:
-      required: false
-
-  - type: dropdown
-    id: feature-type
-    attributes:
-      label: Feature Type
-      description: What type of feature is this?
-      options:
-        - New Transformer (string manipulation method)
-        - New Mask (formatting method)
-        - Case Conversion
-        - API Enhancement
-        - Other
-    validations:
-      required: true
-
-  - type: textarea
-    id: alternatives
-    attributes:
-      label: Alternatives Considered
-      description: Have you considered any alternative solutions or workarounds?
-    validations:
-      required: false
-
-  - type: checkboxes
-    id: contribution
-    attributes:
-      label: Contribution
-      description: Would you be willing to contribute this feature?
-      options:
-        - label: I'm willing to implement this feature and submit a PR
-          required: false
-
   - type: checkboxes
     id: checklist
     attributes:
@@ -77,6 +33,8 @@ body:
       description: Please confirm the following
       options:
         - label: I have read the [documentation](https://ssolweb.github.io/string-morpher)
+          required: true
+        - label: I have read the existing [Methods](https://ssolweb.github.io/string-morpher/docs/methods/) documentation
           required: true
         - label: I have searched for similar feature requests
           required: true
