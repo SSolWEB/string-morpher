@@ -33,45 +33,6 @@ Closes #[issue_number]
 - [ ] Usage examples included (static and fluent)
 - [ ] Parameters and return values documented
 
-## 💡 Usage Examples
-
-### Static Usage
-```php
-use SSolWEB\StringMorpher\StringMorpher as SM;
-
-$result = SM::methodName($input);
-echo $result; // expected output
-```
-
-### Fluent Usage (Chainable)
-```php
-use SSolWEB\StringMorpher\StringMorpher as SM;
-
-$result = SM::make($input)
-    ->methodName()
-    ->otherMethod();
-    
-echo $result; // expected output
-```
-
-## 🧪 How to Test
-
-```bash
-# Install dependencies
-composer install
-
-# Run tests
-vendor/bin/phpunit
-
-# Run linter
-vendor/bin/phpcs
-```
-
 ## 📸 Screenshots (if applicable)
 
 [Add screenshots if there are visual changes in documentation]
-
-## 📚 Related Documentation
-
-- Issue: #[issue_number]
-- Documentation: [link to docs if already published]
