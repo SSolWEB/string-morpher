@@ -18,14 +18,16 @@ final class MaskBrCnpjTransformer implements StringTransformerInterface
      *
      * @param string $input The string to transform.
      * @param mixed ...$args Not used.
+     * @since 1.1.1 Accepts new alphanumeric format.
      * @return string The masked string.
      */
     public function transform(string $input, mixed ...$args): string
     {
-        $onlyNumbers = preg_replace('/[^0-9]/', '', $input);
-        if (strlen($onlyNumbers) !== 14) {
+        // Remove tudo que não for letra ou número
+        $alnum = preg_replace('/[^A-Za-z0-9]/', '', $input);
+        if (strlen($alnum) !== 14) {
             return $input;
         }
-        return preg_replace('/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/', '$1.$2.$3/$4-$5', $onlyNumbers);
+        return preg_replace('/^(\w{2})(\w{3})(\w{3})(\w{4})(\w{2})$/', '$1.$2.$3/$4-$5', $alnum);
     }
 }
