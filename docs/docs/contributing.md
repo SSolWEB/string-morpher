@@ -6,6 +6,9 @@ nav_order: 4
 # Contributing
 Contributions are always welcome, but to keep things organized, keep in mind the following rules.
 
+  > ⚡ **Important Note**:  
+  > String Morpher is dedicated exclusively to string transformation and manipulation.  Comparison and validation methods (like startsWith, contains, endsWith, similarity, isValidEmail, isValidCpf, etc) are *not* provided and outside the project's scope.
+
 ## Bug Reports
 When reporting a bug in the package, make sure you follow the rules:
 
@@ -42,6 +45,15 @@ vendor/bin/phpunit
 # commit
 # make a pull request
 ```
+
+## Notable Files & Directories
+- `src/Transformers/` — All transformation logic
+- `src/StringMorpher.php` — Facade/static entry point
+- `src/Instances/StringMorpherInstance.php` — Handles chaining and dynamic method resolution
+- `src/Contracts/StringTransformerInterface.php` — Contract for all transformers
+- `tests/Transformers/` — Unit tests for each transformer
+- `docs/` — Jekyll with "just-the-docs" theme
+- `docs/docs/methods/` — Method documentation
 
 ## Repository
 Visit the repository in [github](https://github.com/SSolWEB/string-morpher/)
