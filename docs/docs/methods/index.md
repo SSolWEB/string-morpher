@@ -25,4 +25,7 @@ $username = SM::make('João da Silva Souza')
 echo $username; // joaodasilvaso
 ```
 
+  > ⚡ **Important Note**:  
+  > String Morpher is dedicated exclusively to string transformation and manipulation.  Comparison and validation methods (like startsWith, contains, endsWith, similarity, isValidEmail, isValidCpf, etc) are *not* provided and outside the project's scope.
+
 ## Available Methods
