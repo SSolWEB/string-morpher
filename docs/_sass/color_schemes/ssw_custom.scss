@@ -4,6 +4,8 @@ $cor1: #00645F;
 $cor2: #AC9969;
 $corTexto1: #002927;
 $corTexto2: #272216;
+$corLink1: #9b5a00;
+$corLink2: #d37000;
 $corBase1: #EBFFFE;
 $corBase2: #F1EDE5;
 // customizing light color scheme
@@ -24,10 +26,10 @@ body, .main-header{
     color: white !important;
 }
 a, a:not([class]) {
-    color: $corTexto2 !important;
+    color: $corLink1 !important;
     text-decoration: none;
     &:hover {
-        color: $corTexto1 !important;
+        color: $corLink2 !important;
     }
 }
 nav a {
@@ -52,7 +54,7 @@ nav a {
 .site-footer {
     color: $corTexto1 !important;
     & a, & a:not([class])  {
-        color: $corTexto2 !important;
+        color: #4b412a !important;
         text-decoration: none;
     }
 }
