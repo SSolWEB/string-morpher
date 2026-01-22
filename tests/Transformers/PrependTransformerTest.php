@@ -39,7 +39,7 @@ class PrependTransformerTest extends TestCase
             ' World' => ['World', ' '],
             '123World' => ['World', 123],
             'World' => [null, 'World'],
-            'World' => ['World', null],
+            'World ' => ['World ', null],
         ];
 
         foreach ($tests as $expected => $params) {
