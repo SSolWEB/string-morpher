@@ -37,8 +37,9 @@ class AppendTransformerTest extends TestCase
             'Hello123' => ['Hello', '123'],
             'Hello' => ['Hello', ''],
             ' World' => ['', ' World'],
-            'Hello123' => ['Hello', 123],
+            'Hello1234' => ['Hello', 1234],
             'World' => [null, 'World'],
+            'World ' => ['World ', null],
         ];
 
         foreach ($tests as $expected => $params) {
