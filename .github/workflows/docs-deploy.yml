@@ -1,14 +1,15 @@
-name: Deploy Jekyll site to GitHub Pages
+name: Deploy documentation to GitHub Pages
 
 on:
   push:
     branches:
-      - main  # Adjust the branch you want to trigger the deployment
+      - main
+    paths:
+      - 'docs/**'
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
