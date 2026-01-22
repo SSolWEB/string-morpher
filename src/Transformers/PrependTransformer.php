@@ -11,8 +11,8 @@ class PrependTransformer implements StringTransformerInterface
     /**
      * Prepend a string to the input.
      *
-     * @param string $input
-     * @param mixed $prefix
+     * @param string $input The string to transform.
+     * @param mixed ...$args Arguments: [0] => string $append The string to prepend.
      * @return string
      */
     public function transform(string $input, mixed ...$args): string
