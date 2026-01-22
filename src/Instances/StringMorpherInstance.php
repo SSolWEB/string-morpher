@@ -15,6 +15,7 @@ use Stringable;
  *
  * @package SSolWEB\StringMorpher\Instances
  *
+ * @method StringMorpherInstance append(string $append)
  * @method StringMorpherInstance capitalize()
  * @method StringMorpherInstance fromBase64()
  * @method StringMorpherInstance limit(int $length, string|null $end = null)
