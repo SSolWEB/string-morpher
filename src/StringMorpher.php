@@ -27,6 +27,7 @@ use SSolWEB\StringMorpher\Instances\StringMorpherInstance;
  * @method static StringMorpherInstance ltrim(string $input, string $characters = " \n\r\t\v\0")
  * @method static StringMorpherInstance rtrim(string $input, string $characters = " \n\r\t\v\0")
  * @method static StringMorpherInstance withoutSpaces(string $input)
+ * @method static StringMorpherInstance prepend(mixed $prefix)
  * @method static StringMorpherInstance toCamelCase(string $input)
  * @method static StringMorpherInstance toPascalCase(string $input)
  * @method static StringMorpherInstance toSnakeCase(string $input)
