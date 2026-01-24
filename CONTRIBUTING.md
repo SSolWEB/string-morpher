@@ -1,6 +1,9 @@
 # Contributing
 Contributions are always welcome, but to keep things organized, keep in mind the following rules.
 
+  > ⚡ **Important Note**:  
+  > String Morpher is dedicated exclusively to string transformation and manipulation.  Comparison and validation methods (like startsWith, contains, endsWith, similarity, isValidEmail, isValidCpf, etc) are *not* provided and outside the project's scope.
+
 # Bug Reports
 When reporting a bug in the package, make sure you follow the rules:
 
