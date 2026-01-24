@@ -7,6 +7,7 @@ namespace SSolWEB\StringMorpher;
 use SSolWEB\StringMorpher\Instances\StringMorpherInstance;
 
 /**
+ * @method static StringMorpherInstance append(string $input, string $append)
  * @method static StringMorpherInstance capitalize(string $input)
  * @method static StringMorpherInstance fromBase64(string $input)
  * @method static StringMorpherInstance limit(string $input, int $length, string $end = null)
