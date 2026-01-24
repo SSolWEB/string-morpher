@@ -35,6 +35,7 @@ use Stringable;
  * @method StringMorpherInstance ltrim(string $characters = " \n\r\t\v\0")
  * @method StringMorpherInstance rtrim(string $characters = " \n\r\t\v\0")
  * @method StringMorpherInstance withoutSpaces()
+ * @method StringMorpherInstance prepend(string|null $prefix)
  * @method StringMorpherInstance toCamelCase()
  * @method StringMorpherInstance toPascalCase()
  * @method StringMorpherInstance toSnakeCase()
