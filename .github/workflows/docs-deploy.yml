@@ -2,10 +2,8 @@ name: Deploy documentation to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
-    paths:
-      - 'docs/**'
+    tags:
+      - 'v**'
 
 jobs:
   build:
