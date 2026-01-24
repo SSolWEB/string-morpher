@@ -18,6 +18,9 @@ class MaskBrCnpjTransformerTest extends TestCase
         $tests = [
             '12.345.678/9012-34' => '12345678901234',
             '11.222.333/4444-55' => '11222333444455',
+            '7L.7D3.KW2/0001-00' => '7L7D3KW2000100',
+            '7L.7D3.KW2/N6HD-18' => '7L7D3KW2N6HD18',
+            'RV.SZJ.5KZ/0001-49' => 'RVSZJ5KZ000149',
         ];
 
         foreach ($tests as $expected => $input) {
@@ -31,6 +34,9 @@ class MaskBrCnpjTransformerTest extends TestCase
         $tests = [
             '12.345.678/9012-34' => ['12345678901234'],
             '11.222.333/4444-55' => ['11222333444455'],
+            '7L.7D3.KW2/0001-00' => ['7L7D3KW2000100'],
+            '7L.7D3.KW2/N6HD-18' => ['7L7D3KW2N6HD18'],
+            'RV.SZJ.5KZ/0001-49' => ['RVSZJ5KZ000149'],
         ];
 
         foreach ($tests as $expected => $params) {
