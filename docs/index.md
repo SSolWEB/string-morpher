@@ -5,11 +5,24 @@ nav_order: 1
 
 # String Morpher
 
-A powerful string manipulation library
+This library is designed with a focus on simplicity and efficiency, allowing developers to chain multiple methods in a seamless and readable manner. This makes it easy to perform complex string manipulations in a single flow.
 
-String Morpher A **powerful** and **versatile** string manipulation library designed for developers who need **efficient** and **intuitive** solutions for modifying and masking strings. 
+```php
+use SSolWEB\StringMorpher\StringMorpher as SM; // Dont Forget to import the magic!
 
-With String Morpher, you can unlock a host of advanced methods to transform your strings effortlessly. Its chaining capabilities allow you to perform complex operations in a clean, readable manner, enhancing your development experience. Whether you're formatting user input, crafting dynamic content, or safeguarding sensitive data, String Morpher is your go-to tool for all string-related tasks.
+$formatedSentence = SM::make("   hello,   world!   ")
+    ->replaceRegex('/\s+/', ' ')
+    ->trim()
+    ->toUpperFirst();
+echo $formatedSentence; // Hello, world!
+
+$username = SM::make('João da Silva Souza')
+    ->normalize()
+    ->onlyAlpha()
+    ->toLower()
+    ->limit(12);
+echo $username; // joaodasilvaso
+```
 
 Start by reading the [instalation tutorial](/string-morpher/docs/installation/), then check the
-[Documentation](/string-morpher/docs/methods/) for more information.
+list of available [methods](/string-morpher/docs/methods/) for more information.
