@@ -17,10 +17,10 @@ final class ToSnakeCaseTransformer implements StringTransformerInterface
      * Convert string to snake_case.
      *
      * @param string $input The string to transform.
-     * @param mixed ...$args Not used.
+     * @param array $args Not used.
      * @return string The snake_case string.
      */
-    public function transform(string $input, mixed ...$args): string
+    public function transform(string $input, array $args = []): string
     {
         $str = preg_replace('/[A-Z]/', '_$0', $input);
         $str = strtolower($str);

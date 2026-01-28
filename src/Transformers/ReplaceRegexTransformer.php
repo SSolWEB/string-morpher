@@ -17,10 +17,10 @@ final class ReplaceRegexTransformer implements StringTransformerInterface
      * Replace all occurrences using a regex pattern.
      *
      * @param string $input The string to transform.
-     * @param mixed ...$args Arguments: [0] => array|string $needleRegex, [1] => array|string $replace.
+     * @param array $args Arguments: [0] => array|string $needleRegex, [1] => array|string $replace.
      * @return string The string with regex replacements.
      */
-    public function transform(string $input, mixed ...$args): string
+    public function transform(string $input, array $args = []): string
     {
         $needleRegex = $args[0];
         $replace = $args[1];

@@ -82,7 +82,7 @@ class StringMorpherInstance implements Stringable, JsonSerializable
 
         if (class_exists($className)) {
             $transformer = new $className();
-            $this->string = $transformer->transform($this->string, ...$args);
+            $this->string = $transformer->transform($this->string, $args);
             return $this;
         }
 
@@ -125,8 +125,11 @@ class StringMorpherInstance implements Stringable, JsonSerializable
         return $this->string;
     }
 
-    /** {@inheritDoc} */
-    public function jsonSerialize(): mixed
+    /**
+     * {@inheritDoc}
+     * @return string
+     */
+    public function jsonSerialize()
     {
         return $this->string;
     }

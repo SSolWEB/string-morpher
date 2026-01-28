@@ -17,10 +17,10 @@ final class ToUpperSnakeCaseTransformer implements StringTransformerInterface
      * Convert string to UPPER_SNAKE_CASE.
      *
      * @param string $input The string to transform.
-     * @param mixed ...$args Not used.
+     * @param array $args Not used.
      * @return string The UPPER_SNAKE_CASE string.
      */
-    public function transform(string $input, mixed ...$args): string
+    public function transform(string $input, array $args = []): string
     {
         $snakeCase = (new ToSnakeCaseTransformer())->transform($input);
         return strtoupper($snakeCase);

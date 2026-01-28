@@ -13,7 +13,7 @@
   3. Add a PHPDoc `@method` to both `src/StringMorpher.php` and `src/Instances/StringMorpherInstance.php` for IDE autocompletion.
   4. Document the method in `docs/docs/methods/`.
   5. Add or update a test in `tests/Transformers/`.
-- **All transformers** must implement `transform(string $input, mixed ...$args): string`.
+- **All transformers** must implement `transform(string $input, array $args = []): string`.
 - **Chaining:** All transformation methods return a `StringMorpherInstance` for further chaining.
 - **Usage Example:**
   ```php

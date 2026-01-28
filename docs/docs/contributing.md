@@ -24,7 +24,7 @@ feature?
 
 - Add or fix the morpher logic in `src/Transformers/`
     - Implement the `StringTransformerInterface`.
-    - Follow the main method pattern: `transform(string $input, mixed ...$args): string`.
+    - Follow the main method pattern: `transform(string $input, array $args = []): string`.
 - Update the Facade:
     - Add or edit a PHPDoc `@method` in:
         - `src/StringMorpher.php`

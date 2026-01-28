@@ -17,10 +17,10 @@ final class ToLowerTransformer implements StringTransformerInterface
      * Convert string to lowercase.
      *
      * @param string $input The string to transform.
-     * @param mixed ...$args Not used.
+     * @param array $args Not used.
      * @return string The lowercase string.
      */
-    public function transform(string $input, mixed ...$args): string
+    public function transform(string $input, array $args = []): string
     {
         return mb_strtolower($input, 'UTF-8');
     }

@@ -17,10 +17,10 @@ final class AppendTransformer implements StringTransformerInterface
      * Append a string to the input.
      *
      * @param string $input The string to transform.
-     * @param mixed ...$args Arguments: [0] => string $append The string to append.
+     * @param array $args Arguments: [0] => string $append The string to append.
      * @return string The string with the appended content.
      */
-    public function transform(string $input, mixed ...$args): string
+    public function transform(string $input, array $args = []): string
     {
         $append = $args[0] ?? '';
         return $input . $append;

@@ -19,8 +19,8 @@ interface StringTransformerInterface
      * Transform the input string using the provided arguments.
      *
      * @param string $input The string to transform.
-     * @param mixed ...$args Additional arguments required for the transformation.
+     * @param array $args Additional arguments required for the transformation.
      * @return string The transformed string.
      */
-    public function transform(string $input, mixed ...$args): string;
+    public function transform(string $input, array $args = []): string;
 }

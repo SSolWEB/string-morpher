@@ -17,10 +17,10 @@ final class ToUpperFirstTransformer implements StringTransformerInterface
      * Convert first character to uppercase.
      *
      * @param string $input The string to transform.
-     * @param mixed ...$args Not used.
+     * @param array $args Not used.
      * @return string The string with first character in uppercase.
      */
-    public function transform(string $input, mixed ...$args): string
+    public function transform(string $input, array $args = []): string
     {
         return ucfirst($input);
     }
