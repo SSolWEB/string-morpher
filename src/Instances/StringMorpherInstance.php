@@ -129,6 +129,7 @@ class StringMorpherInstance implements Stringable, JsonSerializable
      * {@inheritDoc}
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
         return $this->string;
