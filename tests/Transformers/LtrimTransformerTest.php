@@ -25,7 +25,7 @@ class LtrimTransformerTest extends TestCase
         foreach ($tests as $test) {
             $expected = array_shift($test);
             $input = array_shift($test);
-            $actual = $transformer->transform($input, ...$test);
+            $actual = $transformer->transform($input, $test);
             $this->assertEquals($expected, $actual);
         }
     }

@@ -24,7 +24,8 @@ class ReplaceTransformerTest extends TestCase
         ];
 
         foreach ($tests as $expected => $test) {
-            $actual = $transformer->transform(...$test);
+            $input = array_shift($test);
+            $actual = $transformer->transform($input, $test);
             $this->assertEquals($expected, $actual);
         }
     }
@@ -42,7 +43,8 @@ class ReplaceTransformerTest extends TestCase
         ];
 
         foreach ($tests as $expected => $test) {
-            $actual = $transformer->transform(...$test);
+            $input = array_shift($test);
+            $actual = $transformer->transform($input, $test);
             $this->assertEquals($expected, $actual);
         }
     }
