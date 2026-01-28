@@ -17,10 +17,10 @@ final class OnlyNumbersTransformer implements StringTransformerInterface
      * Remove all characters except numbers.
      *
      * @param string $input The string to transform.
-     * @param mixed ...$args Not used.
+     * @param array $args Not used.
      * @return string The string with only numbers.
      */
-    public function transform(string $input, mixed ...$args): string
+    public function transform(string $input, array $args = []): string
     {
         return preg_replace('/[^0-9]/', '', $input);
     }

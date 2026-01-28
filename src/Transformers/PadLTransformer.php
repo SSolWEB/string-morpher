@@ -17,10 +17,10 @@ final class PadLTransformer implements StringTransformerInterface
      * Pad string on the left.
      *
      * @param string $input The string to transform.
-     * @param mixed ...$args Arguments: [0] => int $length, [1] => string $padChar (optional).
+     * @param array $args Arguments: [0] => int $length, [1] => string $padChar (optional).
      * @return string The padded string.
      */
-    public function transform(string $input, mixed ...$args): string
+    public function transform(string $input, array $args = []): string
     {
         $length = $args[0] ?? 0;
         $padChar = $args[1] ?? ' ';

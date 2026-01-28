@@ -17,11 +17,11 @@ final class MaskBrCnpjTransformer implements StringTransformerInterface
      * Apply Brazilian CNPJ mask.
      *
      * @param string $input The string to transform.
-     * @param mixed ...$args Not used.
+     * @param array $args Not used.
      * @since 1.1.1 Accepts new alphanumeric format.
      * @return string The masked string.
      */
-    public function transform(string $input, mixed ...$args): string
+    public function transform(string $input, array $args = []): string
     {
         // Remove tudo que não for letra ou número
         $alnum = preg_replace('/[^A-Za-z0-9]/', '', $input);

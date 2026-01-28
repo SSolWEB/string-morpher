@@ -17,10 +17,10 @@ final class ReverseTransformer implements StringTransformerInterface
      * Reverse the input string.
      *
      * @param string $input The string to transform.
-     * @param mixed ...$args Not used.
+     * @param array $args Not used.
      * @return string The reversed string.
      */
-    public function transform(string $input, mixed ...$args): string
+    public function transform(string $input, array $args = []): string
     {
         return strrev($input);
     }

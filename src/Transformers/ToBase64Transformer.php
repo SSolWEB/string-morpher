@@ -17,10 +17,10 @@ final class ToBase64Transformer implements StringTransformerInterface
      * Encode string to Base64.
      *
      * @param string $input The string to transform.
-     * @param mixed ...$args Not used.
+     * @param array $args Not used.
      * @return string The Base64 encoded string.
      */
-    public function transform(string $input, mixed ...$args): string
+    public function transform(string $input, array $args = []): string
     {
         return base64_encode($input);
     }

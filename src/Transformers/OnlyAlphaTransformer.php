@@ -17,10 +17,10 @@ final class OnlyAlphaTransformer implements StringTransformerInterface
      * Remove all characters except letters.
      *
      * @param string $input The string to transform.
-     * @param mixed ...$args Not used.
+     * @param array $args Not used.
      * @return string The string with only letters.
      */
-    public function transform(string $input, mixed ...$args): string
+    public function transform(string $input, array $args = []): string
     {
         return preg_replace('/[^a-zA-Z]/', '', $input);
     }

@@ -18,10 +18,10 @@ final class FromBase64Transformer implements StringTransformerInterface
      * Decode Base64 string.
      *
      * @param string $input The string to transform.
-     * @param mixed ...$args Not used.
+     * @param array $args Not used.
      * @return string The decoded string.
      */
-    public function transform(string $input, mixed ...$args): string
+    public function transform(string $input, array $args = []): string
     {
         return base64_decode($input);
     }

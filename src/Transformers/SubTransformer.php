@@ -17,10 +17,10 @@ final class SubTransformer implements StringTransformerInterface
      * Extract a substring from the input string.
      *
      * @param string $input The string to transform.
-     * @param mixed ...$args Arguments: [0] => int $offset, [1] => int|null $length.
+     * @param array $args Arguments: [0] => int $offset, [1] => int|null $length.
      * @return string The substring.
      */
-    public function transform(string $input, mixed ...$args): string
+    public function transform(string $input, array $args = []): string
     {
         $offset = $args[0] ?? 0;
         $length = $args[1] ?? null;

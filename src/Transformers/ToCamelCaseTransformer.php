@@ -17,10 +17,10 @@ final class ToCamelCaseTransformer implements StringTransformerInterface
      * Convert string to camelCase.
      *
      * @param string $input The string to transform.
-     * @param mixed ...$args Not used.
+     * @param array $args Not used.
      * @return string The camelCase string.
      */
-    public function transform(string $input, mixed ...$args): string
+    public function transform(string $input, array $args = []): string
     {
         $str = str_replace(['-', '_'], ' ', $input);
         $str = ucwords($str);

@@ -17,10 +17,10 @@ final class NormalizeTransformer implements StringTransformerInterface
      * Remove all accents and special characters, preserving only alphanumeric and spaces.
      *
      * @param string $input The string to transform.
-     * @param mixed ...$args Not used.
+     * @param array $args Not used.
      * @return string The normalized string.
      */
-    public function transform(string $input, mixed ...$args): string
+    public function transform(string $input, array $args = []): string
     {
         $transliteration = [
             'á' => 'a', 'à' => 'a', 'â' => 'a', 'ã' => 'a', 'ä' => 'a', 'å' => 'a',

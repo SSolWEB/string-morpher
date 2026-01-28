@@ -17,10 +17,10 @@ final class ToUpperTransformer implements StringTransformerInterface
      * Convert string to uppercase.
      *
      * @param string $input The string to transform.
-     * @param mixed ...$args Not used.
+     * @param array $args Not used.
      * @return string The uppercase string.
      */
-    public function transform(string $input, mixed ...$args): string
+    public function transform(string $input, array $args = []): string
     {
         return mb_strtoupper($input, 'UTF-8');
     }

@@ -17,10 +17,10 @@ final class LimitTransformer implements StringTransformerInterface
      * Limit the string length.
      *
      * @param string $input The string to transform.
-     * @param mixed ...$args Arguments: [0] => int $length, [1] => string|null $end (optional).
+     * @param array $args Arguments: [0] => int $length, [1] => string|null $end (optional).
      * @return string The limited string.
      */
-    public function transform(string $input, mixed ...$args): string
+    public function transform(string $input, array $args = []): string
     {
         $length = $args[0] ?? 100;
         $end = $args[1] ?? null;

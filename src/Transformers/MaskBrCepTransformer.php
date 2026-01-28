@@ -17,10 +17,10 @@ final class MaskBrCepTransformer implements StringTransformerInterface
      * Apply Brazilian CEP mask.
      *
      * @param string $input The string to transform.
-     * @param mixed ...$args Not used.
+     * @param array $args Not used.
      * @return string The masked string.
      */
-    public function transform(string $input, mixed ...$args): string
+    public function transform(string $input, array $args = []): string
     {
         $onlyNumbers = preg_replace('/[^0-9]/', '', $input);
         if (strlen($onlyNumbers) !== 8) {

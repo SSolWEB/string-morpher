@@ -17,10 +17,10 @@ final class MaskBrRealTransformer implements StringTransformerInterface
      * Apply Brazilian Real currency mask.
      *
      * @param string $input The string to transform.
-     * @param mixed ...$args Not used.
+     * @param array $args Not used.
      * @return string The masked string.
      */
-    public function transform(string $input, mixed ...$args): string
+    public function transform(string $input, array $args = []): string
     {
         if (empty($input)) {
             return $input;
