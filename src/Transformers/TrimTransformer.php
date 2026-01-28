@@ -23,6 +23,6 @@ final class TrimTransformer implements StringTransformerInterface
     public function transform(string $input, array $args = []): string
     {
         $characters = $args[0] ?? " \n\r\t\v\0";
-        return $characters == null ? trim($input) : trim($input, $characters);
+        return trim($input, $characters);
     }
 }

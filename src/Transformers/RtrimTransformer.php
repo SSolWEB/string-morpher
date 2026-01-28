@@ -23,6 +23,6 @@ final class RtrimTransformer implements StringTransformerInterface
     public function transform(string $input, array $args = []): string
     {
         $characters = $args[0] ?? " \n\r\t\v\0";
-        return $characters === null ? rtrim($input) : rtrim($input, $characters);
+        return rtrim($input, $characters);
     }
 }
