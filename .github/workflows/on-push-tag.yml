@@ -1,0 +1,10 @@
+name: On Tag workflow
+
+on:
+  push:
+    tags:
+      - 'v**'
+
+jobs:
+  call-docs-deploy:
+    uses: ./.github/workflows/docs-deploy.yml

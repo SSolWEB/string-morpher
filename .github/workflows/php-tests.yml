@@ -1,0 +1,24 @@
+name: PHP Tests
+
+on:
+  workflow_call:
+
+jobs:
+  run-tests:
+    name: PHP ${{ matrix.php-version }} Tests
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php-version: ['8.0', '8.5']
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+      - name: Install Composer dependencies
+        run: composer update --no-progress --prefer-dist
+      - name: Run PHPUnit
+        run: vendor/bin/phpunit

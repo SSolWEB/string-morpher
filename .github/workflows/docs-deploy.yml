@@ -1,9 +1,7 @@
 name: Deploy documentation to GitHub Pages
 
 on:
-  push:
-    tags:
-      - 'v**'
+  workflow_call:
   workflow_dispatch:
     inputs:
       reason:

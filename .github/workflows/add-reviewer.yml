@@ -1,0 +1,17 @@
+name: Add reviewer
+
+on:
+  workflow_call:
+
+jobs:
+  add-reviewer:
+    name: Add Reviewer
+    runs-on: ubuntu-latest
+    steps:
+    - name: Add Reviewers
+      uses: madrapps/add-reviewers@v1
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        reviewers: viniciusvts
+        re-request-when-approved: true
+        re-request-when-changes-requested: true
