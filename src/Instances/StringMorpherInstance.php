@@ -45,6 +45,7 @@ use Stringable;
  * @method StringMorpherInstance toTrainCase()
  * @method StringMorpherInstance toDotCase()
  * @method StringMorpherInstance toFlatCase()
+ * @method StringMorpherInstance mask(string $maskPattern, array $customMap = [])
  * @method StringMorpherInstance maskBrCep()
  * @method StringMorpherInstance maskBrCpf()
  * @method StringMorpherInstance maskBrCnpj()
