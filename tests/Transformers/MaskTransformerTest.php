@@ -2,7 +2,6 @@
 
 namespace SSolWEB\StringMorpher\Tests\Transformers;
 
-use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use SSolWEB\StringMorpher\StringMorpher as SM;
 use SSolWEB\StringMorpher\Instances\StringMorpherInstance;
@@ -12,7 +11,7 @@ class MaskTransformerTest extends TestCase
 {
     public static function paramProvider()
     {
-        // input, mask pattern, expected output, optional custom map
+        // expected, input, mask pattern, optional custom map
         return [
             ['123-ABC', '123ABC', '000-AAA'],
             ['1a(2b)3c', '1a2b3c', 'N(N)N', ['N' => '[0-9][a-z]']],
@@ -26,20 +25,24 @@ class MaskTransformerTest extends TestCase
         ];
     }
 
-    #[DataProvider('paramProvider')]
-    public function testTransform($expected, $input, $maskPattern, $customMap = [])
+    public function testTransform()
     {
-        $transformer = new MaskTransformer();
-        $result = $transformer->transform($input, $maskPattern, $customMap);
-        $this->assertEquals($expected, $result);
+        foreach ($this->paramProvider() as $args) {
+            $expected = array_shift($args);
+            $transformer = new MaskTransformer();
+            $result = $transformer->transform(...$args);
+            $this->assertEquals($expected, $result);
+        }
     }
 
-    #[DataProvider('paramProvider')]
-    public function testFacade($expected, $input, $maskPattern, $customMap = [])
+    public function testFacade()
     {
-        $result = SM::mask($input, $maskPattern, $customMap);
-        $this->assertEquals($expected, $result);
-        $this->assertInstanceOf(StringMorpherInstance::class, $result);
+        foreach ($this->paramProvider() as $args) {
+            $expected = array_shift($args);
+            $result = SM::mask(...$args);
+            $this->assertEquals($expected, $result);
+            $this->assertInstanceOf(StringMorpherInstance::class, $result);
+        }
     }
 
     public function testFacadeAcceptsNull()
