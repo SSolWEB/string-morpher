@@ -5,15 +5,7 @@ namespace SSolWEB\StringMorpher\Transformers;
 use SSolWEB\StringMorpher\Contracts\StringTransformerInterface;
 
 /**
- * MaskTransformer
- *
  * Masks a string using a mask pattern and regex mapping.
- *
- * Default mapping:
- *   '0' => '[0-9]'
- *   'A' => '[A-Za-z]'
- *   'S' => '[A-Za-z0-9]'
- *
  * Custom mapping can be provided as an associative array.
  */
 class MaskTransformer implements StringTransformerInterface
