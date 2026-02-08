@@ -4,6 +4,7 @@ String Morpher A powerful and versatile string manipulation library designed for
 
 ## Status
 
+[![Build Status](https://github.com/SSolWEB/string-morpher/actions/workflows/on-push-main.yml/badge.svg)](https://github.com/SSolWEB/string-morpher/actions/workflows/on-push-main.yml)
 [![Packagist Version](https://img.shields.io/packagist/v/ssolweb/string-morpher)](https://packagist.org/packages/ssolweb/string-morpher)
 [![Packagist License](https://img.shields.io/packagist/l/ssolweb/string-morpher)](https://packagist.org/packages/ssolweb/string-morpher)
 
