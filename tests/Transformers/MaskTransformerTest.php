@@ -2,6 +2,7 @@
 
 namespace SSolWEB\StringMorpher\Tests\Transformers;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use SSolWEB\StringMorpher\StringMorpher as SM;
 use SSolWEB\StringMorpher\Instances\StringMorpherInstance;
@@ -24,20 +25,16 @@ class MaskTransformerTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider paramProvider
-     */
-    public function testTransform($expected, $input, $maskPattern, $customMap = null)
+    #[DataProvider('paramProvider')]
+    public function testTransform($expected, $input, $maskPattern, $customMap = [])
     {
         $transformer = new MaskTransformer();
         $result = $transformer->transform($input, $maskPattern, $customMap);
         $this->assertEquals($expected, $result);
     }
 
-    /**
-     * @dataProvider paramProvider
-     */
-    public function testFacade($expected, $input, $maskPattern, $customMap = null)
+    #[DataProvider('paramProvider')]
+    public function testFacade($expected, $input, $maskPattern, $customMap = [])
     {
         $result = SM::mask($input, $maskPattern, $customMap);
         $this->assertEquals($expected, $result);
