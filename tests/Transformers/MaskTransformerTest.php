@@ -41,6 +41,13 @@ class MaskTransformerTest extends TestCase
         $this->assertInstanceOf(StringMorpherInstance::class, $result);
     }
 
+    public function testFacadeAcceptsNull()
+    {
+        $result = SM::mask(null, '000-AAA');
+        $this->assertEquals('', $result);
+        $this->assertInstanceOf(StringMorpherInstance::class, $result);
+    }
+
     public function testInvalidCustomMapKeyThrows()
     {
         $this->expectException(\InvalidArgumentException::class);
