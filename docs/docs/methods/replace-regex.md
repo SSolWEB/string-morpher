@@ -18,3 +18,14 @@ $string = SM::make($string)
     ->replaceRegex('/\s+/', ' ');
 echo $string; // The quick brown fox jumps
 ```
+
+### Perform a regular expression search and replace
+
+```php
+$string = 'March 24, 2025';
+$string = SM::limit($string, '/(\w+) (\d+), (\d+)/i', '$3, $1 $2');
+// or
+$string = SM::make($string)
+    ->limit('/(\w+) (\d+), (\d+)/i', '$3, $1 $2');
+echo $string; // '2025, March 24'
+```
