@@ -28,7 +28,7 @@
 ## Developer Workflows
 - **Install dependencies:** `composer install`
 - **Run tests:** `vendor/bin/phpunit`
-- **Lint code:** `vendor/bin/phpcs`
+- **Lint code:** `vendor/bin/phpcs`. Follow rules in `phpcs.xml`.
 - **Add package:** `composer require vendor/package`
 - **Document methods:** Add/modify markdown in `docs/docs/methods/`.
 
