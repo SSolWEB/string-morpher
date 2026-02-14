@@ -27,6 +27,7 @@ use Stringable;
  * @method StringMorpherInstance replace(array|string $needle, array|string $replace, bool $caseSensitive = true)
  * @method StringMorpherInstance replaceRegex(array|string $needleRegex, array|string $replace)
  * @method StringMorpherInstance reverse()
+ * @method StringMorpherInstance stripTags(string[]|string|null $allowedTags = null)
  * @method StringMorpherInstance sub(int $offset, int|null $length = null)
  * @method StringMorpherInstance toBase64()
  * @method StringMorpherInstance toLower()
