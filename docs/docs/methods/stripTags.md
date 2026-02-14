@@ -1,4 +1,10 @@
-# StripTags
+---
+title: "stripTags"
+parent: Methods
+nav_order:
+---
+
+# stripTags
 
 Removes all HTML and PHP tags from a string. Optionally allows certain tags (as in PHP's strip_tags).
 
