@@ -19,7 +19,7 @@ use SSolWEB\StringMorpher\Instances\StringMorpherInstance;
  * @method static StringMorpherInstance replace(string $input, array|string $needle, array|string $replace, bool $cs)
  * @method static StringMorpherInstance replaceRegex(string $input, array|string $needleRegex, array|string $replace)
  * @method static StringMorpherInstance reverse(string $input)
- * @method static StringMorpherInstance stripTags(string[]|string|null $allowedTags = null)
+ * @method static StringMorpherInstance stripTags(string $input, string[]|string|null $allowedTags = null)
  * @method static StringMorpherInstance sub(string $input, int $offset, int|null $length = null)
  * @method static StringMorpherInstance toBase64(string $input)
  * @method static StringMorpherInstance toLower(string $input)
