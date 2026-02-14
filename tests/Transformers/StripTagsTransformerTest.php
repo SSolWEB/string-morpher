@@ -50,5 +50,9 @@ class StripTagsTransformerTest extends TestCase
         $result = SM::stripTags(null);
         $this->assertEquals('', $result);
         $this->assertInstanceOf(StringMorpherInstance::class, $result);
+        // other example
+        $result = SM::stripTags(null, ['<p>']);
+        $this->assertEquals('', $result);
+        $this->assertInstanceOf(StringMorpherInstance::class, $result);
     }
 }
