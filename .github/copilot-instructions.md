@@ -11,7 +11,7 @@
   1. Implement `StringTransformerInterface` (`src/Contracts/StringTransformerInterface.php`).
   2. Place the class in `src/Transformers/`.
   3. Add a PHPDoc `@method` to both `src/StringMorpher.php` and `src/Instances/StringMorpherInstance.php` for IDE autocompletion.
-  4. Document the method in `docs/docs/methods/`.
+  4. Document the method in `docs/docs/methods/`. See other examples for format.
   5. Add or update a test in `tests/Transformers/`.
 - **All transformers** must implement `transform(string $input, mixed ...$args): string`.
 - **Chaining:** All transformation methods return a `StringMorpherInstance` for further chaining.
@@ -28,7 +28,7 @@
 ## Developer Workflows
 - **Install dependencies:** `composer install`
 - **Run tests:** `vendor/bin/phpunit`
-- **Lint code:** `vendor/bin/phpcs`
+- **Lint code:** `vendor/bin/phpcs`. Follow rules in `phpcs.xml`.
 - **Add package:** `composer require vendor/package`
 - **Document methods:** Add/modify markdown in `docs/docs/methods/`.
 
