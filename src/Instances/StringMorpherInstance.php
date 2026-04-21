@@ -17,6 +17,7 @@ use Stringable;
  *
  * @method StringMorpherInstance append(string $append)
  * @method StringMorpherInstance capitalize()
+ * @method StringMorpherInstance encodeUrl()
  * @method StringMorpherInstance fromBase64()
  * @method StringMorpherInstance limit(int $length, string|null $end = null)
  * @method StringMorpherInstance normalize()
