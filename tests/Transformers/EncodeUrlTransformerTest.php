@@ -23,6 +23,7 @@ class EncodeUrlTransformerTest extends TestCase
             ['%20', ' '],
         ];
     }
+
     public function testTransform()
     {
         $transformer = new EncodeUrlTransformer();
@@ -43,7 +44,6 @@ class EncodeUrlTransformerTest extends TestCase
             $this->assertInstanceOf(StringMorpherInstance::class, $result);
         }
     }
-    
 
     public function testFacadeAcceptsNull()
     {
