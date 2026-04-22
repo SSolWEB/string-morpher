@@ -6,11 +6,6 @@
     <arg name="colors"/>
     <rule ref="PSR12"/>
     <!-- Rules in alphabetical order-->
-    <rule ref="Generic.Files.LineEndings">
-        <properties>
-            <property name="eolChar" value="\r\n"/>
-        </properties>
-    </rule>
     <rule ref="Generic.Files.LineLength">
         <properties>
             <property name="lineLimit" value="120"/>
