@@ -44,6 +44,7 @@ use SSolWEB\StringMorpher\Instances\StringMorpherInstance;
  * @method static StringMorpherInstance maskBrCnpj(string $input)
  * @method static StringMorpherInstance maskBrPhone(string $input)
  * @method static StringMorpherInstance maskBrReal(string $input)
+ * @method static StringMorpherInstance hideEmail(string $input)
  */
 class StringMorpher
 {
