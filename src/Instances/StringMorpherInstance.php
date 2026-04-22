@@ -52,6 +52,7 @@ use Stringable;
  * @method StringMorpherInstance maskBrCnpj()
  * @method StringMorpherInstance maskBrPhone()
  * @method StringMorpherInstance maskBrReal()
+ * @method StringMorpherInstance hideEmail()
  */
 class StringMorpherInstance implements Stringable, JsonSerializable
 {
