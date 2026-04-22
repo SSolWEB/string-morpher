@@ -60,6 +60,8 @@ final class HideEmailTransformer implements StringTransformerInterface
      * Mask a segment: keep the first two characters, replace the rest with `*`.
      * Shorter segments keep whatever prefix they have and add one star so the
      * mask is always visible.
+     * @param string $segment The string segment to mask.
+     * @return string The masked segment.
      */
     private function mask(string $segment): string
     {
