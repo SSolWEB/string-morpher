@@ -8,6 +8,16 @@ use SSolWEB\StringMorpher\Contracts\StringTransformerInterface;
 
 final class HidePartialTransformer implements StringTransformerInterface
 {
+    /**
+     * Masks the middle of $input while keeping a configurable prefix and suffix visible.
+     *
+     * @param string $input The string to transform.
+     * @param mixed ...$args Arguments: [0] => int $prefix (default 0), [1] => int $suffix (default 0),
+     *                       [2] => string $maskChar (default '*').
+     * @return string The string with the middle masked, or the input unchanged when too short.
+     * @throws \InvalidArgumentException When prefix/suffix are not non-negative integers,
+     *                                   or $maskChar is not a single character.
+     */
     public function transform(string $input, mixed ...$args): string
     {
         $prefix = $args[0] ?? 0;
