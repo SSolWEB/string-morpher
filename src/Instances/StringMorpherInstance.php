@@ -53,6 +53,7 @@ use Stringable;
  * @method StringMorpherInstance maskBrPhone()
  * @method StringMorpherInstance maskBrReal()
  * @method StringMorpherInstance hideEmail()
+ * @method StringMorpherInstance hidePartial(int $prefix = 0, int $suffix = 0, string $maskChar = '*')
  */
 class StringMorpherInstance implements Stringable, JsonSerializable
 {
