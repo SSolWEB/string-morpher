@@ -1,4 +1,4 @@
-name: PHP Tests
+name: PHP Linter
 
 on:
   workflow_call:

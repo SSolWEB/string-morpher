@@ -1,4 +1,10 @@
-# Mask
+---
+title: "maskBrReal"
+parent: Methods
+nav_order:
+---
+
+# mask
 
 Masks a string using a mask pattern and regex mapping.
 
