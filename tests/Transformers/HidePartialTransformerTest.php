@@ -85,4 +85,18 @@ class HidePartialTransformerTest extends TestCase
 
         $this->assertEquals('日***字', $transformer->transform('日本語文字', 1, 1));
     }
+
+    public function testFacadeAcceptsNull()
+    {
+        $result = SM::hidePartial(null, 2, 2);
+        $this->assertEquals('', $result);
+        $this->assertInstanceOf(StringMorpherInstance::class, $result);
+    }
+
+    public function testFacadeAcceptsEmptyString()
+    {
+        $result = SM::hidePartial('', 2, 2);
+        $this->assertEquals('', $result);
+        $this->assertInstanceOf(StringMorpherInstance::class, $result);
+    }
 }
