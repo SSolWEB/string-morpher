@@ -28,9 +28,6 @@ jobs:
             tests:
               - tests/**
 
-  call-add-reviewer:
-    uses: ./.github/workflows/add-reviewer.yml
-
   call-php-tests:
     needs: changed_files
     if: |
