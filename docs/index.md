@@ -5,7 +5,7 @@ nav_order: 1
 
 # String Morpher
 
-This library is designed with a focus on simplicity and efficiency, allowing developers to chain multiple methods in a seamless and readable manner. This makes it easy to perform complex string manipulations in a single flow.
+String Morpher offers a fluent API, specifically designed for string manipulation, allowing developers to chain multiple methods in a seamless and readable manner. This makes it easy to perform complex string manipulations in a single and concise flow without the need for auxiliary functions or manual manipulation.
 
 ```php
 use SSolWEB\StringMorpher\StringMorpher as SM; // Dont Forget to import the magic!

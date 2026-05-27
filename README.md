@@ -1,6 +1,6 @@
 # String Morpher, A powerful string manipulation library
 
-String Morpher A powerful and versatile string manipulation library designed for developers who need efficient and intuitive solutions for modifying and masking strings.
+String Morpher offers a fluent API, specifically designed for string manipulation, allowing developers to chain multiple methods in a seamless and readable manner. This makes it easy to perform complex string manipulations in a single and concise flow without the need for auxiliary functions or manual manipulation.
 
 ## Status
 
