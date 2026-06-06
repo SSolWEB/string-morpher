@@ -26,6 +26,7 @@ use Stringable;
  * @method StringMorpherInstance onlyNumbers()
  * @method StringMorpherInstance padL(int $length, string $padChar = ' ')
  * @method StringMorpherInstance padR(int $length, string $padChar = ' ')
+ * @method StringMorpherInstance remove(array|string $needle, bool $caseSensitive = true)
  * @method StringMorpherInstance replace(array|string $needle, array|string $replace, bool $caseSensitive = true)
  * @method StringMorpherInstance replaceRegex(array|string $needleRegex, array|string $replace)
  * @method StringMorpherInstance reverse()

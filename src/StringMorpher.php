@@ -18,6 +18,7 @@ use SSolWEB\StringMorpher\Instances\StringMorpherInstance;
  * @method static StringMorpherInstance onlyNumbers(string $input)
  * @method static StringMorpherInstance padL(string $input, int $length, string $padChar = ' ')
  * @method static StringMorpherInstance padR(string $input, int $length, string $padChar = ' ')
+ * @method static StringMorpherInstance remove(string $input, array|string $needle, bool $cs = true)
  * @method static StringMorpherInstance replace(string $input, array|string $needle, array|string $replace, bool $cs)
  * @method static StringMorpherInstance replaceRegex(string $input, array|string $needleRegex, array|string $replace)
  * @method static StringMorpherInstance reverse(string $input)
