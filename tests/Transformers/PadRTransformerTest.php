@@ -19,7 +19,7 @@ class PadRTransformerTest extends TestCase
             ['The quick brown fox jumps', 'The quick brown fox jumps', 11, '1'],
             ['abc123aa', 'abc123', 8, 'a'],
             ['hello-world  ', 'hello-world', 13, ' '],
-            ['hello-world  ', 'hello-world', 13],
+            ['hello-worldy  ', 'hello-worldy', 14],
             ['11122233344', '111222333', 11, '4'],
         ];
 
@@ -37,9 +37,9 @@ class PadRTransformerTest extends TestCase
             'The quick brown fox jumps' => ['The quick brown fox jumps', 11, '1'],
             'abc123aa' => ['abc123', 8, 'a'],
             'hello-world  ' => ['hello-world', 13, ' '],
-            'hello-world  ' => ['hello-world', 13],
+            'hello-worldy  ' => ['hello-worldy', 14],
             '11122233344' => ['111222333', 11, '4'],
-            '11122233344' => [111222333, 11, '4'],
+            '112233445566' => [1122334455, 12, '6'],
         ];
 
         foreach ($tests as $expected => $params) {

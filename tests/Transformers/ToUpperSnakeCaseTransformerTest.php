@@ -17,9 +17,9 @@ class ToUpperSnakeCaseTransformerTest extends TestCase
 
         $tests = [
             'UPPER_SNAKE_CASE_EXAMPLE' => 'Upper snake case example',
-            'UPPER_SNAKE_CASE_EXAMPLE' => 'upperSnakeCaseExample',
-            'UPPER_SNAKE_CASE_EXAMPLE' => 'upper-snake-case-example',
-            'UPPER_SNAKE_CASE_EXAMPLE' => 'Upper_Snake-Case_Example',
+            'UPPER_SNAKE_CASE_EXAMPLE2' => 'upperSnakeCaseExample2',
+            'UPPER_SNAKE_CASE_EXAMPLE_3' => 'upper-snake-case-example-3',
+            'UPPER_SNAKE_CASE_EXAMPLE_4' => 'Upper_Snake-Case_Example_4',
             'UPPER_SNAKE_CASE' => 'UpperSnakeCase',
             'U' => 'U',
             '' => '',
@@ -35,9 +35,9 @@ class ToUpperSnakeCaseTransformerTest extends TestCase
     {
         $tests = [
             'UPPER_SNAKE_CASE_EXAMPLE' => ['Upper snake case example'],
-            'UPPER_SNAKE_CASE_EXAMPLE' => ['upperSnakeCaseExample'],
-            'UPPER_SNAKE_CASE_EXAMPLE' => ['upper-snake-case-example'],
-            'UPPER_SNAKE_CASE_EXAMPLE' => ['Upper_Snake-Case_Example'],
+            'UPPER_SNAKE_CASE_EXAMPLE2' => ['upperSnakeCaseExample2'],
+            'UPPER_SNAKE_CASE_EXAMPLE_3' => ['upper-snake-case-example-3'],
+            'UPPER_SNAKE_CASE_EXAMPLE_4' => ['Upper_Snake-Case_Example_4'],
             'UPPER_SNAKE_CASE' => ['UpperSnakeCase'],
             'U' => ['U'],
             '' => [''],

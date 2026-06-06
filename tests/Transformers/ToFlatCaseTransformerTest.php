@@ -17,9 +17,9 @@ class ToFlatCaseTransformerTest extends TestCase
 
         $tests = [
             'flatcaseexample' => 'Flat case example',
-            'flatcaseexample' => 'flatCaseExample',
-            'flatcaseexample' => 'flat_case_example',
-            'flatcaseexample' => 'Flat_Case-Example',
+            'flatcaseexample2' => 'flatCaseExample2',
+            'flatcaseexample3' => 'flat_case_example_3',
+            'flatcaseexample4' => 'Flat_Case-Example 4',
             'flatcase' => 'FlatCase',
             'f' => 'F',
             '' => '',
@@ -35,9 +35,9 @@ class ToFlatCaseTransformerTest extends TestCase
     {
         $tests = [
             'flatcaseexample' => ['Flat case example'],
-            'flatcaseexample' => ['flatCaseExample'],
-            'flatcaseexample' => ['flat_case_example'],
-            'flatcaseexample' => ['Flat_Case-Example'],
+            'flatcaseexample2' => ['flatCaseExample2'],
+            'flatcaseexample3' => ['flat_case_example_3'],
+            'flatcaseexample4' => ['Flat_Case-Example 4'],
             'flatcase' => ['FlatCase'],
             'f' => ['F'],
             '' => [''],

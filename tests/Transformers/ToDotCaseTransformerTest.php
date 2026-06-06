@@ -17,9 +17,9 @@ class ToDotCaseTransformerTest extends TestCase
 
         $tests = [
             'dot.case.example' => 'Dot case example',
-            'dot.case.example' => 'dotCaseExample',
-            'dot.case.example' => 'dot_case_example',
-            'dot.case.example' => 'Dot_Case-Example',
+            'dot.case.example2' => 'dotCaseExample2',
+            'dot.case.example.3' => 'dot_case_example_3',
+            'dot.case.example.4' => 'Dot_Case-Example 4',
             'dot.case' => 'DotCase',
             'd' => 'D',
             '' => '',
@@ -35,9 +35,9 @@ class ToDotCaseTransformerTest extends TestCase
     {
         $tests = [
             'dot.case.example' => ['Dot case example'],
-            'dot.case.example' => ['dotCaseExample'],
-            'dot.case.example' => ['dot_case_example'],
-            'dot.case.example' => ['Dot_Case-Example'],
+            'dot.case.example2' => ['dotCaseExample2'],
+            'dot.case.example.3' => ['dot_case_example_3'],
+            'dot.case.example.4' => ['Dot_Case-Example 4'],
             'dot.case' => ['DotCase'],
             'd' => ['D'],
             '' => [''],

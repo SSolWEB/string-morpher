@@ -17,9 +17,9 @@ class ToKebabCaseTransformerTest extends TestCase
 
         $tests = [
             'kebab-case-example' => 'Kebab case example',
-            'kebab-case-example' => 'kebabCaseExample',
-            'kebab-case-example' => 'kebab_case_example',
-            'kebab-case-example' => 'Kebab_Case-Example',
+            'kebab-case-example2' => 'kebabCaseExample2',
+            'kebab-case-example-3' => 'kebab_case_example_3',
+            'kebab-case-example-4' => 'Kebab_Case-Example 4',
             'kebab-case' => 'KebabCase',
             'k' => 'K',
             '' => '',
@@ -35,9 +35,9 @@ class ToKebabCaseTransformerTest extends TestCase
     {
         $tests = [
             'kebab-case-example' => ['Kebab case example'],
-            'kebab-case-example' => ['kebabCaseExample'],
-            'kebab-case-example' => ['kebab_case_example'],
-            'kebab-case-example' => ['Kebab_Case-Example'],
+            'kebab-case-example2' => ['kebabCaseExample2'],
+            'kebab-case-example-3' => ['kebab_case_example_3'],
+            'kebab-case-example-4' => ['Kebab_Case-Example 4'],
             'kebab-case' => ['KebabCase'],
             'k' => ['K'],
             '' => [''],

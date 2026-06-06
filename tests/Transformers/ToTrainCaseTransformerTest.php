@@ -17,9 +17,9 @@ class ToTrainCaseTransformerTest extends TestCase
 
         $tests = [
             'Train-Case-Example' => 'Train case example',
-            'Train-Case-Example' => 'trainCaseExample',
-            'Train-Case-Example' => 'train_case_example',
-            'Train-Case-Example' => 'Train_Case-Example',
+            'Train-Case-Example2' => 'trainCaseExample2',
+            'Train-Case-Example-3' => 'train_case_example_3',
+            'Train-Case-Example-4' => 'Train_Case-Example 4',
             'Train-Case' => 'TrainCase',
             'T' => 'T',
             '' => '',
@@ -35,9 +35,9 @@ class ToTrainCaseTransformerTest extends TestCase
     {
         $tests = [
             'Train-Case-Example' => ['Train case example'],
-            'Train-Case-Example' => ['trainCaseExample'],
-            'Train-Case-Example' => ['train_case_example'],
-            'Train-Case-Example' => ['Train_Case-Example'],
+            'Train-Case-Example2' => ['trainCaseExample2'],
+            'Train-Case-Example-3' => ['train_case_example_3'],
+            'Train-Case-Example-4' => ['Train_Case-Example 4'],
             'Train-Case' => ['TrainCase'],
             'T' => ['T'],
             '' => [''],

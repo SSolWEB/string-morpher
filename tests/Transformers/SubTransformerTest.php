@@ -19,7 +19,7 @@ class SubTransformerTest extends TestCase
             ['f6g7h8i9j0', 'a1b2c3d4e5f6g7h8i9j0kl)m%n$o#p;qrstuvwxyz', 10, 10],
             ['ef', 'abcdef', -2],
             ['cde', 'abcdef', 2, -1],
-            ['cde', 'abcdef', -4, -1],
+            ['bcde', 'abcdef', -5, -1],
             ['', 'abcdef', 4, -4],
             ['lo wo', 'Hello world', 3, 5],
         ];
@@ -38,7 +38,7 @@ class SubTransformerTest extends TestCase
             'f6g7h8i9j0' => ['a1b2c3d4e5f6g7h8i9j0kl)m%n$o#p;qrstuvwxyz', 10, 10],
             'ef' => ['abcdef', -2],
             'cde' => ['abcdef', 2, -1],
-            'cde' => ['abcdef', -4, -1],
+            'bcde' => ['abcdef', -5, -1],
             '' => ['abcdef', 4, -4],
             'lo wo' => ['Hello world', 3, 5],
         ];
