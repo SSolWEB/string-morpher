@@ -17,9 +17,9 @@ class TrimTransformerTest extends TestCase
 
         $tests = [
             ['Hello world', ' Hello world '],
-            ['Hello world', ' Hello world ', ' '],
-            ['Hello world', ' Hello world ', ' \n\r\t\v\0'],
-            [' Hello world ', ' Hello world ', '\n\r\t\v\0'],
+            ['Hello world2', ' Hello world2 ', ' '],
+            ['Hello world3', ' Hello world3 ', ' \n\r\t\v\0'],
+            [' Hello world4 ', ' Hello world4 ', '\n\r\t\v\0'],
         ];
 
         foreach ($tests as $test) {
@@ -34,8 +34,8 @@ class TrimTransformerTest extends TestCase
     {
         $tests = [
             'Hello world' => [' Hello world '],
-            'Hello world' => [' Hello world ', ' '],
-            'Hello world' => [' Hello world ', ' \n\r\t\v\0'],
+            'Hello world2' => [' Hello world2 ', ' '],
+            'Hello world3' => [' Hello world3 ', ' \n\r\t\v\0'],
             ' Hello world ' => [' Hello world ', '\n\r\t\v\0'],
         ];
 

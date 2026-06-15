@@ -17,9 +17,9 @@ class ToCamelCaseTransformerTest extends TestCase
 
         $tests = [
             'camelCaseExample' => 'Camel case example',
-            'camelCaseExample' => 'camel_case_example',
-            'camelCaseExample' => 'camel-case-example',
-            'camelCaseExample' => 'Camel_Case-Example',
+            'camelCaseExample2' => 'camel_case_example2',
+            'camelCaseExample3' => 'camel-case-example-3',
+            'camelCaseExample4' => 'Camel_Case-Example 4',
             'camelCase' => 'CamelCase',
             'c' => 'C',
             '' => '',
@@ -35,9 +35,9 @@ class ToCamelCaseTransformerTest extends TestCase
     {
         $tests = [
             'camelCaseExample' => ['Camel case example'],
-            'camelCaseExample' => ['camel_case_example'],
-            'camelCaseExample' => ['camel-case-example'],
-            'camelCaseExample' => ['Camel_Case-Example'],
+            'camelCaseExample2' => ['camel_case_example2'],
+            'camelCaseExample3' => ['camel-case-example-3'],
+            'camelCaseExample4' => ['Camel_Case-Example 4'],
             'camelCase' => ['CamelCase'],
             'c' => ['C'],
             '' => [''],

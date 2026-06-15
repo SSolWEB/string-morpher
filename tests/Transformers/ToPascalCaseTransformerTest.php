@@ -17,9 +17,9 @@ class ToPascalCaseTransformerTest extends TestCase
 
         $tests = [
             'PascalCaseExample' => 'Pascal case example',
-            'PascalCaseExample' => 'pascal_case_example',
-            'PascalCaseExample' => 'pascal-case-example',
-            'PascalCaseExample' => 'Pascal_Case-Example',
+            'PascalCaseExample2' => 'pascal_case_example2',
+            'PascalCaseExample3' => 'pascal-case-example3',
+            'PascalCaseExample4' => 'Pascal_Case-Example4',
             'PascalCase' => 'PascalCase',
             'P' => 'P',
             '' => '',
@@ -35,9 +35,9 @@ class ToPascalCaseTransformerTest extends TestCase
     {
         $tests = [
             'PascalCaseExample' => ['Pascal case example'],
-            'PascalCaseExample' => ['pascal_case_example'],
-            'PascalCaseExample' => ['pascal-case-example'],
-            'PascalCaseExample' => ['Pascal_Case-Example'],
+            'PascalCaseExample2' => ['pascal_case_example2'],
+            'PascalCaseExample3' => ['pascal-case-example3'],
+            'PascalCaseExample4' => ['Pascal_Case-Example4'],
             'PascalCase' => ['PascalCase'],
             'P' => ['P'],
             '' => [''],
