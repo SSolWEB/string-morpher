@@ -42,6 +42,7 @@ use SSolWEB\StringMorpher\Instances\StringMorpherInstance;
  * @method static StringMorpherInstance toDotCase(string $input)
  * @method static StringMorpherInstance toFlatCase(string $input)
  * @method static StringMorpherInstance wrap(string $input, string|null $prefix, string|null $suffix = null)
+ * @method static StringMorpherInstance unwrap(string $input, string|null $prefix, string|null $suffix = null)
  * @method static StringMorpherInstance mask(string $input, string $maskPattern, array $customMap = [])
  * @method static StringMorpherInstance maskBrCep(string $input)
  * @method static StringMorpherInstance maskBrCpf(string $input)

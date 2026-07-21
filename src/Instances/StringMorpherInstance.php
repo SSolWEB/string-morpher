@@ -50,6 +50,7 @@ use Stringable;
  * @method StringMorpherInstance toDotCase()
  * @method StringMorpherInstance toFlatCase()
  * @method StringMorpherInstance wrap(string|null $prefix, string|null $suffix = null)
+ * @method StringMorpherInstance unwrap(string|null $prefix, string|null $suffix = null)
  * @method StringMorpherInstance mask(string $maskPattern, array $customMap = [])
  * @method StringMorpherInstance maskBrCep()
  * @method StringMorpherInstance maskBrCpf()
