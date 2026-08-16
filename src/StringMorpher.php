@@ -33,6 +33,7 @@ use SSolWEB\StringMorpher\Instances\StringMorpherInstance;
  * @method static StringMorpherInstance rtrim(string $input, string $characters = " \n\r\t\v\0")
  * @method static StringMorpherInstance withoutSpaces(string $input)
  * @method static StringMorpherInstance prepend(string $input, string|null $prefix)
+ * @method static StringMorpherInstance slugify(string $input, string $separator = '-')
  * @method static StringMorpherInstance toCamelCase(string $input)
  * @method static StringMorpherInstance toPascalCase(string $input)
  * @method static StringMorpherInstance toSnakeCase(string $input)
