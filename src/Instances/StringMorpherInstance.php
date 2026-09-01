@@ -41,6 +41,7 @@ use Stringable;
  * @method StringMorpherInstance rtrim(string $characters = " \n\r\t\v\0")
  * @method StringMorpherInstance withoutSpaces()
  * @method StringMorpherInstance prepend(string|null $prefix)
+ * @method StringMorpherInstance slugify(string $separator = '-')
  * @method StringMorpherInstance toCamelCase()
  * @method StringMorpherInstance toPascalCase()
  * @method StringMorpherInstance toSnakeCase()
