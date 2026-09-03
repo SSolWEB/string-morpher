@@ -559,249 +559,305 @@
     
     "relUrl": "/docs/methods/rtrim/#usage"
   },"80": {
+    "doc": "slugify",
+    "title": "slugify",
+    "content": "This method converts the string into a URL- and file-safe slug. It normalizes characters by stripping accents, converts everything to lowercase, replaces all non-alphanumeric characters with a given separator (defaulting to -), collapses multiple consecutive separators, and trims the separators from the start and end of the string. It behaves similarly to toKebabCase, but is much stricter and designed for creating safe identifiers, making it ideal for URLs, file names, user handles, database keys, and SEO purposes. ",
+    "url": "/string-morpher/docs/methods/slugify/",
+    
+    "relUrl": "/docs/methods/slugify/"
+  },"81": {
+    "doc": "slugify",
+    "title": "Usage",
+    "content": "$string = 'Olá mundo, como vai?'; $string = SM::slugify($string); // or $string = SM::make($string) -&gt;slugify(); echo $string; // ola-mundo-como-vai . With a Custom Separator . You can optionally provide a custom separator to be used instead of a hyphen. $string = 'Olá mundo, como vai?'; $string = SM::slugify($string, '_'); // or $string = SM::make($string) -&gt;slugify('_'); echo $string; // ola_mundo_como_vai . ",
+    "url": "/string-morpher/docs/methods/slugify/#usage",
+    
+    "relUrl": "/docs/methods/slugify/#usage"
+  },"82": {
     "doc": "stripTags",
     "title": "stripTags",
     "content": "Removes all HTML and PHP tags from a string. Optionally allows certain tags (as in PHP’s strip_tags). ",
     "url": "/string-morpher/docs/methods/stripTags/",
     
     "relUrl": "/docs/methods/stripTags/"
-  },"81": {
+  },"83": {
     "doc": "stripTags",
     "title": "Usage",
     "content": "$clean = SM::stripTags('&lt;p&gt;Paragraph&lt;/p&gt;&lt;b&gt;Bold&lt;/b&gt;'); // Output: 'ParagraphBold' $clean = SM::make('&lt;p&gt;Welcome&lt;/p&gt;&lt;a href=\"#\"&gt;here&lt;/a&gt;')-&gt;stripTags(); // Output: 'Welcomehere' . ",
     "url": "/string-morpher/docs/methods/stripTags/#usage",
     
     "relUrl": "/docs/methods/stripTags/#usage"
-  },"82": {
+  },"84": {
     "doc": "stripTags",
     "title": "Parameters",
     "content": ". | allowedTags (string, optional): Tags to allow, e.g., ‘’. | . $clean = SM::stripTags('&lt;p&gt;Paragraph&lt;/p&gt;&lt;b&gt;Bold&lt;/b&gt;', '&lt;b&gt;'); // Output: 'Paragraph&lt;b&gt;Bold&lt;/b&gt;' $clean = SM::make('&lt;p&gt;Welcome&lt;/p&gt;&lt;a href=\"#\"&gt;here&lt;/a&gt;')-&gt;stripTags('&lt;p&gt;'); // Output: '&lt;p&gt;Welcome&lt;/p&gt;here' . ",
     "url": "/string-morpher/docs/methods/stripTags/#parameters",
     
     "relUrl": "/docs/methods/stripTags/#parameters"
-  },"83": {
+  },"85": {
     "doc": "stripTags",
     "title": "Returns",
     "content": "A sanitized string with tags removed, except allowed tags. ",
     "url": "/string-morpher/docs/methods/stripTags/#returns",
     
     "relUrl": "/docs/methods/stripTags/#returns"
-  },"84": {
+  },"86": {
     "doc": "stripTags",
     "title": "Notes",
     "content": ". | Useful for sanitizing user input for display, emails, logs, or further transformations. | Helps avoid XSS and rendering issues. | . ",
     "url": "/string-morpher/docs/methods/stripTags/#notes",
     
     "relUrl": "/docs/methods/stripTags/#notes"
-  },"85": {
+  },"87": {
     "doc": "sub",
     "title": "sub",
     "content": "This method extracts a portion of the string (substring) starting at a specified position and with a specified length. ",
     "url": "/string-morpher/docs/methods/sub/",
     
     "relUrl": "/docs/methods/sub/"
-  },"86": {
+  },"88": {
     "doc": "sub",
     "title": "Usage",
     "content": "$string = 'Hello world'; $string = SM::sub($string, 3, 5); // or $string = SM::make($string) -&gt;sub(3, 5); echo $string; // lo wo . ",
     "url": "/string-morpher/docs/methods/sub/#usage",
     
     "relUrl": "/docs/methods/sub/#usage"
-  },"87": {
+  },"89": {
     "doc": "toBase64",
     "title": "toBase64",
     "content": "This method encodes the string to Base64 format. ",
     "url": "/string-morpher/docs/methods/to-base64/",
     
     "relUrl": "/docs/methods/to-base64/"
-  },"88": {
+  },"90": {
     "doc": "toBase64",
     "title": "Usage",
     "content": "$string = 'Hello world'; $string = SM::toBase64($string); // or $string = SM::make($string) -&gt;toBase64(); echo $string; // SGVsbG8gd29ybGQ= . ",
     "url": "/string-morpher/docs/methods/to-base64/#usage",
     
     "relUrl": "/docs/methods/to-base64/#usage"
-  },"89": {
+  },"91": {
     "doc": "toCamelCase",
     "title": "toCamelCase",
     "content": "This method converts the string to camelCase format, where the first word is lowercase and subsequent words are capitalized with no spaces. ",
     "url": "/string-morpher/docs/methods/to-camel-case/",
     
     "relUrl": "/docs/methods/to-camel-case/"
-  },"90": {
+  },"92": {
     "doc": "toCamelCase",
     "title": "Usage",
     "content": "$string = 'example string case'; $string = SM::toCamelCase($string); // or $string = SM::make($string) -&gt;toCamelCase(); echo $string; // exampleStringCase . ",
     "url": "/string-morpher/docs/methods/to-camel-case/#usage",
     
     "relUrl": "/docs/methods/to-camel-case/#usage"
-  },"91": {
+  },"93": {
     "doc": "toDotCase",
     "title": "toDotCase",
     "content": "This method converts the string to dot.case format, where words are separated by periods and all lowercase. ",
     "url": "/string-morpher/docs/methods/to-dot-case/",
     
     "relUrl": "/docs/methods/to-dot-case/"
-  },"92": {
+  },"94": {
     "doc": "toDotCase",
     "title": "Usage",
     "content": "$string = 'example string case'; $string = SM::toDotCase($string); // or $string = SM::make($string) -&gt;toDotCase(); echo $string; // example.string.case . ",
     "url": "/string-morpher/docs/methods/to-dot-case/#usage",
     
     "relUrl": "/docs/methods/to-dot-case/#usage"
-  },"93": {
+  },"95": {
     "doc": "toFlatCase",
     "title": "toFlatCase",
     "content": "This method converts the string to flatcase format, removing all spaces and special characters while keeping everything lowercase. ",
     "url": "/string-morpher/docs/methods/to-flat-case/",
     
     "relUrl": "/docs/methods/to-flat-case/"
-  },"94": {
+  },"96": {
     "doc": "toFlatCase",
     "title": "Usage",
     "content": "$string = 'example string case'; $string = SM::toFlatCase($string); // or $string = SM::make($string) -&gt;toFlatCase(); echo $string; // examplestringcase . ",
     "url": "/string-morpher/docs/methods/to-flat-case/#usage",
     
     "relUrl": "/docs/methods/to-flat-case/#usage"
-  },"95": {
+  },"97": {
     "doc": "toKebabCase",
     "title": "toKebabCase",
     "content": "This method converts the string to kebab-case format, where words are separated by hyphens and all lowercase. ",
     "url": "/string-morpher/docs/methods/to-kebab-case/",
     
     "relUrl": "/docs/methods/to-kebab-case/"
-  },"96": {
+  },"98": {
     "doc": "toKebabCase",
     "title": "Usage",
     "content": "$string = 'example string case'; $string = SM::toKebabCase($string); // or $string = SM::make($string) -&gt;toKebabCase(); echo $string; // example-string-case . ",
     "url": "/string-morpher/docs/methods/to-kebab-case/#usage",
     
     "relUrl": "/docs/methods/to-kebab-case/#usage"
-  },"97": {
+  },"99": {
     "doc": "toLower",
     "title": "toLower",
     "content": "This method transforms all characters in the string to lowercase. ",
     "url": "/string-morpher/docs/methods/to-lower/",
     
     "relUrl": "/docs/methods/to-lower/"
-  },"98": {
+  },"100": {
     "doc": "toLower",
     "title": "Usage",
     "content": "$string = 'HeLlO wOrLd'; $string = SM::toLower($string); // or $string = SM::make($string) -&gt;toLower(); echo $string; // hello world . ",
     "url": "/string-morpher/docs/methods/to-lower/#usage",
     
     "relUrl": "/docs/methods/to-lower/#usage"
-  },"99": {
+  },"101": {
     "doc": "toPascalCase",
     "title": "toPascalCase",
     "content": "This method converts the string to PascalCase format, where each word is capitalized with no spaces. ",
     "url": "/string-morpher/docs/methods/to-pascal-case/",
     
     "relUrl": "/docs/methods/to-pascal-case/"
-  },"100": {
+  },"102": {
     "doc": "toPascalCase",
     "title": "Usage",
     "content": "$string = 'example string case'; $string = SM::toPascalCase($string); // or $string = SM::make($string) -&gt;toPascalCase(); echo $string; // ExampleStringCase . ",
     "url": "/string-morpher/docs/methods/to-pascal-case/#usage",
     
     "relUrl": "/docs/methods/to-pascal-case/#usage"
-  },"101": {
+  },"103": {
     "doc": "toSnakeCase",
     "title": "toSnakeCase",
     "content": "This method converts the string to snake_case format, where words are separated by underscores and all lowercase. ",
     "url": "/string-morpher/docs/methods/to-snake-case/",
     
     "relUrl": "/docs/methods/to-snake-case/"
-  },"102": {
+  },"104": {
     "doc": "toSnakeCase",
     "title": "Usage",
     "content": "$string = 'example string case'; $string = SM::toSnakeCase($string); // or $string = SM::make($string) -&gt;toSnakeCase(); echo $string; // example_string_case . ",
     "url": "/string-morpher/docs/methods/to-snake-case/#usage",
     
     "relUrl": "/docs/methods/to-snake-case/#usage"
-  },"103": {
+  },"105": {
     "doc": "toTrainCase",
     "title": "toTrainCase",
     "content": "This method converts the string to Train-Case format, where words are separated by hyphens and each word is capitalized. ",
     "url": "/string-morpher/docs/methods/to-train-case/",
     
     "relUrl": "/docs/methods/to-train-case/"
-  },"104": {
+  },"106": {
     "doc": "toTrainCase",
     "title": "Usage",
     "content": "$string = 'example string case'; $string = SM::toTrainCase($string); // or $string = SM::make($string) -&gt;toTrainCase(); echo $string; // Example-String-Case . ",
     "url": "/string-morpher/docs/methods/to-train-case/#usage",
     
     "relUrl": "/docs/methods/to-train-case/#usage"
-  },"105": {
+  },"107": {
     "doc": "toUpperFirst",
     "title": "toUpperFirst",
     "content": "This method capitalizes only the first letter of the string while keeping the rest unchanged. ",
     "url": "/string-morpher/docs/methods/to-upper-first/",
     
     "relUrl": "/docs/methods/to-upper-first/"
-  },"106": {
+  },"108": {
     "doc": "toUpperFirst",
     "title": "Usage",
     "content": "$string = 'hello world'; $string = SM::toUpperFirst($string); // or $string = SM::make($string) -&gt;toUpperFirst(); echo $string; // Hello world . ",
     "url": "/string-morpher/docs/methods/to-upper-first/#usage",
     
     "relUrl": "/docs/methods/to-upper-first/#usage"
-  },"107": {
+  },"109": {
     "doc": "toUpperSnakeCase",
     "title": "toUpperSnakeCase",
     "content": "This method converts the string to UPPER_SNAKE_CASE format, where words are separated by underscores and all uppercase. ",
     "url": "/string-morpher/docs/methods/to-upper-snake-case/",
     
     "relUrl": "/docs/methods/to-upper-snake-case/"
-  },"108": {
+  },"110": {
     "doc": "toUpperSnakeCase",
     "title": "Usage",
     "content": "$string = 'example string case'; $string = SM::toUpperSnakeCase($string); // or $string = SM::make($string) -&gt;toUpperSnakeCase(); echo $string; // EXAMPLE_STRING_CASE . ",
     "url": "/string-morpher/docs/methods/to-upper-snake-case/#usage",
     
     "relUrl": "/docs/methods/to-upper-snake-case/#usage"
-  },"109": {
+  },"111": {
     "doc": "toUpper",
     "title": "toUpper",
     "content": "This method transforms all characters in the string to uppercase. ",
     "url": "/string-morpher/docs/methods/to-upper/",
     
     "relUrl": "/docs/methods/to-upper/"
-  },"110": {
+  },"112": {
     "doc": "toUpper",
     "title": "Usage",
     "content": "$string = 'HeLlO wOrLd'; $string = SM::toUpper($string); // or $string = SM::make($string) -&gt;toUpper(); echo $string; // HELLO WORLD . ",
     "url": "/string-morpher/docs/methods/to-upper/#usage",
     
     "relUrl": "/docs/methods/to-upper/#usage"
-  },"111": {
+  },"113": {
     "doc": "trim",
     "title": "trim",
     "content": "This method removes whitespace (or other characters) from both the beginning and end of the string. ",
     "url": "/string-morpher/docs/methods/trim/",
     
     "relUrl": "/docs/methods/trim/"
-  },"112": {
+  },"114": {
     "doc": "trim",
     "title": "Usage",
     "content": "$string = ' Hello world '; $string = SM::trim($string); // or $string = SM::make($string) -&gt;trim(); echo $string; // Hello world . Custom characters to trim . // You can specify which characters to trim $string = SM::trim($string, \" \\n\\r\\t\\v\\0\"); // or $string = SM::make($string) -&gt;trim(\" \\n\\r\\t\\v\\0\"); . ",
     "url": "/string-morpher/docs/methods/trim/#usage",
     
     "relUrl": "/docs/methods/trim/#usage"
-  },"113": {
+  },"115": {
+    "doc": "unwrap",
+    "title": "unwrap",
+    "content": "Removes a matching prefix and suffix from a string. ",
+    "url": "/string-morpher/docs/methods/unwrap/",
+    
+    "relUrl": "/docs/methods/unwrap/"
+  },"116": {
+    "doc": "unwrap",
+    "title": "Usage",
+    "content": "$string = '(abc)'; $string = SM::unwrap($string, '(', ')'); // or $string = SM::make($string) -&gt;unwrap('(', ')'); echo $string; // abc . ",
+    "url": "/string-morpher/docs/methods/unwrap/#usage",
+    
+    "relUrl": "/docs/methods/unwrap/#usage"
+  },"117": {
+    "doc": "unwrap",
+    "title": "Wrap omitting suffix",
+    "content": "If the suffix is not provided, it defaults to the same value as the prefix. $string = '\"abc\"'; $string = SM::unwrap($string, '\"'); // or $string = SM::make($string) -&gt;unwrap('\"'); echo $string; // abc . ",
+    "url": "/string-morpher/docs/methods/unwrap/#wrap-omitting-suffix",
+    
+    "relUrl": "/docs/methods/unwrap/#wrap-omitting-suffix"
+  },"118": {
     "doc": "withoutSpaces",
     "title": "withoutSpaces",
     "content": "This method removes all spaces from the string, keeping all other characters intact. ",
     "url": "/string-morpher/docs/methods/without-spaces/",
     
     "relUrl": "/docs/methods/without-spaces/"
-  },"114": {
+  },"119": {
     "doc": "withoutSpaces",
     "title": "Usage",
     "content": "$string = 'Hello world'; $string = SM::withoutSpaces($string); // or $string = SM::make($string) -&gt;withoutSpaces(); echo $string; // Helloworld . ",
     "url": "/string-morpher/docs/methods/without-spaces/#usage",
     
     "relUrl": "/docs/methods/without-spaces/#usage"
+  },"120": {
+    "doc": "wrap",
+    "title": "wrap",
+    "content": "Wraps a string with a prefix and suffix. ",
+    "url": "/string-morpher/docs/methods/wrap/",
+    
+    "relUrl": "/docs/methods/wrap/"
+  },"121": {
+    "doc": "wrap",
+    "title": "Usage",
+    "content": "$string = 'abc'; $string = SM::wrap($string, '(', ')'); // or fluent $string = SM::make($string) -&gt;wrap('(', ')'); echo $string; // (abc) . ",
+    "url": "/string-morpher/docs/methods/wrap/#usage",
+    
+    "relUrl": "/docs/methods/wrap/#usage"
+  },"122": {
+    "doc": "wrap",
+    "title": "Wrap ommiting suffix",
+    "content": "If the suffix is not provided, it defaults to the same value as the prefix. $string = 'abc'; $string = SM::wrap($string, '\"'); // or fluent $string = SM::make($string) -&gt;wrap('\"'); echo $string; // \"abc\" . ",
+    "url": "/string-morpher/docs/methods/wrap/#wrap-ommiting-suffix",
+    
+    "relUrl": "/docs/methods/wrap/#wrap-ommiting-suffix"
   }
 }
